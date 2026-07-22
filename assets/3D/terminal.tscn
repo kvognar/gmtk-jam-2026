@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bvlmt8kd0nbh6"]
+
+[ext_resource type="PackedScene" uid="uid://m0kidr7nk712" path="res://assets/3D/glbs/terminal.glb" id="1_cg5va"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_0ki25"]
+[ext_resource type="Material" uid="uid://tjxoi5p6hmyw" path="res://assets/materials/screen.tres" id="3_fui7u"]
+
+[node name="terminal" unique_id=431836551 instance=ExtResource("1_cg5va")]
+
+[node name="terminal" parent="." index="0" unique_id=1328255214]
+material_override = ExtResource("2_0ki25")
+
+[node name="terminal_screen" parent="." index="1" unique_id=882787067]
+material_override = ExtResource("3_fui7u")
+
+[node name="button3" parent="." index="2" unique_id=570806116]
+material_override = ExtResource("2_0ki25")
+
+[node name="button1" parent="." index="3" unique_id=367580150]
+material_override = ExtResource("2_0ki25")
+
+[node name="button2" parent="." index="4" unique_id=1042847183]
+material_override = ExtResource("2_0ki25")

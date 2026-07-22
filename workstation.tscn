@@ -1,3 +1,15 @@
 [gd_scene format=3 uid="uid://b4n03qixpsio3"]
 
+[ext_resource type="PackedScene" uid="uid://bgr0oe6tv8u8r" path="res://assets/3D/room.tscn" id="1_un3qw"]
+[ext_resource type="PackedScene" uid="uid://bvlmt8kd0nbh6" path="res://assets/3D/terminal.tscn" id="2_jfner"]
+[ext_resource type="PackedScene" uid="uid://b00fa10qd8r0w" path="res://assets/3D/props/coffeecup.tscn" id="3_yfhe6"]
+
 [node name="Workstation" type="Node3D" unique_id=2105439346]
+
+[node name="room" parent="." unique_id=235516147 instance=ExtResource("1_un3qw")]
+
+[node name="terminal" parent="." unique_id=431836551 instance=ExtResource("2_jfner")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, -1.095)
+
+[node name="coffeecup" parent="terminal" unique_id=1962544746 instance=ExtResource("3_yfhe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24699628, 0.28577247, 0.27102375)

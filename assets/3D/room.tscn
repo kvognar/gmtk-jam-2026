@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bgr0oe6tv8u8r"]
+
+[ext_resource type="PackedScene" uid="uid://cqhacyashokks" path="res://assets/3D/glbs/room.glb" id="1_uglcb"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_j5uj1"]
+
+[node name="room" unique_id=235516147 instance=ExtResource("1_uglcb")]
+
+[node name="room_walls" parent="." index="0" unique_id=864922177]
+material_override = ExtResource("2_j5uj1")

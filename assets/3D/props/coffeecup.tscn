@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b00fa10qd8r0w"]
+
+[ext_resource type="PackedScene" uid="uid://kihs7m5akv0l" path="res://assets/3D/glbs/coffeecup.glb" id="1_norvb"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_tlql6"]
+
+[node name="coffeecup" unique_id=1962544746 instance=ExtResource("1_norvb")]
+
+[node name="coffeecup" parent="." index="0" unique_id=2089432605]
+material_override = ExtResource("2_tlql6")

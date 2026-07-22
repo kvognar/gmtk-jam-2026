@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cavtbwonir6dt"]
+
+[ext_resource type="PackedScene" uid="uid://btcccgv3l4c6o" path="res://assets/3D/glbs/pie.glb" id="1_dppsq"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_0lk7l"]
+
+[node name="pie" unique_id=1943440283 instance=ExtResource("1_dppsq")]
+
+[node name="pie" parent="." index="0" unique_id=2089063933]
+material_override = ExtResource("2_0lk7l")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bhojpxl1ngo1"]
+
+[ext_resource type="PackedScene" uid="uid://iv2p6e3vjl3c" path="res://assets/3D/glbs/pencil.glb" id="1_m2j7e"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_pbux0"]
+
+[node name="pencil" unique_id=2144322216 instance=ExtResource("1_m2j7e")]
+
+[node name="pencil" parent="." index="0" unique_id=1143281086]
+material_override = ExtResource("2_pbux0")

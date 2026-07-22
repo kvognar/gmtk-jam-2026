@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dad8pgesntm1n"
-path.s3tc="res://.godot/imported/countdown_texture.png-090b299c24ec6d597409173c0190427f.s3tc.ctex"
+path.s3tc="res://.godot/imported/countdown_texture.png-4b179c206a067a2481461bbc0aad8126.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/countdown_texture.png"
-dest_files=["res://.godot/imported/countdown_texture.png-090b299c24ec6d597409173c0190427f.s3tc.ctex"]
+source_file="res://assets/textures/countdown_texture.png"
+dest_files=["res://.godot/imported/countdown_texture.png-4b179c206a067a2481461bbc0aad8126.s3tc.ctex"]
 
 [params]
 
