@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dwt1qdmghu1x2"]
+
+[ext_resource type="Script" uid="uid://c4tuhk0adi4x4" path="res://microgames/microgame.gd" id="1_u3unr"]
+
+[node name="Microgame" type="Control" unique_id=1956794833]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u3unr")
+
+[node name="Prompt" type="Label" parent="." unique_id=616038800]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
