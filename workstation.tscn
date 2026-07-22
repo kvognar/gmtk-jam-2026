@@ -4,11 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://bgr0oe6tv8u8r" path="res://assets/3D/room.tscn" id="1_un3qw"]
 [ext_resource type="PackedScene" uid="uid://bvlmt8kd0nbh6" path="res://assets/3D/terminal.tscn" id="2_jfner"]
 [ext_resource type="PackedScene" uid="uid://b00fa10qd8r0w" path="res://assets/3D/props/coffeecup.tscn" id="3_yfhe6"]
+[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="5_yfhe6"]
 
 [sub_resource type="Environment" id="Environment_ejdy6"]
 ambient_light_source = 2
 ambient_light_color = Color(0.5682058, 0.42399585, 0.350675, 1)
 ambient_light_energy = 6.92
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ejdy6"]
+size = Vector3(0.33972168, 0.2565918, 1)
 
 [node name="Workstation" type="Node3D" unique_id=2105439346]
 script = ExtResource("1_j81i1")
@@ -26,3 +30,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5962175, -0.34459257)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=218602268]
 environment = SubResource("Environment_ejdy6")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1351131901]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=917582177]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0026245117, 0.5846128, -1.388461)
+shape = SubResource("BoxShape3D_ejdy6")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=2126559800]
+
+[node name="Microgame" parent="SubViewport" unique_id=1956794833 instance=ExtResource("5_yfhe6")]
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
