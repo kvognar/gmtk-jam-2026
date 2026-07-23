@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bgy5lgfk53aru"]
+
+[ext_resource type="PackedScene" uid="uid://cd1d3c5ei4ya8" path="res://assets/3D/glbs/warning_light.glb" id="1_h8taw"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_cf0by"]
+[ext_resource type="Script" uid="uid://chk1pf5a0mocp" path="res://scripts/warning_light.gd" id="2_q7nja"]
+[ext_resource type="AudioStream" uid="uid://crs1eraludse2" path="res://assets/audio/alarm.ogg" id="4_4ynf8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7nja"]
+specular_mode = 2
+albedo_color = Color(0.65556806, 1.853034e-06, 4.813075e-07, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="Animation" id="Animation_4ynf8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("warninglight_001:surface_material_override/0:emission_enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_q7nja"]
+resource_name = "alert"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("warninglight_001:surface_material_override/0:emission_enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("beep")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_4ynf8")
+}],
+"times": PackedFloat32Array(0.8)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_mfa8l"]
+resource_name = "alertv2"
+length = 2.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_c3ii5"]
+resource_name = "off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("warninglight_001:surface_material_override/0:emission_enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ynf8"]
+_data = {
+&"RESET": SubResource("Animation_4ynf8"),
+&"alert": SubResource("Animation_q7nja"),
+&"alertv2": SubResource("Animation_mfa8l"),
+&"off": SubResource("Animation_c3ii5")
+}
+
+[node name="warning_light" unique_id=283672739 instance=ExtResource("1_h8taw")]
+script = ExtResource("2_q7nja")
+
+[node name="warninglight" parent="." index="0" unique_id=2038902323]
+material_override = ExtResource("2_cf0by")
+
+[node name="warninglight_001" parent="." index="1" unique_id=1304368270]
+cast_shadow = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_q7nja")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2" unique_id=380524889]
+libraries/ = SubResource("AnimationLibrary_4ynf8")
+
+[node name="beep" type="AudioStreamPlayer3D" parent="." index="3" unique_id=1673226077]
