@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cavtbwonir6dt" path="res://assets/3D/props/pie.tscn" id="6_bsjfv"]
 [ext_resource type="PackedScene" uid="uid://bhojpxl1ngo1" path="res://assets/3D/props/pencil.tscn" id="7_nqpf1"]
 [ext_resource type="PackedScene" uid="uid://xc2581fpplo6" path="res://assets/3D/props/paper.tscn" id="8_7fv2r"]
+[ext_resource type="PackedScene" uid="uid://blrf3onqr0ncf" path="res://assets/3D/props/binder.tscn" id="10_527rt"]
+[ext_resource type="PackedScene" uid="uid://c74vivqha7pn0" path="res://assets/3D/terminal3.tscn" id="11_6bswh"]
+[ext_resource type="PackedScene" uid="uid://bovwwt2kwxq2n" path="res://assets/3D/props/phone.tscn" id="11_8txgb"]
 
 [sub_resource type="Environment" id="Environment_ejdy6"]
 ambient_light_source = 2
@@ -23,7 +26,7 @@ size = Vector3(0.33972168, 0.2565918, 1)
 script = ExtResource("1_j81i1")
 
 [node name="terminal2" parent="." unique_id=430066637 instance=ExtResource("2_yfhe6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1035508, 0.18743303, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7442686, 0.18743303, -0.45650586)
 
 [node name="MicrogameContainer" type="Control" parent="." unique_id=1621265339]
 layout_mode = 3
@@ -38,9 +41,6 @@ mouse_filter = 2
 
 [node name="terminal" parent="." unique_id=431836551 instance=ExtResource("2_jfner")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, -1.095)
-
-[node name="coffeecup" parent="terminal" unique_id=1962544746 instance=ExtResource("3_yfhe6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24699628, 0.28577247, 0.27102375)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=98828477]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5962175, -0.34459257)
@@ -89,15 +89,27 @@ transform = Transform3D(0.9434516, 0, 0.33151034, 0, 1, 0, -0.33151034, 0, 0.943
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 1.5057015)
 
 [node name="pencil" parent="props" unique_id=2144322216 instance=ExtResource("7_nqpf1")]
-transform = Transform3D(-0.5061217, 0, 0.86246204, 0, 1, 0, -0.86246204, 0, -0.5061217, -0.8578451, 0.36890873, 0.2511909)
+transform = Transform3D(-0.5061217, 0, 0.86246204, 0, 1, 0, -0.86246204, 0, -0.5061217, -0.49856293, 0.36890873, -0.20531496)
 
 [node name="paper" parent="props" unique_id=1377978053 instance=ExtResource("8_7fv2r")]
-transform = Transform3D(0.6170999, 0, 0.78688484, 0, 1, 0, -0.78688484, 0, 0.6170999, -0.91617876, 0.36743304, 0.15119843)
+transform = Transform3D(0.6170999, 0, 0.78688484, 0, 1, 0, -0.78688484, 0, 0.6170999, -0.55689657, 0.36743304, -0.30530745)
+
+[node name="coffeecup" parent="props" unique_id=1962544746 instance=ExtResource("3_yfhe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24799629, 0.28577247, -0.8239763)
+
+[node name="binder" parent="props" unique_id=479138083 instance=ExtResource("10_527rt")]
+transform = Transform3D(0.9380351, 0, -0.34654027, 0, 1, 0, 0.34654027, 0, 0.9380351, 1.1010087, 0.8727921, -0.19095367)
+
+[node name="phone" parent="props" unique_id=184188855 instance=ExtResource("11_8txgb")]
+transform = Transform3D(-0.82989216, 0, -0.5579238, 0, 1, 0, 0.5579238, 0, -0.82989216, 0.5283268, 0.28753218, 0.32995236)
 
 [node name="counter" parent="." unique_id=457422934 instance=ExtResource("2_b5nh1")]
 transform = Transform3D(1, 0, 0, 0, 0.98792636, -0.15492435, 0, 0.15492435, 0.98792636, 0.41945773, 1.1070285, -1.4673011)
 initial_value = 14
 start_spin_delay = 0.25
 enable_test_input = false
+
+[node name="terminal3" parent="." unique_id=1116731443 instance=ExtResource("11_6bswh")]
+transform = Transform3D(-4.3711385e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.3711385e-08, 0.78018534, 1.1920929e-07, -0.17246705)
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

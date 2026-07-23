@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c74vivqha7pn0"]
+
+[ext_resource type="PackedScene" uid="uid://day1brdhnd8ro" path="res://assets/3D/glbs/terminal3.glb" id="1_1kp1j"]
+[ext_resource type="Material" uid="uid://tjxoi5p6hmyw" path="res://assets/materials/screen.tres" id="2_38bu6"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="3_lyj8f"]
+
+[node name="terminal3" type="Node3D" unique_id=1116731443]
+
+[node name="terminal" parent="." unique_id=1500894608 instance=ExtResource("1_1kp1j")]
+
+[node name="terminal3_screen1" parent="terminal" index="0" unique_id=1676858904]
+material_override = ExtResource("2_38bu6")
+
+[node name="terminal3_switch2" parent="terminal" index="1" unique_id=1670690620]
+material_override = ExtResource("3_lyj8f")
+
+[node name="terminal3_switch1" parent="terminal" index="2" unique_id=356319940]
+material_override = ExtResource("3_lyj8f")
+
+[node name="terminal3_screen2" parent="terminal" index="3" unique_id=627469966]
+material_override = ExtResource("2_38bu6")
+
+[node name="terminal3" parent="terminal" index="4" unique_id=1269182288]
+material_override = ExtResource("3_lyj8f")
+
+[node name="terminal3_switch3" parent="terminal" index="5" unique_id=1348517869]
+material_override = ExtResource("3_lyj8f")
+
+[node name="terminal3_switch4" parent="terminal" index="6" unique_id=381336474]
+material_override = ExtResource("3_lyj8f")
+
+[node name="terminal3_2" parent="terminal" index="7" unique_id=2014857832]
+material_override = ExtResource("3_lyj8f")
+
+[editable path="terminal"]
