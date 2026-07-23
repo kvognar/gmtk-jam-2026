@@ -2,6 +2,7 @@ extends Control
 class_name Microgame
 
 @export var prompt: String = 'Do the thing!'
+@export var time_limit := 5.0
 
 signal success
 signal failure
@@ -10,6 +11,9 @@ var playing: bool = false
 
 func _ready() -> void:
 	scale = Vector2(0, 0)
+	$Timer.wait_time = time_limit
+
+	begin()
 
 func begin() -> void:
 	scale=Vector2(1, 1)
@@ -22,10 +26,8 @@ func begin() -> void:
 	playing = true
 
 func fail() -> void:
-	print_debug('we lost :(')
 	playing = false
 	var timer = get_tree().create_timer(1.0).timeout
-	print_debug('failure!!')
 	failure.emit()
 
 func lose() -> void:
@@ -40,10 +42,11 @@ func win() -> void:
 	$Result.show()
 	playing = false
 	await get_tree().create_timer(1.0).timeout
-	print_debug('on to the next thing')
 	success.emit()
 	
 func _process(delta: float) -> void:
+	%ProgressBar.value = ($Timer.time_left / $Timer.wait_time) * %ProgressBar.max_value
+	
 	if Input.is_action_just_pressed('action'):
 		win()
 
@@ -51,7 +54,6 @@ func time_up() -> void:
 	if !playing:
 		return
 	playing = false
-	print_debug('time_up')
 	$Result.text = 'Time up!!'
 	$Result.show()
 	await get_tree().create_timer(1.0).timeout
