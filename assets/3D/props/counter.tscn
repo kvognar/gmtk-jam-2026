@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cra17twuq7bv5"]
+
+[ext_resource type="PackedScene" uid="uid://v1v065i6hnyv" path="res://assets/3D/glbs/frame.glb" id="1_bde78"]
+[ext_resource type="Script" uid="uid://byfsg6s55s1r4" path="res://scripts/counter.gd" id="1_d4vro"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="3_rw3mh"]
+[ext_resource type="PackedScene" uid="uid://ggaq7b5un0sp" path="res://assets/3D/props/numberwheel.tscn" id="3_u00kj"]
+
+[node name="counter" type="Node3D" unique_id=457422934]
+script = ExtResource("1_d4vro")
+initial_value = 20
+spin_to_on_start = 10
+start_spin_delay = 0.1
+
+[node name="frame" parent="." unique_id=60497206 instance=ExtResource("1_bde78")]
+
+[node name="numberframe" parent="frame" index="0" unique_id=982681674]
+material_override = ExtResource("3_rw3mh")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1086855791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24905123)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D" unique_id=1715752298]
+
+[node name="thousands" parent="." unique_id=595440184 instance=ExtResource("3_u00kj")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1210681, 0, -0.13063647)
+
+[node name="hundreds" parent="." unique_id=468394586 instance=ExtResource("3_u00kj")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039602607, 0, -0.13063647)
+
+[node name="tens" parent="." unique_id=987898696 instance=ExtResource("3_u00kj")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041528024, 0, -0.13063647)
+
+[node name="ones" parent="." unique_id=367394693 instance=ExtResource("3_u00kj")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12199392, 0, -0.131)
+
+[editable path="frame"]

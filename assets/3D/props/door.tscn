@@ -5,5 +5,5 @@
 
 [node name="door" unique_id=297827739 instance=ExtResource("1_fgbck")]
 
-[node name="Cylinder" parent="." index="0" unique_id=654454335]
+[node name="door" parent="." index="0" unique_id=1224328297]
 material_override = ExtResource("2_o78gj")

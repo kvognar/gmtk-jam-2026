@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ggaq7b5un0sp"]
+
+[ext_resource type="PackedScene" uid="uid://dftb2oxbhsai3" path="res://assets/3D/glbs/numberwheel.glb" id="1_hqnhj"]
+[ext_resource type="Script" uid="uid://3iqpd1eubva4" path="res://scripts/numberwheel.gd" id="2_h4314"]
+[ext_resource type="Material" uid="uid://djy4dulbdd200" path="res://assets/materials/numbers.tres" id="2_ki170"]
+[ext_resource type="AudioStream" uid="uid://icrepao8b082" path="res://assets/audio/tick.ogg" id="3_h4314"]
+
+[node name="numberwheel" unique_id=595440184 instance=ExtResource("1_hqnhj")]
+script = ExtResource("2_h4314")
+
+[node name="numberwheel" parent="." index="0" unique_id=1803900776]
+transform = Transform3D(1, 0, 0, 0, -0.33143926, 0.9434765, 0, -0.9434765, -0.33143926, 0, 0, 0)
+material_override = ExtResource("2_ki170")
+
+[node name="tick" type="AudioStreamPlayer3D" parent="." index="2" unique_id=492703869]
+stream = ExtResource("3_h4314")

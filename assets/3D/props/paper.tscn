@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://xc2581fpplo6"]
+
+[ext_resource type="PackedScene" uid="uid://c1w7wrif8lad2" path="res://assets/3D/glbs/paper.glb" id="1_mvd8u"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_rx64s"]
+
+[node name="paper" unique_id=1377978053 instance=ExtResource("1_mvd8u")]
+
+[node name="loose_paper" parent="." index="0" unique_id=1124435230]
+material_override = ExtResource("2_rx64s")
