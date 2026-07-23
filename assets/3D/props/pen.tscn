@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dt6i36hw8owgm"]
+
+[ext_resource type="PackedScene" uid="uid://bxojmjq5fjugf" path="res://assets/3D/glbs/pen.glb" id="1_ciebi"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_f2t2p"]
+
+[node name="pen" unique_id=133651095 instance=ExtResource("1_ciebi")]
+
+[node name="Cylinder" parent="." index="0" unique_id=1515158933]
+material_override = ExtResource("2_f2t2p")

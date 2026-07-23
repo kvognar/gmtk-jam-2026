@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://q3gemwtnifsm"]
+
+[ext_resource type="PackedScene" uid="uid://ijny0ohvuehr" path="res://assets/3D/glbs/tapething.glb" id="1_qjpbb"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_6br0q"]
+
+[node name="tapething" unique_id=653005474 instance=ExtResource("1_qjpbb")]
+
+[node name="tapething" parent="." index="0" unique_id=282461096]
+material_override = ExtResource("2_6br0q")
