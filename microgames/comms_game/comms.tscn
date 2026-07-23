@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cki0rsiaa0rg7"]
+
+[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_ccj6e"]
+[ext_resource type="Script" uid="uid://1pqq68pga041" path="res://microgames/comms_game/comms.gd" id="2_d43xh"]
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="3_axmo6"]
+[ext_resource type="AudioStream" uid="uid://crowysncr73tj" path="res://assets/sound/640170main_Roger20Roll.mp3" id="4_gndaa"]
+
+[node name="Microgame" unique_id=1956794833 instance=ExtResource("1_ccj6e")]
+script = ExtResource("2_d43xh")
+
+[node name="Prompt" parent="." index="1" unique_id=616038800]
+text = "Tune the radio! (A or D)"
+
+[node name="TargetFrequency" type="Label" parent="." index="4" unique_id=1419827306]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 89.0
+offset_right = 243.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 40
+
+[node name="CurrentFrequency" type="Label" parent="." index="5" unique_id=980260948]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 156.0
+offset_right = 243.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 40
+
+[node name="Icon" type="Sprite2D" parent="." index="6" unique_id=763621727]
+position = Vector2(278, 389)
+texture = ExtResource("3_axmo6")
+
+[node name="VictoryVoice" type="AudioStreamPlayer" parent="." index="8" unique_id=506152646]
+stream = ExtResource("4_gndaa")
