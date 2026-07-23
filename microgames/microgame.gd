@@ -6,19 +6,20 @@ class_name Microgame
 signal success
 signal failure
 
-var playing: bool = true
+var playing: bool = false
 
 func _ready() -> void:
-	begin()
+	scale = Vector2(0, 0)
 
 func begin() -> void:
+	scale=Vector2(1, 1)
 	$Prompt.text = prompt;
 	$Prompt.show()
 	$Result.hide()
 	$Timer.start()
-	playing = true
 	await get_tree().create_timer(1.0).timeout
 	$Prompt.hide()
+	playing = true
 
 func fail() -> void:
 	print_debug('we lost :(')
@@ -35,8 +36,10 @@ func lose() -> void:
 func win() -> void:
 	if !playing:
 		return
-	print_debug('we win')
-	var timer = get_tree().create_timer(1.0).timeout
+	$Result.text = 'You did it!'
+	$Result.show()
+	playing = false
+	await get_tree().create_timer(1.0).timeout
 	print_debug('on to the next thing')
 	success.emit()
 	
@@ -45,10 +48,13 @@ func _process(delta: float) -> void:
 		win()
 
 func time_up() -> void:
+	if !playing:
+		return
 	playing = false
 	print_debug('time_up')
 	$Result.text = 'Time up!!'
 	$Result.show()
+	await get_tree().create_timer(1.0).timeout
 	fail()
 
 func _on_timer_timeout() -> void:

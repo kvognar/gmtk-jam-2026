@@ -17,6 +17,8 @@ size = Vector3(0.33972168, 0.2565918, 1)
 [node name="Workstation" type="Node3D" unique_id=2105439346]
 script = ExtResource("1_j81i1")
 
+[node name="Microgame" parent="." unique_id=1956794833 instance=ExtResource("5_yfhe6")]
+
 [node name="room" parent="." unique_id=235516147 instance=ExtResource("1_un3qw")]
 
 [node name="terminal" parent="." unique_id=431836551 instance=ExtResource("2_jfner")]
@@ -37,8 +39,30 @@ environment = SubResource("Environment_ejdy6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0026245117, 0.5846128, -1.388461)
 shape = SubResource("BoxShape3D_ejdy6")
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=2126559800]
+[node name="HUD" type="Control" parent="." unique_id=939519783]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Microgame" parent="SubViewport" unique_id=1956794833 instance=ExtResource("5_yfhe6")]
+[node name="MarginContainer" type="MarginContainer" parent="HUD" unique_id=2125890534]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/MarginContainer" unique_id=1818126971]
+layout_mode = 2
+
+[node name="Wins" type="Label" parent="HUD/MarginContainer/VBoxContainer" unique_id=1202314465]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Losses" type="Label" parent="HUD/MarginContainer/VBoxContainer" unique_id=2044938555]
+unique_name_in_owner = true
+layout_mode = 2
 
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]
