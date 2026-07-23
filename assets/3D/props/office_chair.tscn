@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://42lp1pvoklh4"]
+
+[ext_resource type="PackedScene" uid="uid://coh238gwiipvh" path="res://assets/3D/glbs/office_chair.glb" id="1_i7rux"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_2l3ue"]
+
+[node name="office_chair" unique_id=27165987 instance=ExtResource("1_i7rux")]
+
+[node name="office_chair" parent="." index="0" unique_id=2121577432]
+material_override = ExtResource("2_2l3ue")
