@@ -20,6 +20,7 @@ func begin() -> void:
 	super()
 	initialize_frequencies()
 	update_current_frequency_text()
+	$Static.play()
 
 func initialize_frequencies() -> void:
 	initialize_current_frequency()
@@ -49,6 +50,7 @@ func update_dial_rotation(rads) -> void:
 	dial.rotation += rads
 
 func win() -> void:
+	$Static.stop()
 	$VictoryVoice.play()
 	super()
 
