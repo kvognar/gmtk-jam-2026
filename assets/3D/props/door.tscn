@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dpwe4ux26ceaw"]
+
+[ext_resource type="PackedScene" uid="uid://cuolgb0weq4sf" path="res://assets/3D/glbs/door.glb" id="1_fgbck"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_o78gj"]
+
+[node name="door" unique_id=297827739 instance=ExtResource("1_fgbck")]
+
+[node name="Cylinder" parent="." index="0" unique_id=654454335]
+material_override = ExtResource("2_o78gj")
