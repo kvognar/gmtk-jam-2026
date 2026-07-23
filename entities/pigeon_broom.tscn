@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cgibssfk5vj5v"]
+
+[ext_resource type="Script" uid="uid://1ypbequ14l56" path="res://entities/pigeon_broom.gd" id="1_ghjjy"]
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_tlwo6"]
+
+[sub_resource type="Animation" id="Animation_ghjjy"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Sprite2D/Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3m3gu"]
+resource_name = "swing"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2, 2),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 0.34557518, -0.025429418, -0.057595864, 0, 0, -0.33161256, -0.016916307, 0.11286463, 0, 0, 0, -0.01641703, -0.055268764, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.20149784, 0.3)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Sprite2D/Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vb1sx"]
+_data = {
+&"RESET": SubResource("Animation_ghjjy"),
+&"swing": SubResource("Animation_3m3gu")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1tlpq"]
+radius = 60.0
+height = 228.0
+
+[node name="PigeonBroom" type="Node2D" unique_id=2064054785]
+script = ExtResource("1_ghjjy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1531511526]
+libraries/ = SubResource("AnimationLibrary_vb1sx")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=644353099]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=410928618]
+position = Vector2(0, -156.99997)
+scale = Vector2(1, 3.7070313)
+texture = ExtResource("1_tlwo6")
+
+[node name="Area2D" type="Area2D" parent="Pivot/Sprite2D" unique_id=620557562]
+position = Vector2(0, -2.0580874e-06)
+scale = Vector2(0.99999994, 0.26975763)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Sprite2D/Area2D" unique_id=816495494]
+position = Vector2(-2, -153)
+shape = SubResource("CapsuleShape2D_1tlpq")
+disabled = true
+
+[connection signal="body_entered" from="Pivot/Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

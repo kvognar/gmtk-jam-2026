@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cxp1v8dcaowox"]
+
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_0wh4r"]
+[ext_resource type="Script" uid="uid://ba6y8ocisvqrn" path="res://entities/pigeon.gd" id="1_ho0rk"]
+[ext_resource type="AudioStream" uid="uid://dspx6jdbup0wy" path="res://assets/audio/pigeon-flutter-1.wav" id="3_majot"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6pnk7"]
+radius = 89.31
+
+[node name="Pigeon" type="CharacterBody2D" unique_id=540676680]
+script = ExtResource("1_ho0rk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=914533448]
+texture = ExtResource("1_0wh4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1729281083]
+shape = SubResource("CircleShape2D_6pnk7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1991612719]
+stream = ExtResource("3_majot")

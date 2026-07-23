@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dkii2wf8iirkv"]
+
+[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_sdkxx"]
+[ext_resource type="Script" uid="uid://b4ubt6lewx4li" path="res://microgames/pigeons.gd" id="2_86bxv"]
+[ext_resource type="PackedScene" uid="uid://cgibssfk5vj5v" path="res://entities/pigeon_broom.tscn" id="2_kirvr"]
+[ext_resource type="PackedScene" uid="uid://cxp1v8dcaowox" path="res://entities/pigeon.tscn" id="3_86bxv"]
+
+[node name="Microgame" unique_id=1956794833 instance=ExtResource("1_sdkxx")]
+script = ExtResource("2_86bxv")
+prompt = "Shoo!"
+
+[node name="PigeonBroom" parent="." index="5" unique_id=2064054785 instance=ExtResource("2_kirvr")]
+
+[node name="Pigeons" type="Node2D" parent="." index="6" unique_id=1329843846]
+
+[node name="Pigeon" parent="Pigeons" index="0" unique_id=540676680 instance=ExtResource("3_86bxv")]
+position = Vector2(1165, 303)
+
+[node name="Pigeon2" parent="Pigeons" index="1" unique_id=625872230 instance=ExtResource("3_86bxv")]
+position = Vector2(253, 205)
+
+[node name="Pigeon3" parent="Pigeons" index="2" unique_id=1241233968 instance=ExtResource("3_86bxv")]
+position = Vector2(838, 501)
