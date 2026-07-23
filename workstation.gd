@@ -2,6 +2,7 @@ extends Node3D
 
 var games: Array[Microgame] = []
 var game_paks: Array[PackedScene] = [
+	load("res://microgames/pigeons.tscn"),
 	load("res://microgames/button_clicker.tscn"),
 	load("res://microgames/click_to_win.tscn"),
 	load("res://microgames/comms_game/comms.tscn")
