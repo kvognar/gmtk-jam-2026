@@ -7,6 +7,7 @@
 
 [node name="Microgame" unique_id=1956794833 instance=ExtResource("1_ccj6e")]
 script = ExtResource("2_d43xh")
+prompt = "Tune the radio!"
 
 [node name="Prompt" parent="." index="1" unique_id=616038800]
 text = "Tune the radio! (A or D)"
