@@ -4,19 +4,44 @@
 [ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_0ki25"]
 [ext_resource type="Material" uid="uid://tjxoi5p6hmyw" path="res://assets/materials/screen.tres" id="3_fui7u"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wqjaw"]
+height = 0.029467776
+radius = 0.028320313
+
 [node name="terminal" unique_id=431836551 instance=ExtResource("1_cg5va")]
 
-[node name="terminal" parent="." index="0" unique_id=1328255214]
+[node name="terminal" parent="." index="0" unique_id=143452836]
 material_override = ExtResource("2_0ki25")
 
-[node name="terminal_screen" parent="." index="1" unique_id=882787067]
+[node name="terminal_screen" parent="." index="1" unique_id=476786901]
 material_override = ExtResource("3_fui7u")
 
-[node name="button3" parent="." index="2" unique_id=570806116]
+[node name="button3" parent="." index="2" unique_id=141246500]
 material_override = ExtResource("2_0ki25")
 
-[node name="button1" parent="." index="3" unique_id=367580150]
+[node name="button1" parent="." index="3" unique_id=714472486]
 material_override = ExtResource("2_0ki25")
 
-[node name="button2" parent="." index="4" unique_id=1042847183]
+[node name="button2" parent="." index="4" unique_id=1788537946]
 material_override = ExtResource("2_0ki25")
+
+[node name="button_area1" type="Area3D" parent="." index="5" unique_id=1816937524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2415322, 0.65721047, -0.13451183)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="button_area1" index="0" unique_id=1896728910]
+transform = Transform3D(1, 4.183498e-08, -3.1041747e-08, -4.2599506e-08, 0.31373322, -0.94951123, -2.9983955e-08, 0.94951123, 0.31373322, 0, -2.4735928e-05, -8.177757e-05)
+shape = SubResource("CylinderShape3D_wqjaw")
+
+[node name="button_area2" type="Area3D" parent="." index="6" unique_id=88937658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2415322, 0.5817269, -0.110306114)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="button_area2" index="0" unique_id=696932362]
+transform = Transform3D(1, 4.183498e-08, -3.1041747e-08, -4.2722416e-08, 0.31763405, -0.94821346, -2.9808575e-08, 0.94821346, 0.31763405, 0, -2.4735928e-05, -8.177757e-05)
+shape = SubResource("CylinderShape3D_wqjaw")
+
+[node name="button_area3" type="Area3D" parent="." index="7" unique_id=1739368247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24121875, 0.5039905, -0.08585675)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="button_area3" index="0" unique_id=1745114246]
+transform = Transform3D(1, 4.183498e-08, -3.1041747e-08, -4.2722416e-08, 0.31763405, -0.94821346, -2.9808575e-08, 0.94821346, 0.31763405, 0, -2.4735928e-05, -8.177757e-05)
+shape = SubResource("CylinderShape3D_wqjaw")

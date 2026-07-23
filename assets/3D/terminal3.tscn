@@ -4,6 +4,9 @@
 [ext_resource type="Material" uid="uid://tjxoi5p6hmyw" path="res://assets/materials/screen.tres" id="2_38bu6"]
 [ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="3_lyj8f"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wqjaw"]
+size = Vector3(0.0503418, 0.0994751, 0.042558596)
+
 [node name="terminal3" type="Node3D" unique_id=1116731443]
 
 [node name="terminal" parent="." unique_id=1500894608 instance=ExtResource("1_1kp1j")]
@@ -31,5 +34,33 @@ material_override = ExtResource("3_lyj8f")
 
 [node name="terminal3_2" parent="terminal" index="7" unique_id=2014857832]
 material_override = ExtResource("3_lyj8f")
+
+[node name="switch1" type="Area3D" parent="terminal" unique_id=1954380110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27025366, 0.36649492, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terminal/switch1" unique_id=1318948543]
+transform = Transform3D(1, 0, 0, 0, 0.7399258, 0.6726885, 0, -0.6726885, 0.7399258, 0.0061279237, -0.017132431, 0.019404389)
+shape = SubResource("BoxShape3D_wqjaw")
+
+[node name="switch2" type="Area3D" parent="terminal" unique_id=1388515447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19553334, 0.36649492, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terminal/switch2" unique_id=787868598]
+transform = Transform3D(1, 0, 0, 0, 0.7399258, 0.6726885, 0, -0.6726885, 0.7399258, 0.0061279237, -0.017132431, 0.019404389)
+shape = SubResource("BoxShape3D_wqjaw")
+
+[node name="switch3" type="Area3D" parent="terminal" unique_id=910292095]
+transform = Transform3D(0.9997809, 0, 0.020931056, 0, 1, 0, -0.020931056, 0, 0.9997809, 0.19957915, 0.36570615, -0.000790732)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terminal/switch3" unique_id=1572189979]
+transform = Transform3D(1, 0, 0, 0, 0.7399258, 0.6726885, 0, -0.6726885, 0.7399258, 0.0061279237, -0.017132431, 0.019404389)
+shape = SubResource("BoxShape3D_wqjaw")
+
+[node name="switch4" type="Area3D" parent="terminal" unique_id=1691131645]
+transform = Transform3D(0.9997809, 0, 0.020931056, 0, 1, 0, -0.020931056, 0, 0.9997809, 0.2729797, 0.36570615, -0.000790732)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terminal/switch4" unique_id=173802929]
+transform = Transform3D(1, 0, 0, 0, 0.7399258, 0.6726885, 0, -0.6726885, 0.7399258, 0.0061279237, -0.017132431, 0.019404389)
+shape = SubResource("BoxShape3D_wqjaw")
 
 [editable path="terminal"]
