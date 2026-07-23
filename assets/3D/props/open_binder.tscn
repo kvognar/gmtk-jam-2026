@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://3mrt3b5lddah"]
+
+[ext_resource type="PackedScene" uid="uid://dsku42r3mh1v8" path="res://assets/3D/glbs/open_binder.glb" id="1_8otrr"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_xv05l"]
+[ext_resource type="Material" uid="uid://3ooeg313a61k" path="res://assets/materials/pages.tres" id="3_xv05l"]
+
+[node name="open_binder" unique_id=2116206237 instance=ExtResource("1_8otrr")]
+
+[node name="open_binder" parent="." index="0" unique_id=1623446470]
+material_override = ExtResource("2_xv05l")
+
+[node name="open_binder_001" parent="." index="1" unique_id=1763957118]
+material_override = ExtResource("3_xv05l")
