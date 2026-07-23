@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bbqor6jcpyj7m"
+path="res://.godot/imported/Cosmos Vibe.ogg-0b8c2345974dc76b423ec5c1dd8837bf.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Cosmos Vibe.ogg"
+dest_files=["res://.godot/imported/Cosmos Vibe.ogg-0b8c2345974dc76b423ec5c1dd8837bf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

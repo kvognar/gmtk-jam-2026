@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5enwqn5vivxy"
+path="res://.godot/imported/Time's Running Out.ogg-728abc27e806fc33a5e346a987511669.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Time's Running Out.ogg"
+dest_files=["res://.godot/imported/Time's Running Out.ogg-728abc27e806fc33a5e346a987511669.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
