@@ -16,11 +16,6 @@ start_spin_delay = 0.1
 [node name="numberframe" parent="frame" index="0" unique_id=982681674]
 material_override = ExtResource("3_rw3mh")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1086855791]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24905123)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D" unique_id=1715752298]
-
 [node name="thousands" parent="." unique_id=595440184 instance=ExtResource("3_u00kj")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1210681, 0, -0.13063647)
