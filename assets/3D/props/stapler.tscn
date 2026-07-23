@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dx7q7u7ugh2kr"]
+
+[ext_resource type="PackedScene" uid="uid://c73fnlt0etxhq" path="res://assets/3D/glbs/stapler.glb" id="1_xqd4f"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_fr5ws"]
+
+[node name="stapler" unique_id=1011541332 instance=ExtResource("1_xqd4f")]
+
+[node name="stapler" parent="." index="0" unique_id=60545576]
+material_override = ExtResource("2_fr5ws")

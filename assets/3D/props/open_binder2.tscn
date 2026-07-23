@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dbov07i2l060u"]
+
+[ext_resource type="PackedScene" uid="uid://b5nv412fryfa5" path="res://assets/3D/glbs/open_binder2.glb" id="1_n7uux"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_ymkej"]
+
+[node name="open_binder" unique_id=1406536435 instance=ExtResource("1_n7uux")]
+
+[node name="open_binder_002" parent="." index="0" unique_id=650930926]
+material_override = ExtResource("2_ymkej")
