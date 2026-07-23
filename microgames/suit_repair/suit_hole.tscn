@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ciua6wtyhdn4e"]
+
+[ext_resource type="Script" uid="uid://dynodnom3ljsq" path="res://microgames/suit_repair/suit_hole.gd" id="1_w0hs4"]
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="2_dtx87"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ejdy6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejdy6"]
+radius = 47.26521
+
+[node name="SuitHole" type="Node2D" unique_id=118899803]
+script = ExtResource("1_w0hs4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1726973013]
+material = SubResource("CanvasItemMaterial_ejdy6")
+texture = ExtResource("2_dtx87")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=396674692]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1874625354]
+shape = SubResource("CircleShape2D_ejdy6")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

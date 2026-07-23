@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://kyggwnl5nqun"]
+
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_ebhj2"]
+[ext_resource type="PackedScene" uid="uid://ciua6wtyhdn4e" path="res://microgames/suit_repair/suit_hole.tscn" id="2_182oc"]
+
+[node name="Suit" type="Node2D" unique_id=645462558]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1576329350]
+position = Vector2(1057, 428)
+scale = Vector2(5.171875, 5.171875)
+texture = ExtResource("1_ebhj2")
+
+[node name="Holes" type="Node2D" parent="." unique_id=685126020]
+
+[node name="SuitHole" parent="Holes" unique_id=118899803 instance=ExtResource("2_182oc")]
+position = Vector2(1166, 439)
+
+[node name="SuitHole2" parent="Holes" unique_id=2089572215 instance=ExtResource("2_182oc")]
+position = Vector2(952, 432)

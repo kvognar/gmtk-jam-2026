@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cxuosva6evwlw"]
+
+[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_3egq7"]
+[ext_resource type="Script" uid="uid://btkst3nl2tis" path="res://microgames/suit_repair/suit_repair.gd" id="2_bq3qb"]
+[ext_resource type="PackedScene" uid="uid://kyggwnl5nqun" path="res://microgames/suit_repair/suit.tscn" id="3_kpxw4"]
+
+[node name="SuitRepair" unique_id=1956794833 instance=ExtResource("1_3egq7")]
+script = ExtResource("2_bq3qb")
+
+[node name="Suit" parent="." index="5" unique_id=645462558 instance=ExtResource("3_kpxw4")]
+
+[node name="Tapes" type="Node2D" parent="." index="6" unique_id=133206157]
+
+[editable path="Suit"]
