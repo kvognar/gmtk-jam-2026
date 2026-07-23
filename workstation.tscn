@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bgr0oe6tv8u8r" path="res://assets/3D/room.tscn" id="1_un3qw"]
 [ext_resource type="PackedScene" uid="uid://bvlmt8kd0nbh6" path="res://assets/3D/terminal.tscn" id="2_jfner"]
 [ext_resource type="PackedScene" uid="uid://b00fa10qd8r0w" path="res://assets/3D/props/coffeecup.tscn" id="3_yfhe6"]
-[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="5_yfhe6"]
 
 [sub_resource type="Environment" id="Environment_ejdy6"]
 ambient_light_source = 2
@@ -17,7 +16,14 @@ size = Vector3(0.33972168, 0.2565918, 1)
 [node name="Workstation" type="Node3D" unique_id=2105439346]
 script = ExtResource("1_j81i1")
 
-[node name="Microgame" parent="." unique_id=1956794833 instance=ExtResource("5_yfhe6")]
+[node name="MicrogameContainer" type="Control" parent="." unique_id=1621265339]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="room" parent="." unique_id=235516147 instance=ExtResource("1_un3qw")]
 

@@ -12,8 +12,12 @@ var playing: bool = false
 func _ready() -> void:
 	scale = Vector2(0, 0)
 	$Timer.wait_time = time_limit
-
-	begin()
+	
+	if get_parent() == get_tree().root:
+		begin()
+	
+func _draw() -> void:
+	pass
 
 func begin() -> void:
 	scale=Vector2(1, 1)
@@ -27,7 +31,7 @@ func begin() -> void:
 
 func fail() -> void:
 	playing = false
-	var timer = get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	failure.emit()
 
 func lose() -> void:
@@ -44,11 +48,8 @@ func win() -> void:
 	await get_tree().create_timer(1.0).timeout
 	success.emit()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	%ProgressBar.value = ($Timer.time_left / $Timer.wait_time) * %ProgressBar.max_value
-	
-	if Input.is_action_just_pressed('action'):
-		win()
 
 func time_up() -> void:
 	if !playing:

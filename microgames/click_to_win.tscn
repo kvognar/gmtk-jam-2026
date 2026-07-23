@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bxvruoc313g0l"]
+
+[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_eys2r"]
+[ext_resource type="Script" uid="uid://5ujvpvccwh14" path="res://microgames/click_to_win.gd" id="2_wlcg8"]
+
+[node name="Microgame" unique_id=1956794833 instance=ExtResource("1_eys2r")]
+script = ExtResource("2_wlcg8")

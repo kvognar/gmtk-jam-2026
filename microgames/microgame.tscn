@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dwt1qdmghu1x2"]
 
 [ext_resource type="Script" uid="uid://c4tuhk0adi4x4" path="res://microgames/microgame.gd" id="1_u3unr"]
-[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="2_3ht7m"]
 
 [node name="Microgame" type="Control" unique_id=1956794833]
 layout_mode = 3
@@ -42,10 +41,6 @@ offset_right = 656.0
 offset_bottom = 195.0
 theme_override_font_sizes/font_size = 40
 text = "Result"
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=763621727]
-position = Vector2(832, 434)
-texture = ExtResource("2_3ht7m")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=866576842]
 layout_mode = 1
