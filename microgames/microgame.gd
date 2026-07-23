@@ -3,6 +3,7 @@ class_name Microgame
 
 @export var prompt: String = 'Do the thing!'
 @export var time_limit := 5.0
+@export var preview_image: Texture2D
 
 signal success
 signal failure
@@ -13,8 +14,15 @@ func _ready() -> void:
 	scale = Vector2(0, 0)
 	$Timer.wait_time = time_limit
 	
+	$PreviewImage.texture = preview_image
+	
 	if get_parent() == get_tree().root:
 		begin()
+		fade_preview()
+
+func fade_preview() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property($PreviewImage, 'modulate', Color('ffffff00'), 0.5)
 	
 func _draw() -> void:
 	pass

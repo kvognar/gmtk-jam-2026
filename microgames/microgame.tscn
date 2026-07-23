@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dwt1qdmghu1x2"]
 
 [ext_resource type="Script" uid="uid://c4tuhk0adi4x4" path="res://microgames/microgame.gd" id="1_u3unr"]
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="2_3ht7m"]
 
-[node name="Microgame" type="Control" unique_id=1956794833]
+[node name="Microgame2" type="Control" unique_id=1956794833]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3unr")
+preview_image = ExtResource("2_3ht7m")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=842226354]
 layout_mode = 1
@@ -68,5 +70,14 @@ layout_mode = 2
 max_value = 5.0
 value = 5.0
 show_percentage = false
+
+[node name="PreviewImage" type="TextureRect" parent="." unique_id=287436211]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

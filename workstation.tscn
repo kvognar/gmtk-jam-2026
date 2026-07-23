@@ -43,7 +43,7 @@ mouse_filter = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, -1.095)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=98828477]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5962175, -0.34459257)
+transform = Transform3D(-0.056408413, 0, -0.9984078, 0, 1, 0, 0.9984078, 0, -0.056408413, 0, 0.5962175, -0.34459257)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=218602268]
 environment = SubResource("Environment_ejdy6")

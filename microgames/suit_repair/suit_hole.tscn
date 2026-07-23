@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ciua6wtyhdn4e"]
 
 [ext_resource type="Script" uid="uid://dynodnom3ljsq" path="res://microgames/suit_repair/suit_hole.gd" id="1_w0hs4"]
-[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="2_dtx87"]
+[ext_resource type="Texture2D" uid="uid://ekmrovolkdmr" path="res://microgames/suit_repair/assets/suit_hole.png" id="2_w0hs4"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ejdy6"]
 
@@ -13,7 +13,8 @@ script = ExtResource("1_w0hs4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1726973013]
 material = SubResource("CanvasItemMaterial_ejdy6")
-texture = ExtResource("2_dtx87")
+scale = Vector2(0.23199996, 0.23199996)
+texture = ExtResource("2_w0hs4")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=396674692]
 
