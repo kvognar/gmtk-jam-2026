@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bgtmvhevrbxya"
+path="res://.godot/imported/Pick Up Your Feet.ogg-5345da02bf108bac56497327a7dbc9a6.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Pick Up Your Feet.ogg"
+dest_files=["res://.godot/imported/Pick Up Your Feet.ogg-5345da02bf108bac56497327a7dbc9a6.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

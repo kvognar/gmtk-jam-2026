@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bm6vve3gh83ff"
+path="res://.godot/imported/Shinjuku Isn't Overrated.ogg-49a22f3b4caa3f01aa97ae8a07c5a344.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Shinjuku Isn't Overrated.ogg"
+dest_files=["res://.godot/imported/Shinjuku Isn't Overrated.ogg-49a22f3b4caa3f01aa97ae8a07c5a344.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
