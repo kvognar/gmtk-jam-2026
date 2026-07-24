@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dkii2wf8iirkv"]
 
 [ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_sdkxx"]
-[ext_resource type="Script" uid="uid://b4ubt6lewx4li" path="res://microgames/pigeons.gd" id="2_86bxv"]
+[ext_resource type="Script" uid="uid://b4ubt6lewx4li" path="res://microgames/pigeons/pigeons.gd" id="2_86bxv"]
 [ext_resource type="PackedScene" uid="uid://cgibssfk5vj5v" path="res://entities/pigeon_broom.tscn" id="2_kirvr"]
 [ext_resource type="PackedScene" uid="uid://cxp1v8dcaowox" path="res://entities/pigeon.tscn" id="3_86bxv"]
 

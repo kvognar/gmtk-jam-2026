@@ -1,5 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://tjxoi5p6hmyw"]
 
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_1381l"]
+
 [resource]
+albedo_texture = ExtResource("1_1381l")
+albedo_texture_msdf = true
 emission = Color(0.6305754, 0.63057524, 0, 1)
 emission_energy_multiplier = 10.0

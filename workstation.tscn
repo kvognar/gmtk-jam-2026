@@ -19,23 +19,11 @@ ambient_light_source = 2
 ambient_light_color = Color(0.5682058, 0.42399585, 0.350675, 1)
 ambient_light_energy = 6.92
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ejdy6"]
-size = Vector3(0.33972168, 0.2565918, 1)
-
 [node name="Workstation" type="Node3D" unique_id=2105439346]
 script = ExtResource("1_j81i1")
 
 [node name="terminal2" parent="." unique_id=430066637 instance=ExtResource("2_yfhe6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7442686, 0.18743303, -0.45650586)
-
-[node name="MicrogameContainer" type="Control" parent="." unique_id=1621265339]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="room" parent="." unique_id=235516147 instance=ExtResource("1_un3qw")]
 
@@ -43,16 +31,10 @@ mouse_filter = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, -1.095)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=98828477]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5962175, -0.34459257)
+transform = Transform3D(-0.056408413, 0, -0.9984078, 0, 1, 0, 0.9984078, 0, -0.056408413, 0, 0.5962175, -0.34459257)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=218602268]
 environment = SubResource("Environment_ejdy6")
-
-[node name="Area3D" type="Area3D" parent="." unique_id=1351131901]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=917582177]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0026245117, 0.5846128, -1.388461)
-shape = SubResource("BoxShape3D_ejdy6")
 
 [node name="HUD" type="Control" parent="." unique_id=939519783]
 layout_mode = 3
@@ -111,5 +93,3 @@ enable_test_input = false
 
 [node name="terminal3" parent="." unique_id=1116731443 instance=ExtResource("11_6bswh")]
 transform = Transform3D(-4.3711385e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.3711385e-08, 0.78018534, 1.1920929e-07, -0.17246705)
-
-[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

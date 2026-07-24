@@ -1,38 +1,64 @@
 [gd_scene format=3 uid="uid://c74vivqha7pn0"]
 
 [ext_resource type="PackedScene" uid="uid://day1brdhnd8ro" path="res://assets/3D/glbs/terminal3.glb" id="1_1kp1j"]
-[ext_resource type="Material" uid="uid://tjxoi5p6hmyw" path="res://assets/materials/screen.tres" id="2_38bu6"]
+[ext_resource type="PackedScene" uid="uid://c010nlfsbm15d" path="res://workstation/microgame_container.tscn" id="3_1kp1j"]
 [ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="3_lyj8f"]
+[ext_resource type="Resource" uid="uid://cik4iav5ykkj5" path="res://rooms/test_room.tres" id="4_38bu6"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lyj8f"]
+viewport_path = NodePath("../MicrogameContainer/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1nske"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_lyj8f")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_573og"]
+viewport_path = NodePath("../MicrogameContainer2/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aed1g"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_573og")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wqjaw"]
 size = Vector3(0.0503418, 0.0994751, 0.042558596)
+
+[sub_resource type="Environment" id="Environment_6pnk7"]
+ambient_light_source = 2
+ambient_light_color = Color(0.58391047, 0.58391047, 0.58391047, 1)
+ambient_light_energy = 4.52
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nv02p"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wiswm"]
+viewport_path = NodePath("SubViewport")
 
 [node name="terminal3" type="Node3D" unique_id=1116731443]
 
 [node name="terminal" parent="." unique_id=1500894608 instance=ExtResource("1_1kp1j")]
 
-[node name="terminal3_screen1" parent="terminal" index="0" unique_id=1676858904]
-material_override = ExtResource("2_38bu6")
+[node name="terminal3_screen1" parent="terminal" index="0" unique_id=1341449541]
+material_override = SubResource("StandardMaterial3D_1nske")
 
-[node name="terminal3_switch2" parent="terminal" index="1" unique_id=1670690620]
+[node name="terminal3_switch2" parent="terminal" index="1" unique_id=156781442]
 material_override = ExtResource("3_lyj8f")
 
-[node name="terminal3_switch1" parent="terminal" index="2" unique_id=356319940]
+[node name="terminal3_switch1" parent="terminal" index="2" unique_id=178633526]
 material_override = ExtResource("3_lyj8f")
 
-[node name="terminal3_screen2" parent="terminal" index="3" unique_id=627469966]
-material_override = ExtResource("2_38bu6")
+[node name="terminal3_screen2" parent="terminal" index="3" unique_id=717756365]
+material_override = SubResource("StandardMaterial3D_aed1g")
 
-[node name="terminal3" parent="terminal" index="4" unique_id=1269182288]
+[node name="terminal3" parent="terminal" index="4" unique_id=1000773308]
 material_override = ExtResource("3_lyj8f")
 
-[node name="terminal3_switch3" parent="terminal" index="5" unique_id=1348517869]
+[node name="terminal3_switch3" parent="terminal" index="5" unique_id=1270196937]
 material_override = ExtResource("3_lyj8f")
 
-[node name="terminal3_switch4" parent="terminal" index="6" unique_id=381336474]
+[node name="terminal3_switch4" parent="terminal" index="6" unique_id=587943645]
 material_override = ExtResource("3_lyj8f")
 
-[node name="terminal3_2" parent="terminal" index="7" unique_id=2014857832]
+[node name="terminal3_2" parent="terminal" index="7" unique_id=1836278860]
 material_override = ExtResource("3_lyj8f")
 
 [node name="switch1" type="Area3D" parent="terminal" unique_id=1954380110]
@@ -63,4 +89,31 @@ transform = Transform3D(0.9997809, 0, 0.020931056, 0, 1, 0, -0.020931056, 0, 0.9
 transform = Transform3D(1, 0, 0, 0, 0.7399258, 0.6726885, 0, -0.6726885, 0.7399258, 0.0061279237, -0.017132431, 0.019404389)
 shape = SubResource("BoxShape3D_wqjaw")
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=857949204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55536896, 0.78225726)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1905407857]
+environment = SubResource("Environment_6pnk7")
+
+[node name="MicrogameContainer" parent="." unique_id=686309062 instance=ExtResource("3_1kp1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21761441, 0.56795865, -0.2561602)
+
+[node name="GameScreen" parent="MicrogameContainer" index="0" unique_id=1720335106]
+texture = SubResource("ViewportTexture_nv02p")
+
+[node name="Microgame2" parent="MicrogameContainer/SubViewport" parent_id_path=PackedInt32Array(686309062, 189914907) index="0" unique_id=1956794833]
+preview_image = null
+
+[node name="MicrogameContainer2" parent="." unique_id=1526180774 instance=ExtResource("3_1kp1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24237159, 0.54900855, -0.21812828)
+room = ExtResource("4_38bu6")
+
+[node name="GameScreen" parent="MicrogameContainer2" index="0" unique_id=1720335106]
+texture = SubResource("ViewportTexture_wiswm")
+
+[node name="Microgame2" parent="MicrogameContainer2/SubViewport" parent_id_path=PackedInt32Array(1526180774, 189914907) index="0" unique_id=1956794833]
+preview_image = null
+
 [editable path="terminal"]
+[editable path="MicrogameContainer"]
+[editable path="MicrogameContainer2"]

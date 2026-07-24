@@ -4,7 +4,8 @@ class_name SuitHole
 signal patched(hole: SuitHole)
 
 
-
+func _ready() -> void:
+	rotate(randf_range(0, 2*PI))
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

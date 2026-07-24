@@ -1,13 +1,13 @@
 extends Node3D
 
-var games: Array[Microgame] = []
-var game_paks: Array[PackedScene] = [
-	load("res://microgames/suit_repair/suit_repair.tscn"),
-	load("res://microgames/pigeons.tscn"),
-	load("res://microgames/button_clicker.tscn"),
-	load("res://microgames/click_to_win.tscn"),
-	load("res://microgames/comms_game/comms.tscn")
-]
+#var games: Array[Microgame] = []
+#var game_paks: Array[PackedScene] = [
+	#load("res://microgames/suit_repair/suit_repair.tscn"),
+	#load("res://microgames/pigeons.tscn"),
+	#load("res://microgames/button_clicker.tscn"),
+	#load("res://microgames/click_to_win.tscn"),
+	#load("res://microgames/comms_game/comms.tscn")
+#]
 
 var current_game: Microgame
 
@@ -22,14 +22,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
-	if event.is_action_pressed("action"):
-		current_game = game_paks[game_index].instantiate()
-		game_index +=1
-		if game_index >= game_paks.size():
-			game_index=  0
-		$MicrogameContainer.add_child(current_game)
-		call_deferred('start_game')
 		
 func start_game() -> void:
 	current_game.begin()

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Room" format=3 uid="uid://cik4iav5ykkj5"]
+
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_aps31"]
+[ext_resource type="PackedScene" uid="uid://bxvruoc313g0l" path="res://microgames/click_to_win/click_to_win.tscn" id="1_fgn3e"]
+[ext_resource type="PackedScene" uid="uid://i1bopqerari8" path="res://microgames/button_clicker/button_clicker.tscn" id="2_64fhs"]
+[ext_resource type="Script" uid="uid://ulf2dkpf8wec" path="res://room.gd" id="2_pd0lp"]
+
+[resource]
+script = ExtResource("2_pd0lp")
+name = "Test ROom"
+games = Array[PackedScene]([ExtResource("1_fgn3e"), ExtResource("2_64fhs")])
+metadata/_custom_type_script = "uid://ulf2dkpf8wec"
