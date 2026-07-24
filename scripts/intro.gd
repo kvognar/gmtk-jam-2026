@@ -7,7 +7,7 @@ extends Node2D
 @onready var slide2_audio: AudioStreamPlayer2D = $slideshow/slide2/AudioStreamPlayer2D
 @onready var typing: AudioStreamPlayer2D = %typing
 
-@export var font: Font = preload("res://assets/intro/daisywhl.otf")
+@export var font: Font = preload("res://assets/intro/Mom差___.ttf")
 
 @export_group("Text Style")
 @export var font_size := 48

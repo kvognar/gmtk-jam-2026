@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://d03qxb5gea3pd"]
+
+[ext_resource type="Script" uid="uid://bbmj637ilwsiu" path="res://scripts/ending.gd" id="1_3v48n"]
+[ext_resource type="Texture2D" uid="uid://dmqwo5hgmyt7" path="res://assets/textures/cloud2.png" id="1_nfmnx"]
+[ext_resource type="Texture2D" uid="uid://dwn7524ie6aom" path="res://assets/textures/cloud1.png" id="2_qa3ag"]
+[ext_resource type="Texture2D" uid="uid://bctq3fkgprich" path="res://assets/textures/ground.png" id="3_5amew"]
+[ext_resource type="Texture2D" uid="uid://lu6e415ykqt" path="res://assets/textures/Mercury_3.png" id="4_t1k4y"]
+[ext_resource type="Texture2D" uid="uid://ds8qf01gi5jsp" path="res://assets/textures/fire1.png" id="6_75aq2"]
+[ext_resource type="Texture2D" uid="uid://daw5km6h0rkkn" path="res://assets/textures/fire2.png" id="7_o5uye"]
+[ext_resource type="Texture2D" uid="uid://bih15msgenpv0" path="res://assets/textures/fire3.png" id="8_e6d8c"]
+[ext_resource type="FontFile" uid="uid://bvaorgs1jl5l8" path="res://assets/ending/Sunny Spells Basic 2.ttf" id="9_75aq2"]
+[ext_resource type="AudioStream" uid="uid://1sb24nq5ecvi" path="res://assets/ending/rocketburn.ogg" id="10_o5uye"]
+[ext_resource type="AudioStream" uid="uid://vtrnye3dkxqg" path="res://assets/ending/bonk.ogg" id="11_e6d8c"]
+[ext_resource type="AudioStream" uid="uid://bc7qpu5fypuke" path="res://assets/ending/ending_ambience.ogg" id="12_jc8es"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqjaw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_75aq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o5uye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e6d8c")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"fire",
+"speed": 5.0
+}]
+
+[node name="ending" type="Node2D" unique_id=1068859247]
+script = ExtResource("1_3v48n")
+test_wins = 0
+test_losses = 4
+shake_time = 2.0
+shake_strength = 5.0
+launch_time = 4.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=275582651]
+
+[node name="sky" type="ColorRect" parent="CanvasLayer" unique_id=455202161]
+custom_minimum_size = Vector2(400, 800)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.49632627, 0.6586701, 1, 1)
+
+[node name="cloud2" type="Sprite2D" parent="CanvasLayer" unique_id=292770881]
+unique_name_in_owner = true
+position = Vector2(1220, 302.00003)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_nfmnx")
+
+[node name="cloud1" type="Sprite2D" parent="CanvasLayer" unique_id=1151213251]
+unique_name_in_owner = true
+position = Vector2(344.00003, 419.99997)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_qa3ag")
+
+[node name="ground" type="Sprite2D" parent="CanvasLayer" unique_id=1761768000]
+position = Vector2(808.00006, 833)
+scale = Vector2(0.40361127, 0.40361127)
+texture = ExtResource("3_5amew")
+
+[node name="rocket" type="Sprite2D" parent="CanvasLayer" unique_id=1774286444]
+unique_name_in_owner = true
+position = Vector2(804, 602)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_t1k4y")
+
+[node name="fire" type="AnimatedSprite2D" parent="CanvasLayer/rocket" unique_id=2052239903]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-19.999998, 2014.9999)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_wqjaw")
+frame = 2
+frame_progress = 0.7251559
+speed_scale = 2.0
+
+[node name="frameleft" type="ColorRect" parent="CanvasLayer" unique_id=429239781]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -453.0
+offset_right = 337.0
+offset_bottom = 453.0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="frameright" type="ColorRect" parent="CanvasLayer" unique_id=1184331101]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -453.0
+offset_bottom = 453.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Message" type="Label" parent="CanvasLayer" unique_id=1827826982]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("9_75aq2")
+theme_override_font_sizes/font_size = 100
+
+[node name="rocketburn" type="AudioStreamPlayer2D" parent="." unique_id=1583815467]
+unique_name_in_owner = true
+stream = ExtResource("10_o5uye")
+volume_db = 10.0
+
+[node name="bonk" type="AudioStreamPlayer2D" parent="." unique_id=110159938]
+unique_name_in_owner = true
+stream = ExtResource("11_e6d8c")
+volume_db = 10.0
+
+[node name="ambiance" type="AudioStreamPlayer2D" parent="." unique_id=1641836586]
+unique_name_in_owner = true
+stream = ExtResource("12_jc8es")
+volume_db = -10.0
