@@ -2,6 +2,8 @@ extends Node3D
 
 @export var song: AudioStream
 
+@onready var countdown: AudioStreamPlayer3D = %countdown
+
 var wins := 0
 var losses := 0
 
@@ -9,6 +11,7 @@ var game_index = 0
 
 func _ready() -> void:
 	MusicPlayer.switch_to(song)
+	countdown.play()
 	show_scores()
 	for container: MicrogameContainer in get_tree().get_nodes_in_group('microgame_containers'):
 		container.failure.connect(_on_game_fail)

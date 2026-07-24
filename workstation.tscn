@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://42lp1pvoklh4" path="res://assets/3D/props/office_chair.tscn" id="18_tklhv"]
 [ext_resource type="PackedScene" uid="uid://3mrt3b5lddah" path="res://assets/3D/props/open_binder.tscn" id="20_o17yg"]
 [ext_resource type="PackedScene" uid="uid://c1dv42fa6lssc" path="res://assets/3D/props/walkietalkie.tscn" id="23_hxn30"]
+[ext_resource type="PackedScene" uid="uid://che24gjmqr67v" path="res://assets/3D/props/radio.tscn" id="24_ygi8u"]
+[ext_resource type="AudioStream" uid="uid://5uv5b4i06k54" path="res://assets/audio/countdown.ogg" id="25_t2qr7"]
 
 [sub_resource type="Environment" id="Environment_ejdy6"]
 ambient_light_source = 2
@@ -119,7 +121,7 @@ transform = Transform3D(-4.3711386e-09, -3.943759e-18, -0.1, -0.0057717897, 0.09
 texture = ExtResource("13_y3vsm")
 
 [node name="stapler" parent="props" unique_id=1011541332 instance=ExtResource("14_3cqpm")]
-transform = Transform3D(-0.8757663, 0, 0.48273537, 0, 1, 0, -0.48273537, 0, -0.8757663, 1.0454199, 0.8748635, -0.60869986)
+transform = Transform3D(0.6627633, 0, -0.748829, 0, 1, 0, 0.748829, 0, 0.6627633, -0.01986444, 0.8748635, -1.4033916)
 
 [node name="office_chair" parent="props" unique_id=1342068046 instance=ExtResource("18_tklhv")]
 transform = Transform3D(0.43989348, 0, -0.89804995, 0, 1, 0, 0.89804995, 0, 0.43989348, -1.2609291, 0, -1.2980058)
@@ -162,3 +164,12 @@ transform = Transform3D(-4.3711385e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4
 
 [node name="walkietalkie" parent="." unique_id=1841322629 instance=ExtResource("23_hxn30")]
 transform = Transform3D(0.6272336, 0, -0.7788312, 0, 1, 0, 0.7788312, 0, 0.6272336, 0.4827326, 0.29250082, -0.7009909)
+
+[node name="radio" parent="." unique_id=194408429 instance=ExtResource("24_ygi8u")]
+transform = Transform3D(-0.4755353, 0, 0.87969667, 0, 1, 0, -0.87969667, 0, -0.4755353, 1.049753, 0.88196, -0.67000496)
+
+[node name="countdown" type="AudioStreamPlayer3D" parent="radio" unique_id=2115307922]
+unique_name_in_owner = true
+stream = ExtResource("25_t2qr7")
+unit_size = 1.0
+panning_strength = 3.0
