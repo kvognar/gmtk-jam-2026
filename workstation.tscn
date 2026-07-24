@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cavtbwonir6dt" path="res://assets/3D/props/pie.tscn" id="6_bsjfv"]
 [ext_resource type="PackedScene" uid="uid://bhojpxl1ngo1" path="res://assets/3D/props/pencil.tscn" id="7_nqpf1"]
 [ext_resource type="PackedScene" uid="uid://xc2581fpplo6" path="res://assets/3D/props/paper.tscn" id="8_7fv2r"]
+[ext_resource type="PackedScene" uid="uid://b1met5awrdslg" path="res://assets/3D/props/rollingtable.tscn" id="8_n5ube"]
 [ext_resource type="PackedScene" uid="uid://blrf3onqr0ncf" path="res://assets/3D/props/binder.tscn" id="10_527rt"]
 [ext_resource type="PackedScene" uid="uid://c74vivqha7pn0" path="res://assets/3D/terminal3.tscn" id="11_6bswh"]
 [ext_resource type="PackedScene" uid="uid://bovwwt2kwxq2n" path="res://assets/3D/props/phone.tscn" id="11_8txgb"]
@@ -24,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://6xl2uxwuywj0" path="res://assets/textures/motivation2.png" id="19_ex53a"]
 [ext_resource type="PackedScene" uid="uid://3mrt3b5lddah" path="res://assets/3D/props/open_binder.tscn" id="20_o17yg"]
 [ext_resource type="PackedScene" uid="uid://c1dv42fa6lssc" path="res://assets/3D/props/walkietalkie.tscn" id="23_hxn30"]
+[ext_resource type="PackedScene" uid="uid://5w1pqua2usf6" path="res://assets/3D/props/trashbin.tscn" id="23_uh1hk"]
 [ext_resource type="PackedScene" uid="uid://che24gjmqr67v" path="res://assets/3D/props/radio.tscn" id="24_ygi8u"]
 [ext_resource type="AudioStream" uid="uid://5uv5b4i06k54" path="res://assets/audio/countdown.ogg" id="25_t2qr7"]
 [ext_resource type="PackedScene" uid="uid://dgkinmpq8m6aw" path="res://assets/3D/props/rocket.tscn" id="27_int05"]
@@ -85,6 +87,9 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="props" type="Node3D" parent="." unique_id=346376335]
+
+[node name="rollingtable" parent="props" unique_id=1420355266 instance=ExtResource("8_n5ube")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 1.2577841, 1.1920929e-07, 1.0973175)
 
 [node name="terminal4" parent="props" unique_id=1765224464 instance=ExtResource("15_moqvm")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.74239737, 0, 0.17332053)
@@ -159,6 +164,9 @@ transform = Transform3D(0.13800727, 0, -0.9904312, 0, 1, 0, 0.9904312, 0, 0.1380
 
 [node name="phone2" parent="props" unique_id=2077229958 instance=ExtResource("11_8txgb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84031975, 0, 0.6193495)
+
+[node name="trashbin" parent="props" unique_id=11836819 instance=ExtResource("23_uh1hk")]
+transform = Transform3D(-0.08308934, 0, -0.9965421, 0, 1, 0, 0.9965421, 0, -0.08308934, 0.6146988, 0, 0.5648783)
 
 [node name="counter" parent="." unique_id=457422934 instance=ExtResource("2_b5nh1")]
 transform = Transform3D(-1, -1.3525212e-08, -8.637019e-08, -1.391632e-08, 0.99998975, 0.0045298636, 8.630804e-08, 0.0045298636, -0.99998975, 0.90882665, 1.1070285, 1.4922203)
