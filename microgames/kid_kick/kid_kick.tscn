@@ -11,13 +11,6 @@ script = ExtResource("2_4udp4")
 prompt = "Kick the kid!"
 preview_image = null
 
-[node name="Prompt" parent="." index="1" unique_id=616038800]
-offset_left = 590.0
-offset_top = 215.0
-offset_right = 978.0
-offset_bottom = 284.0
-text = "Kick the kid out!"
-
 [node name="KickPrompt" type="Label" parent="." index="2" unique_id=560987756]
 layout_mode = 0
 offset_left = 730.0
@@ -27,7 +20,7 @@ offset_bottom = 209.0
 theme_override_font_sizes/font_size = 50
 text = "Kick!"
 
-[node name="MarginContainer" parent="." index="5" unique_id=866576842]
+[node name="MarginContainer" parent="." index="4" unique_id=866576842]
 offset_left = -1.0
 offset_top = -1.0
 offset_right = -1.0
@@ -58,3 +51,11 @@ flip_h = true
 
 [node name="KidOof" type="AudioStreamPlayer" parent="." index="9" unique_id=1652827537]
 stream = ExtResource("5_x73dp")
+
+[node name="Prompt" parent="CenterContainer" parent_id_path=PackedInt32Array(1036090613) index="0" unique_id=616038800]
+text = "Kick the kid out!"
+
+[node name="KidTimer" type="Timer" parent="." index="11" unique_id=1677432984]
+one_shot = true
+
+[connection signal="timeout" from="KidTimer" to="." method="_kid_blast_off_start"]

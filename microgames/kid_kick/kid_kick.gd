@@ -33,16 +33,13 @@ func win() -> void:
 	start_kid_timer()
 
 func start_kid_timer() -> void:
-	var kid_timer = Timer.new()
-	kid_timer.wait_time = KICK_DURATION * 0.75
-	kid_timer.connect('finished', _kid_blast_off_start)
-	
+	$KidTimer.wait_time = KICK_DURATION * 0.75
+	$KidTimer.start()
 
 func start_kick() -> void:
 	var tween = $FootPivot.create_tween().bind_node($FootPivot)
 	tween.set_ease(Tween.EASE_IN)
 	tween.tween_property($FootPivot, "rotation", deg_to_rad(-65), 0.5)
-	tween.finished.connect(_kid_blast_off_start)
 	
 func _kid_blast_off_start() -> void:
 	$KidOof.play()
