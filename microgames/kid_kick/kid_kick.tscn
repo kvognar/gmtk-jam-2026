@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://p8t1si54eplu"]
+
+[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_khhlu"]
+[ext_resource type="Script" uid="uid://cpr22ryhwxdxd" path="res://microgames/kid_kick/kid_kick.gd" id="2_4udp4"]
+[ext_resource type="Texture2D" uid="uid://2yhnsfbya7ak" path="res://assets/textures/foot_placeholder.png" id="3_0mbnp"]
+[ext_resource type="Texture2D" uid="uid://dariaik6vq0f0" path="res://assets/textures/kid_placeholder.png" id="4_x73dp"]
+[ext_resource type="AudioStream" uid="uid://csr77fedd1qkm" path="res://assets/audio/freesound_community-homemadeoof-47509.mp3" id="5_x73dp"]
+
+[node name="Microgame" unique_id=1956794833 instance=ExtResource("1_khhlu")]
+script = ExtResource("2_4udp4")
+prompt = "Kick the kid!"
+preview_image = null
+
+[node name="Prompt" parent="." index="1" unique_id=616038800]
+offset_left = 590.0
+offset_top = 215.0
+offset_right = 978.0
+offset_bottom = 284.0
+text = "Kick the kid out!"
+
+[node name="KickPrompt" type="Label" parent="." index="2" unique_id=560987756]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 140.0
+offset_right = 852.0
+offset_bottom = 209.0
+theme_override_font_sizes/font_size = 50
+text = "Kick!"
+
+[node name="MarginContainer" parent="." index="5" unique_id=866576842]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
+
+[node name="PowerMeter" type="ProgressBar" parent="." index="6" unique_id=40033573]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 102.0
+offset_right = 285.0
+offset_bottom = 583.0
+step = 1.0
+fill_mode = 3
+
+[node name="KidSprite" type="Sprite2D" parent="." index="7" unique_id=75782374]
+position = Vector2(1158.0001, 583)
+scale = Vector2(0.18684909, 0.14127606)
+texture = ExtResource("4_x73dp")
+
+[node name="FootPivot" type="Node2D" parent="." index="8" unique_id=1393403061]
+position = Vector2(693, 365.00003)
+
+[node name="FootSprite" type="Sprite2D" parent="FootPivot" index="0" unique_id=1696844071]
+position = Vector2(-117.37061, -20.836052)
+texture = ExtResource("3_0mbnp")
+centered = false
+flip_h = true
+
+[node name="KidOof" type="AudioStreamPlayer" parent="." index="9" unique_id=1652827537]
+stream = ExtResource("5_x73dp")

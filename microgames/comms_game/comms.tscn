@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://cki0rsiaa0rg7"]
 
 [ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_ccj6e"]
-[ext_resource type="Script" uid="uid://1pqq68pga041" path="res://microgames/comms_game/comms.gd" id="2_d43xh"]
+[ext_resource type="Script" uid="uid://cpr22ryhwxdxd" path="res://microgames/kid_kick/kid_kick.gd" id="2_psaj7"]
 [ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="3_axmo6"]
-[ext_resource type="AudioStream" uid="uid://crowysncr73tj" path="res://assets/sound/640170main_Roger20Roll.mp3" id="4_gndaa"]
-[ext_resource type="AudioStream" uid="uid://ds0w3luha1hh1" path="res://assets/sound/dragon-studio-radio-static-323621.mp3" id="5_psaj7"]
+[ext_resource type="AudioStream" uid="uid://crowysncr73tj" path="res://assets/audio/640170main_Roger20Roll.mp3" id="4_gndaa"]
+[ext_resource type="AudioStream" uid="uid://ds0w3luha1hh1" path="res://assets/audio/dragon-studio-radio-static-323621.mp3" id="5_psaj7"]
 
 [node name="Microgame" unique_id=1956794833 instance=ExtResource("1_ccj6e")]
-script = ExtResource("2_d43xh")
-prompt = "Tune the radio!"
+script = ExtResource("2_psaj7")
 
 [node name="Prompt" parent="." index="1" unique_id=616038800]
 text = "Tune the radio! (A or D)"
