@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://c1dv42fa6lssc" path="res://assets/3D/props/walkietalkie.tscn" id="23_hxn30"]
 [ext_resource type="PackedScene" uid="uid://che24gjmqr67v" path="res://assets/3D/props/radio.tscn" id="24_ygi8u"]
 [ext_resource type="AudioStream" uid="uid://5uv5b4i06k54" path="res://assets/audio/countdown.ogg" id="25_t2qr7"]
+[ext_resource type="PackedScene" uid="uid://dgkinmpq8m6aw" path="res://assets/3D/props/rocket.tscn" id="27_int05"]
 
 [sub_resource type="Environment" id="Environment_ejdy6"]
 ambient_light_source = 2
@@ -37,7 +38,13 @@ script = ExtResource("1_j81i1")
 song = ExtResource("2_3cqpm")
 
 [node name="terminal2" parent="." unique_id=430066637 instance=ExtResource("2_yfhe6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1009303, 0.18743303, -0.45650586)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7244048, 0.18743303, -0.45650586)
+
+[node name="paper" parent="terminal2" unique_id=1377978053 instance=ExtResource("8_7fv2r")]
+transform = Transform3D(0.6170999, 0, 0.78688484, 0, 1, 0, -0.78688484, 0, 0.6170999, 0.18737203, 0.18, 0.15119842)
+
+[node name="pencil" parent="terminal2/paper" unique_id=2144322216 instance=ExtResource("7_nqpf1")]
+transform = Transform3D(0.36633068, 0, 0.9304848, 0, 1, 0, -0.9304848, 0, 0.36633068, -0.042684913, 0.0014756918, 0.107607126)
 
 [node name="room" parent="." unique_id=235516147 instance=ExtResource("1_un3qw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00027179718, -2.3841858e-07, -0.0038256645)
@@ -80,7 +87,7 @@ layout_mode = 2
 [node name="props" type="Node3D" parent="." unique_id=346376335]
 
 [node name="terminal4" parent="props" unique_id=1765224464 instance=ExtResource("15_moqvm")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1644356, 0, 0.17332053)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.74239737, 0, 0.17332053)
 
 [node name="tapething" parent="props/terminal4" unique_id=466067286 instance=ExtResource("16_y3vsm")]
 transform = Transform3D(0.6713895, 0, 0.74110466, 0, 1, 0, -0.74110466, 0, 0.6713895, -0.17582361, 0.2911808, 0.12945199)
@@ -100,14 +107,8 @@ transform = Transform3D(0.9434516, 0, 0.33151034, 0, 1, 0, -0.33151034, 0, 0.943
 [node name="door" parent="props" unique_id=297827739 instance=ExtResource("6_6qs3t")]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 1.5057015)
 
-[node name="pencil" parent="props" unique_id=2144322216 instance=ExtResource("7_nqpf1")]
-transform = Transform3D(-0.5061217, 0, 0.86246204, 0, 1, 0, -0.86246204, 0, -0.5061217, -0.85522467, 0.36890873, -0.20531496)
-
-[node name="paper" parent="props" unique_id=1377978053 instance=ExtResource("8_7fv2r")]
-transform = Transform3D(0.6170999, 0, 0.78688484, 0, 1, 0, -0.78688484, 0, 0.6170999, -0.9135583, 0.36743304, -0.30530745)
-
 [node name="coffeecup" parent="props" unique_id=1962544746 instance=ExtResource("3_yfhe6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24799629, 0.28577247, -0.8239763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22932793, 0.28577247, -0.8239763)
 
 [node name="binder" parent="props" unique_id=479138083 instance=ExtResource("10_527rt")]
 transform = Transform3D(0.9380351, 0, -0.34654027, 0, 1, 0, 0.34654027, 0, 0.9380351, 1.1010087, 0.8727921, -0.19095367)
@@ -119,11 +120,11 @@ transform = Transform3D(0.893232, 0, 0.44959572, 0, 1, 0, -0.44959572, 0, 0.8932
 transform = Transform3D(-0.82989216, 0, -0.5579238, 0, 1, 0, 0.5579238, 0, -0.82989216, 0.5283268, 0.28753218, 0.32995236)
 
 [node name="poster1" type="Sprite3D" parent="props" unique_id=327664269]
-transform = Transform3D(-4.3711386e-09, -3.943759e-18, -0.1, -0.0057717897, 0.099833295, 2.5229302e-10, 0.099833295, 0.0057717897, -4.3638524e-09, 1.4772931, 1.1098202, 0.5172322)
+transform = Transform3D(0.09983417, 0.0057564015, 0, -0.0057564015, 0.09983417, 0, 0, 0, 0.099999994, 0.7178222, 1.1098202, -1.4935453)
 texture = ExtResource("13_y3vsm")
 
 [node name="poster2" type="Sprite3D" parent="props" unique_id=78715226]
-transform = Transform3D(0.049355052, -0.008004938, 0, 0.008004938, 0.049355052, 0, 0, 0, 0.05, -0.4683001, 0.9527947, -1.4965041)
+transform = Transform3D(0.07896808, -0.012807901, 0, 0.012807901, 0.07896808, 0, 0, 0, 0.08, -0.90787137, 0.9527947, -1.4965041)
 texture = ExtResource("19_ex53a")
 
 [node name="stapler" parent="props" unique_id=1011541332 instance=ExtResource("14_3cqpm")]
@@ -157,10 +158,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0959147, 0.8709638, 0.25274
 transform = Transform3D(0.13800727, 0, -0.9904312, 0, 1, 0, 0.9904312, 0, 0.13800727, 1.0285405, 0.8781471, 0.16206706)
 
 [node name="phone2" parent="props" unique_id=2077229958 instance=ExtResource("11_8txgb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3466492, 0, 0.6193495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84031975, 0, 0.6193495)
 
 [node name="counter" parent="." unique_id=457422934 instance=ExtResource("2_b5nh1")]
-transform = Transform3D(1, 0, 0, 0, 0.98792636, -0.15492435, 0, 0.15492435, 0.98792636, 0.41945773, 1.1070285, -1.4673011)
+transform = Transform3D(-1, -1.3525212e-08, -8.637019e-08, -1.391632e-08, 0.99998975, 0.0045298636, 8.630804e-08, 0.0045298636, -0.99998975, 0.90882665, 1.1070285, 1.4922203)
 initial_value = 14
 start_spin_delay = 0.25
 enable_test_input = false
@@ -172,10 +173,13 @@ transform = Transform3D(-4.3711385e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4
 transform = Transform3D(0.6272336, 0, -0.7788312, 0, 1, 0, 0.7788312, 0, 0.6272336, 0.4827326, 0.29250082, -0.7009909)
 
 [node name="radio" parent="." unique_id=194408429 instance=ExtResource("24_ygi8u")]
-transform = Transform3D(-0.4755353, 0, 0.87969667, 0, 1, 0, -0.87969667, 0, -0.4755353, 1.049753, 0.88196, -0.67000496)
+transform = Transform3D(-0.4755353, 0, 0.87969667, 0, 1, 0, -0.87969667, 0, -0.4755353, 1.4688323, 0.7193932, -1.1211443)
 
 [node name="countdown" type="AudioStreamPlayer3D" parent="radio" unique_id=2115307922]
 unique_name_in_owner = true
 stream = ExtResource("25_t2qr7")
 unit_size = 1.0
 panning_strength = 3.0
+
+[node name="rocket" parent="." unique_id=414033897 instance=ExtResource("27_int05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.846977, 0, 0)
