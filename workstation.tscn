@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://q3gemwtnifsm" path="res://assets/3D/props/tapething.tscn" id="16_y3vsm"]
 [ext_resource type="PackedScene" uid="uid://dbov07i2l060u" path="res://assets/3D/props/open_binder2.tscn" id="17_o17yg"]
 [ext_resource type="PackedScene" uid="uid://42lp1pvoklh4" path="res://assets/3D/props/office_chair.tscn" id="18_tklhv"]
+[ext_resource type="Texture2D" uid="uid://6xl2uxwuywj0" path="res://assets/textures/motivation2.png" id="19_ex53a"]
 [ext_resource type="PackedScene" uid="uid://3mrt3b5lddah" path="res://assets/3D/props/open_binder.tscn" id="20_o17yg"]
 [ext_resource type="PackedScene" uid="uid://c1dv42fa6lssc" path="res://assets/3D/props/walkietalkie.tscn" id="23_hxn30"]
 [ext_resource type="PackedScene" uid="uid://che24gjmqr67v" path="res://assets/3D/props/radio.tscn" id="24_ygi8u"]
@@ -39,6 +40,7 @@ song = ExtResource("2_3cqpm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1009303, 0.18743303, -0.45650586)
 
 [node name="room" parent="." unique_id=235516147 instance=ExtResource("1_un3qw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00027179718, -2.3841858e-07, -0.0038256645)
 
 [node name="terminal" parent="." unique_id=431836551 instance=ExtResource("2_jfner")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, -1.095)
@@ -116,9 +118,13 @@ transform = Transform3D(0.893232, 0, 0.44959572, 0, 1, 0, -0.44959572, 0, 0.8932
 [node name="phone" parent="props" unique_id=184188855 instance=ExtResource("11_8txgb")]
 transform = Transform3D(-0.82989216, 0, -0.5579238, 0, 1, 0, 0.5579238, 0, -0.82989216, 0.5283268, 0.28753218, 0.32995236)
 
-[node name="Sprite3D" type="Sprite3D" parent="props" unique_id=327664269]
+[node name="poster1" type="Sprite3D" parent="props" unique_id=327664269]
 transform = Transform3D(-4.3711386e-09, -3.943759e-18, -0.1, -0.0057717897, 0.099833295, 2.5229302e-10, 0.099833295, 0.0057717897, -4.3638524e-09, 1.4772931, 1.1098202, 0.5172322)
 texture = ExtResource("13_y3vsm")
+
+[node name="poster2" type="Sprite3D" parent="props" unique_id=78715226]
+transform = Transform3D(0.049355052, -0.008004938, 0, 0.008004938, 0.049355052, 0, 0, 0, 0.05, -0.4683001, 0.9527947, -1.4965041)
+texture = ExtResource("19_ex53a")
 
 [node name="stapler" parent="props" unique_id=1011541332 instance=ExtResource("14_3cqpm")]
 transform = Transform3D(0.6627633, 0, -0.748829, 0, 1, 0, 0.748829, 0, 0.6627633, -0.01986444, 0.8748635, -1.4033916)
@@ -136,7 +142,7 @@ transform = Transform3D(-0.7032848, 0, -0.7109082, 0, 1, 0, 0.7109082, 0, -0.703
 transform = Transform3D(0.15092269, 0, -0.98854554, 0, 1, 0, 0.98854554, 0, 0.15092269, 0.5335608, 0.28624013, -0.35756868)
 
 [node name="pencil" parent="props/open_binder" unique_id=114146702 instance=ExtResource("7_nqpf1")]
-transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -0.13005435, 0.06545287, -0.06348616)
+transform = Transform3D(1, 0, 4.4703484e-08, 0, 1, 0, -4.4703484e-08, 0, 1, -0.13005435, 0.05735582, -0.06348616)
 
 [node name="coffeecup2" parent="props" unique_id=1323037957 instance=ExtResource("3_yfhe6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0402292, 0.8709638, 0.3708517)
