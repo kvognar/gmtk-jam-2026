@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://brvfsnsp2nksb"]
+
+[ext_resource type="Script" uid="uid://cs73v33mvm3nk" path="res://components/click_and_drag.gd" id="1_gbsej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejdy6"]
+resource_local_to_scene = true
+
+[node name="ClickAndDrag" type="Node2D" unique_id=649557033]
+script = ExtResource("1_gbsej")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=288501250]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=416779008]
+shape = SubResource("RectangleShape2D_ejdy6")
+debug_color = Color(0.55072516, 0.56393605, 7.70092e-07, 0.41960785)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,6 +1,6 @@
 extends Microgame
 
-var num_fires = 4
+var num_fires = 3
 var fire_box = preload('res://microgames/firefighting/fire.tscn')
 var fires_extinguished = 0
 

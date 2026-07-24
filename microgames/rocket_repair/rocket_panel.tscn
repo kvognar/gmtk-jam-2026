@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bk4gmp70cc54k"]
+
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_rmi6d"]
+[ext_resource type="Script" uid="uid://befghxic3k10g" path="res://microgames/rocket_repair/rocket_panel.gd" id="1_v7m2q"]
+[ext_resource type="PackedScene" uid="uid://brvfsnsp2nksb" path="res://components/click_and_drag.tscn" id="2_ajhth"]
+[ext_resource type="PackedScene" uid="uid://6kmwixrh22a7" path="res://microgames/rocket_repair/bolt.tscn" id="4_qq6gv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejdy6"]
+size = Vector2(500, 500)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoich"]
+resource_local_to_scene = true
+size = Vector2(500, 500)
+
+[node name="Panel" type="Area2D" unique_id=1859559947]
+collision_layer = 0
+collision_mask = 16
+input_pickable = false
+script = ExtResource("1_v7m2q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=343972730]
+scale = Vector2(3.9, 3.9)
+texture = ExtResource("1_rmi6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1382831207]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_ejdy6")
+
+[node name="ClickAndDrag" parent="." unique_id=649557033 instance=ExtResource("2_ajhth")]
+
+[node name="CollisionShape2D" parent="ClickAndDrag/Area2D" parent_id_path=PackedInt32Array(649557033, 288501250) index="0" unique_id=416779008]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_yoich")
+
+[node name="Bolts" type="Node2D" parent="." unique_id=965074477]
+
+[node name="Bolt" parent="Bolts" unique_id=954637243 instance=ExtResource("4_qq6gv")]
+position = Vector2(-128, -129)
+
+[node name="Bolt2" parent="Bolts" unique_id=171059703 instance=ExtResource("4_qq6gv")]
+position = Vector2(136, -130)
+
+[node name="Bolt3" parent="Bolts" unique_id=408189088 instance=ExtResource("4_qq6gv")]
+position = Vector2(-114, 145)
+
+[node name="Bolt4" parent="Bolts" unique_id=1793165094 instance=ExtResource("4_qq6gv")]
+position = Vector2(120, 142)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="dropped" from="ClickAndDrag" to="." method="_on_click_and_drag_dropped"]
+[connection signal="lifted" from="ClickAndDrag" to="." method="_on_click_and_drag_lifted"]
+
+[editable path="ClickAndDrag"]

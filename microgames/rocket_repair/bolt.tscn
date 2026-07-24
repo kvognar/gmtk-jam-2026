@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://6kmwixrh22a7"]
+
+[ext_resource type="Script" uid="uid://bfmbm53wt3cc8" path="res://microgames/rocket_repair/bolt.gd" id="1_kdada"]
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="2_c0kbk"]
+[ext_resource type="PackedScene" uid="uid://4gwd3bhrmvea" path="res://entities/sparkler.tscn" id="3_c0kbk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejdy6"]
+radius = 64.0
+
+[sub_resource type="Animation" id="Animation_f64t8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sparkler:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3j2vr"]
+resource_name = "affix"
+length = 0.19999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10622345, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sparkler:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i0aew"]
+_data = {
+&"RESET": SubResource("Animation_f64t8"),
+&"affix": SubResource("Animation_3j2vr")
+}
+
+[node name="Bolt" type="Area2D" unique_id=954637243]
+script = ExtResource("1_kdada")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1918342287]
+shape = SubResource("CircleShape2D_ejdy6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=818418334]
+texture = ExtResource("2_c0kbk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1117928339]
+libraries/ = SubResource("AnimationLibrary_i0aew")
+
+[node name="Sparkler" parent="." unique_id=1291353786 instance=ExtResource("3_c0kbk")]
+amount = 3
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

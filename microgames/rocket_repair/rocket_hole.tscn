@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://1qtw15oqfu8a"]
+
+[ext_resource type="Texture2D" uid="uid://cfbvxdvg6gg0c" path="res://microgames/rocket_repair/rocket_hole.png" id="1_7y48m"]
+[ext_resource type="Script" uid="uid://crp8kxi7lqolu" path="res://microgames/rocket_repair/rocket_hole.gd" id="1_sms8a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejdy6"]
+radius = 176.0
+
+[node name="RocketHole" type="Area2D" unique_id=378933887]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_sms8a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=572120253]
+shape = SubResource("CircleShape2D_ejdy6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=778235050]
+modulate = Color(0.6901961, 0.27450982, 0.30588236, 1)
+texture = ExtResource("1_7y48m")

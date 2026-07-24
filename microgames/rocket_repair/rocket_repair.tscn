@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://x642vv6ljkc3"]
+
+[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_rd5ky"]
+[ext_resource type="PackedScene" uid="uid://1qtw15oqfu8a" path="res://microgames/rocket_repair/rocket_hole.tscn" id="2_6iksm"]
+[ext_resource type="Script" uid="uid://ddmmfdjg1syh2" path="res://microgames/rocket_repair/rocket_repair.gd" id="2_wkg5i"]
+[ext_resource type="PackedScene" uid="uid://bk4gmp70cc54k" path="res://microgames/rocket_repair/rocket_panel.tscn" id="3_wkg5i"]
+
+[node name="RocketRepair" unique_id=1956794833 instance=ExtResource("1_rd5ky")]
+mouse_filter = 2
+script = ExtResource("2_wkg5i")
+prompt = "Fix it up!"
+time_limit = 7.0
+
+[node name="VBoxContainer" parent="MarginContainer" parent_id_path=PackedInt32Array(866576842) index="0" unique_id=360461297]
+mouse_filter = 2
+
+[node name="Control" parent="MarginContainer/VBoxContainer" index="0" unique_id=1708068097]
+mouse_filter = 2
+
+[node name="ProgressBar" parent="MarginContainer/VBoxContainer" index="1" unique_id=184280485]
+mouse_filter = 2
+
+[node name="Holes" type="Node2D" parent="." index="5" unique_id=1934608099]
+
+[node name="RocketHole" parent="Holes" index="0" unique_id=709104314 instance=ExtResource("2_6iksm")]
+position = Vector2(1139, 245)
+
+[node name="Panels" type="Node2D" parent="." index="6" unique_id=1361732386]
+
+[node name="Panel" parent="Panels" index="0" unique_id=1859559947 instance=ExtResource("3_wkg5i")]
+position = Vector2(1236, 782)
+monitorable = false
