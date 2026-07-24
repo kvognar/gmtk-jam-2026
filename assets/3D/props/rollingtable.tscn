@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b1met5awrdslg"]
+
+[ext_resource type="PackedScene" uid="uid://cw1yp0sihiy64" path="res://assets/3D/glbs/rollingtable.glb" id="1_odp38"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_rvmkh"]
+
+[node name="rollingtable" unique_id=1420355266 instance=ExtResource("1_odp38")]
+
+[node name="Cube_001" parent="." index="0" unique_id=1208858126]
+material_override = ExtResource("2_rvmkh")
