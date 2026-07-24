@@ -30,14 +30,14 @@ func _draw() -> void:
 func begin() -> void:
 	fade_preview()
 	scale=Vector2(1, 1)
-	$Prompt.text = prompt;
-	$Prompt.show()
-	$Result.hide()
+	%Prompt.text = prompt;
+	%Prompt.show()
+	%Result.hide()
 	$Timer.start()
 	if song:
 		MusicPlayer.switch_to(song)
 	await get_tree().create_timer(1.0).timeout
-	$Prompt.hide()
+	%Prompt.hide()
 	playing = true
 
 func fail() -> void:
@@ -46,15 +46,15 @@ func fail() -> void:
 	failure.emit()
 
 func lose() -> void:
-	$Result.text = 'Oh no!'
-	$Result.show()
+	%Result.text = 'Oh no!'
+	%Result.show()
 	fail()
 	
 func win() -> void:
 	if !playing:
 		return
-	$Result.text = 'You did it!'
-	$Result.show()
+	%Result.text = 'You did it!'
+	%Result.show()
 	playing = false
 	await get_tree().create_timer(1.0).timeout
 	success.emit()
@@ -66,8 +66,8 @@ func time_up() -> void:
 	if !playing:
 		return
 	playing = false
-	$Result.text = 'Time up!!'
-	$Result.show()
+	%Result.text = 'Time up!!'
+	%Result.show()
 	await get_tree().create_timer(1.0).timeout
 	fail()
 

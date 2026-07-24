@@ -6,6 +6,7 @@
 
 [node name="SuitRepair" unique_id=1956794833 instance=ExtResource("1_3egq7")]
 script = ExtResource("2_bq3qb")
+prompt = "Patch up!"
 
 [node name="Suit" parent="." index="5" unique_id=645462558 instance=ExtResource("3_kpxw4")]
 

@@ -56,6 +56,7 @@ func win() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	super(delta)
 	if Input.is_action_pressed("left"):
 		var freq_increment = delta * FREQ_CHANGE_RATE * - 1
 		update_frequency(freq_increment)

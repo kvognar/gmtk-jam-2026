@@ -7,7 +7,8 @@ signal patched(hole: SuitHole)
 func _ready() -> void:
 	rotate(randf_range(0, 2*PI))
 
-
+# Check that the hole is completely covered by the tape.
+# This is lifted from https://forum.godotengine.org/t/detecting-total-overlap-of-collisionshape2d/68569/2
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var total_dist = 0
 	for owner_idx in area.get_shape_owners():
