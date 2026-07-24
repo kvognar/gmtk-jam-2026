@@ -7,10 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ds0w3luha1hh1" path="res://assets/audio/dragon-studio-radio-static-323621.mp3" id="5_psaj7"]
 
 [node name="Microgame" unique_id=1956794833 instance=ExtResource("1_ccj6e")]
-script = ExtResource("2_psaj7")
-
-[node name="Prompt" parent="." index="1" unique_id=616038800]
-text = "Tune the radio! (A or D)"
+script = ExtResource("2_gndaa")
 
 [node name="TargetFrequency" type="Label" parent="." index="4" unique_id=1419827306]
 layout_mode = 0
@@ -31,6 +28,9 @@ theme_override_font_sizes/font_size = 40
 [node name="Icon" type="Sprite2D" parent="." index="6" unique_id=763621727]
 position = Vector2(278, 389)
 texture = ExtResource("3_axmo6")
+
+[node name="Prompt" parent="CenterContainer" parent_id_path=PackedInt32Array(1036090613) index="0" unique_id=616038800]
+text = "Tune the radio! (A or D)"
 
 [node name="VictoryVoice" type="AudioStreamPlayer" parent="." index="8" unique_id=506152646]
 stream = ExtResource("4_gndaa")
