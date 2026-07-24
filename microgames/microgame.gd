@@ -4,6 +4,7 @@ class_name Microgame
 @export var prompt: String = 'Do the thing!'
 @export var time_limit := 5.0
 @export var preview_image: Texture2D
+@export var song: AudioStream
 
 signal success
 signal failure
@@ -27,13 +28,14 @@ func _draw() -> void:
 	pass
 
 func begin() -> void:
-	print_debug('begin!!')
 	fade_preview()
 	scale=Vector2(1, 1)
 	$Prompt.text = prompt;
 	$Prompt.show()
 	$Result.hide()
 	$Timer.start()
+	if song:
+		MusicPlayer.switch_to(song)
 	await get_tree().create_timer(1.0).timeout
 	$Prompt.hide()
 	playing = true

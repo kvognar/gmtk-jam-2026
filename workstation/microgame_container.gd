@@ -1,4 +1,5 @@
 extends Node3D
+class_name MicrogameContainer
 
 var current_game: Microgame
 

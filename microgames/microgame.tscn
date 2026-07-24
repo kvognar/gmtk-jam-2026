@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4tuhk0adi4x4" path="res://microgames/microgame.gd" id="1_u3unr"]
 [ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="2_3ht7m"]
+[ext_resource type="AudioStream" uid="uid://bm6vve3gh83ff" path="res://assets/audio/music/Shinjuku Isn't Overrated.ogg" id="3_iaa0p"]
 
 [node name="Microgame2" type="Control" unique_id=1956794833]
 layout_mode = 3
@@ -12,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u3unr")
 preview_image = ExtResource("2_3ht7m")
+song = ExtResource("3_iaa0p")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=842226354]
 layout_mode = 1

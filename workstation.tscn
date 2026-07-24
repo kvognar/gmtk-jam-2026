@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqhroda63pqcb" path="res://workstation.gd" id="1_j81i1"]
 [ext_resource type="PackedScene" uid="uid://bgr0oe6tv8u8r" path="res://assets/3D/room.tscn" id="1_un3qw"]
+[ext_resource type="AudioStream" uid="uid://b5enwqn5vivxy" path="res://assets/audio/music/Time's Running Out.ogg" id="2_3cqpm"]
 [ext_resource type="PackedScene" uid="uid://cra17twuq7bv5" path="res://assets/3D/props/counter.tscn" id="2_b5nh1"]
 [ext_resource type="PackedScene" uid="uid://bvlmt8kd0nbh6" path="res://assets/3D/terminal.tscn" id="2_jfner"]
 [ext_resource type="PackedScene" uid="uid://doksdgbkdkl0o" path="res://assets/3D/terminal2.tscn" id="2_yfhe6"]
@@ -21,6 +22,7 @@ ambient_light_energy = 6.92
 
 [node name="Workstation" type="Node3D" unique_id=2105439346]
 script = ExtResource("1_j81i1")
+song = ExtResource("2_3cqpm")
 
 [node name="terminal2" parent="." unique_id=430066637 instance=ExtResource("2_yfhe6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7442686, 0.18743303, -0.45650586)

@@ -10,7 +10,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="BoxShape3D" id="BoxShape3D_tf7i1"]
 size = Vector3(0.33972168, 0.2565918, 0.44726563)
 
-[node name="MicrogameContainer" type="Node3D" unique_id=150213732]
+[node name="MicrogameContainer" type="Node3D" unique_id=150213732 groups=["microgame_containers"]]
 script = ExtResource("1_tf7i1")
 room = ExtResource("2_bll85")
 
