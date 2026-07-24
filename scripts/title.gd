@@ -5,6 +5,7 @@ extends Node3D
 @export var play_scene: String = "res://scenes/intro.tscn"
 
 @onready var ambiance: AudioStreamPlayer3D = $AudioStreamPlayer3D
+@onready var theme: AudioStreamPlayer2D = $music
 @onready var rocket: Node3D = $rocket
 @onready var rocket_area: Area3D = $rocket/Area3D
 @onready var play_button: Button = %Play
@@ -17,6 +18,7 @@ var busy: bool = false
 func _ready():
 	rocket_home = rocket.position
 	ambiance.play()
+	theme.play()
 	rocket_area.input_event.connect(_on_rocket_clicked)
 
 func _on_rocket_clicked(_camera, event, _position, _normal, _shape_idx) -> void:
