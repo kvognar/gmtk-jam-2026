@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://b2htbyf78k15k"]
+
+[ext_resource type="PackedScene" uid="uid://bgr0oe6tv8u8r" path="res://assets/3D/room.tscn" id="1_4ignj"]
+[ext_resource type="Script" uid="uid://qbw8cb5yohfw" path="res://scripts/title.gd" id="1_b3w7a"]
+[ext_resource type="PackedScene" uid="uid://dgkinmpq8m6aw" path="res://assets/3D/props/rocket.tscn" id="2_wosw1"]
+[ext_resource type="FontFile" uid="uid://c3wt13exjxkwp" path="res://assets/textures/Futura.ttc" id="3_p6dhs"]
+[ext_resource type="AudioStream" uid="uid://b0p1mvcv7rm2x" path="res://assets/intro/morningambience.ogg" id="4_pyl7j"]
+
+[sub_resource type="Environment" id="Environment_wqjaw"]
+background_energy_multiplier = 15.0
+ambient_light_energy = 3.56
+
+[node name="title" type="Node3D" unique_id=1901613299]
+script = ExtResource("1_b3w7a")
+
+[node name="room" parent="." unique_id=235516147 instance=ExtResource("1_4ignj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00027179718, -2.3841858e-07, -0.0038256645)
+
+[node name="rocket" parent="." unique_id=414033897 instance=ExtResource("2_wosw1")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1038048445]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22, 12, -12.005)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1590320087]
+
+[node name="title" type="Label" parent="CanvasLayer" unique_id=697772819]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -738.0
+offset_top = -387.0
+offset_right = 140.0
+offset_bottom = -263.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 90
+text = "NAME OF THE GAME"
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=285423129]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = 0.10125
+anchor_top = 0.35777777
+anchor_right = 0.2775
+anchor_bottom = 0.71
+metadata/_edit_use_anchors_ = true
+
+[node name="menu" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=563070750]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.0
+offset_right = 60.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Play" type="Button" parent="CanvasLayer/Panel/menu" unique_id=1702661742]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 45
+text = "Play the Game!"
+flat = true
+
+[node name="Quit" type="Button" parent="CanvasLayer/Panel/menu" unique_id=127455323]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_p6dhs")
+theme_override_font_sizes/font_size = 45
+text = "Quit the Game!"
+flat = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1426914645]
+environment = SubResource("Environment_wqjaw")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1183904982]
+stream = ExtResource("4_pyl7j")
+volume_db = 8.0
+
+[connection signal="pressed" from="CanvasLayer/Panel/menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/menu/Quit" to="." method="_on_quit_pressed"]

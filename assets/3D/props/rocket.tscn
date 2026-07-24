@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dfnnpu1kg1msk" path="res://assets/3D/glbs/rocket.glb" id="1_rrgww"]
 [ext_resource type="Script" uid="uid://cpp8smbmrpln2" path="res://scripts/rocket.gd" id="2_r3mvd"]
 [ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_rbb0h"]
+[ext_resource type="AudioStream" uid="uid://1sb24nq5ecvi" path="res://assets/ending/rocketburn.ogg" id="4_r3mvd"]
 
 [sub_resource type="Curve" id="Curve_rrgww"]
 _data = [Vector2(0, 1), 0.0, 1.4, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -97,6 +98,10 @@ billboard_mode = 1
 material = SubResource("StandardMaterial3D_rrgww")
 size = Vector2(2, 2)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wqjaw"]
+height = 25.53125
+radius = 1.409
+
 [node name="rocket" unique_id=414033897 instance=ExtResource("1_rrgww")]
 script = ExtResource("2_r3mvd")
 
@@ -125,3 +130,16 @@ visible = false
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_wqjaw")
 draw_pass_1 = SubResource("QuadMesh_cxpgj")
+
+[node name="Area3D" type="Area3D" parent="." index="3" unique_id=546899765]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=2049936417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.641733, 0)
+shape = SubResource("CylinderShape3D_wqjaw")
+
+[node name="burn" type="AudioStreamPlayer3D" parent="." index="4" unique_id=748530442]
+stream = ExtResource("4_r3mvd")
+volume_db = 20.0
+unit_size = 20.0
+max_distance = 75.0
+panning_strength = 3.0

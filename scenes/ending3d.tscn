@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://daat15ksd76it"]
+
+[ext_resource type="PackedScene" uid="uid://doksdgbkdkl0o" path="res://assets/3D/terminal2.tscn" id="1_8ooy5"]
+[ext_resource type="Script" uid="uid://bdjaqfr37k6k" path="res://scripts/ending_3d.gd" id="1_ud7aa"]
+[ext_resource type="PackedScene" uid="uid://xc2581fpplo6" path="res://assets/3D/props/paper.tscn" id="2_nqp2j"]
+[ext_resource type="PackedScene" uid="uid://bhojpxl1ngo1" path="res://assets/3D/props/pencil.tscn" id="3_44wff"]
+[ext_resource type="PackedScene" uid="uid://bgr0oe6tv8u8r" path="res://assets/3D/room.tscn" id="4_ff34l"]
+[ext_resource type="PackedScene" uid="uid://bvlmt8kd0nbh6" path="res://assets/3D/terminal.tscn" id="5_hu3k1"]
+[ext_resource type="PackedScene" uid="uid://b1met5awrdslg" path="res://assets/3D/props/rollingtable.tscn" id="6_c61px"]
+[ext_resource type="PackedScene" uid="uid://bhvuesy4h4udy" path="res://assets/3D/props/terminal4.tscn" id="7_ud7aa"]
+[ext_resource type="PackedScene" uid="uid://q3gemwtnifsm" path="res://assets/3D/props/tapething.tscn" id="8_fgl6r"]
+[ext_resource type="PackedScene" uid="uid://dbov07i2l060u" path="res://assets/3D/props/open_binder2.tscn" id="9_to43n"]
+[ext_resource type="PackedScene" uid="uid://42lp1pvoklh4" path="res://assets/3D/props/office_chair.tscn" id="10_fu1ux"]
+[ext_resource type="PackedScene" uid="uid://cavtbwonir6dt" path="res://assets/3D/props/pie.tscn" id="11_nc4og"]
+[ext_resource type="PackedScene" uid="uid://dpwe4ux26ceaw" path="res://assets/3D/props/door.tscn" id="12_xf0f7"]
+[ext_resource type="PackedScene" uid="uid://b00fa10qd8r0w" path="res://assets/3D/props/coffeecup.tscn" id="13_fflm5"]
+[ext_resource type="PackedScene" uid="uid://blrf3onqr0ncf" path="res://assets/3D/props/binder.tscn" id="14_gf844"]
+[ext_resource type="PackedScene" uid="uid://dt6i36hw8owgm" path="res://assets/3D/props/pen.tscn" id="15_ydgh5"]
+[ext_resource type="PackedScene" uid="uid://bovwwt2kwxq2n" path="res://assets/3D/props/phone.tscn" id="16_j8fg5"]
+[ext_resource type="Texture2D" uid="uid://dsgb66hmmov4d" path="res://assets/textures/motivationalposter.png" id="17_cik5j"]
+[ext_resource type="Texture2D" uid="uid://6xl2uxwuywj0" path="res://assets/textures/motivation2.png" id="18_hn4jy"]
+[ext_resource type="PackedScene" uid="uid://dx7q7u7ugh2kr" path="res://assets/3D/props/stapler.tscn" id="19_qxoqs"]
+[ext_resource type="PackedScene" uid="uid://3mrt3b5lddah" path="res://assets/3D/props/open_binder.tscn" id="20_ex6ek"]
+[ext_resource type="PackedScene" uid="uid://5w1pqua2usf6" path="res://assets/3D/props/trashbin.tscn" id="21_n7d4c"]
+[ext_resource type="PackedScene" uid="uid://c74vivqha7pn0" path="res://assets/3D/terminal3.tscn" id="23_0ld12"]
+[ext_resource type="PackedScene" uid="uid://c1dv42fa6lssc" path="res://assets/3D/props/walkietalkie.tscn" id="24_8yal4"]
+[ext_resource type="PackedScene" uid="uid://che24gjmqr67v" path="res://assets/3D/props/radio.tscn" id="25_0u0dd"]
+[ext_resource type="AudioStream" uid="uid://5uv5b4i06k54" path="res://assets/audio/countdown.ogg" id="26_rdrmg"]
+[ext_resource type="PackedScene" uid="uid://dgkinmpq8m6aw" path="res://assets/3D/props/rocket.tscn" id="27_jwik5"]
+[ext_resource type="FontFile" uid="uid://c3wt13exjxkwp" path="res://assets/textures/Futura.ttc" id="29_fgl6r"]
+[ext_resource type="AudioStream" uid="uid://b0p1mvcv7rm2x" path="res://assets/intro/morningambience.ogg" id="29_to43n"]
+[ext_resource type="AudioStream" uid="uid://cs7tmbnp5631k" path="res://assets/intro/roomtone.ogg" id="30_to43n"]
+
+[node name="Ending3D" type="Node3D" unique_id=492220335]
+script = ExtResource("1_ud7aa")
+test_wins = 8
+
+[node name="room" parent="." unique_id=235516147 instance=ExtResource("4_ff34l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00027179718, -2.3841858e-07, -0.0038256645)
+
+[node name="terminal" parent="." unique_id=431836551 instance=ExtResource("5_hu3k1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, -1.095)
+
+[node name="props" type="Node3D" parent="." unique_id=1813569283]
+
+[node name="rollingtable" parent="props" unique_id=1420355266 instance=ExtResource("6_c61px")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 1.2577841, 1.1920929e-07, 1.0973175)
+
+[node name="terminal4" parent="props" unique_id=1765224464 instance=ExtResource("7_ud7aa")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.74239737, 0, 0.17332053)
+
+[node name="tapething" parent="props/terminal4" unique_id=653005474 instance=ExtResource("8_fgl6r")]
+transform = Transform3D(0.6713895, 0, 0.74110466, 0, 1, 0, -0.74110466, 0, 0.6713895, -0.17582361, 0.2911808, 0.12945199)
+
+[node name="open_binder" parent="props/terminal4" unique_id=1406536435 instance=ExtResource("9_to43n")]
+transform = Transform3D(-0.086011276, 0, 0.99629414, 0, 1, 0, -0.99629414, 0, -0.086011276, -0.051866516, 0.79061913, -0.20786834)
+
+[node name="office_chair3" parent="props" unique_id=27165987 instance=ExtResource("10_fu1ux")]
+transform = Transform3D(0.9316124, 0, 0.36345348, 0, 1, 0, -0.36345348, 0, 0.9316124, 0.7431282, 0, -1.3008647)
+
+[node name="office_chair4" parent="props" unique_id=1088690736 instance=ExtResource("10_fu1ux")]
+transform = Transform3D(-0.5551224, 0, 0.8317687, 0, 1, 0, -0.8317687, 0, -0.5551224, -1.2173383, 1.1920929e-07, 1.0835519)
+
+[node name="pie" parent="props" unique_id=1943440283 instance=ExtResource("11_nc4og")]
+transform = Transform3D(0.9434516, 0, 0.33151034, 0, 1, 0, -0.33151034, 0, 0.9434516, 0.22261935, 0.8729107, -1.3828315)
+
+[node name="door" parent="props" unique_id=297827739 instance=ExtResource("12_xf0f7")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 1.5057015)
+
+[node name="coffeecup" parent="props" unique_id=1962544746 instance=ExtResource("13_fflm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22932793, 0.28577247, -0.8239763)
+
+[node name="binder" parent="props" unique_id=479138083 instance=ExtResource("14_gf844")]
+transform = Transform3D(0.9380351, 0, -0.34654027, 0, 1, 0, 0.34654027, 0, 0.9380351, 1.1010087, 0.8727921, -0.19095367)
+
+[node name="pen" parent="props/binder" unique_id=133651095 instance=ExtResource("15_ydgh5")]
+transform = Transform3D(0.893232, 0, 0.44959572, 0, 1, 0, -0.44959572, 0, 0.893232, -0.05443871, 0.039376497, 0.07080346)
+
+[node name="phone" parent="props" unique_id=184188855 instance=ExtResource("16_j8fg5")]
+transform = Transform3D(-0.82989216, 0, -0.5579238, 0, 1, 0, 0.5579238, 0, -0.82989216, 0.5283268, 0.28753218, 0.32995236)
+
+[node name="poster1" type="Sprite3D" parent="props" unique_id=588514811]
+transform = Transform3D(0.09983417, 0.0057564015, 0, -0.0057564015, 0.09983417, 0, 0, 0, 0.099999994, 0.7178222, 1.1098202, -1.4935453)
+texture = ExtResource("17_cik5j")
+
+[node name="poster2" type="Sprite3D" parent="props" unique_id=822050667]
+transform = Transform3D(0.07896808, -0.012807901, 0, 0.012807901, 0.07896808, 0, 0, 0, 0.08, -0.90787137, 0.9527947, -1.4965041)
+texture = ExtResource("18_hn4jy")
+
+[node name="stapler" parent="props" unique_id=1011541332 instance=ExtResource("19_qxoqs")]
+transform = Transform3D(0.6627633, 0, -0.748829, 0, 1, 0, 0.748829, 0, 0.6627633, -0.01986444, 0.8748635, -1.4033916)
+
+[node name="office_chair" parent="props" unique_id=2041983891 instance=ExtResource("10_fu1ux")]
+transform = Transform3D(0.43989348, 0, -0.89804995, 0, 1, 0, 0.89804995, 0, 0.43989348, -1.2609291, 0, -1.2980058)
+
+[node name="office_chair2" parent="props" unique_id=1825293538 instance=ExtResource("10_fu1ux")]
+transform = Transform3D(-0.9978852, 0, -0.06500101, 0, 1, 0, 0.06500101, 0, -0.9978852, -0.75170857, -1.1920929e-07, -1.2359815)
+
+[node name="phone" parent="props/office_chair2" unique_id=2017694385 instance=ExtResource("16_j8fg5")]
+transform = Transform3D(-0.7032848, 0, -0.7109082, 0, 1, 0, 0.7109082, 0, -0.7032848, 0, 0.34144694, 0)
+
+[node name="open_binder" parent="props" unique_id=2116206237 instance=ExtResource("20_ex6ek")]
+transform = Transform3D(0.15092269, 0, -0.98854554, 0, 1, 0, 0.98854554, 0, 0.15092269, 0.5335608, 0.28624013, -0.35756868)
+
+[node name="pencil" parent="props/open_binder" unique_id=326391007 instance=ExtResource("3_44wff")]
+transform = Transform3D(1, 0, 4.4703484e-08, 0, 1, 0, -4.4703484e-08, 0, 1, -0.13005435, 0.05735582, -0.06348616)
+
+[node name="coffeecup2" parent="props" unique_id=1813556066 instance=ExtResource("13_fflm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0402292, 0.8709638, 0.3708517)
+
+[node name="coffeecup3" parent="props" unique_id=1417051931 instance=ExtResource("13_fflm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.091356, 0.8709638, 0.40298998)
+
+[node name="coffeecup4" parent="props" unique_id=1077133196 instance=ExtResource("13_fflm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0959147, 0.8709638, 0.25274056)
+
+[node name="tapething" parent="props" unique_id=1421771526 instance=ExtResource("8_fgl6r")]
+transform = Transform3D(0.13800727, 0, -0.9904312, 0, 1, 0, 0.9904312, 0, 0.13800727, 1.0285405, 0.8781471, 0.16206706)
+
+[node name="phone2" parent="props" unique_id=988665447 instance=ExtResource("16_j8fg5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84031975, 0, 0.6193495)
+
+[node name="trashbin" parent="props" unique_id=11836819 instance=ExtResource("21_n7d4c")]
+transform = Transform3D(-0.08308934, 0, -0.9965421, 0, 1, 0, 0.9965421, 0, -0.08308934, 0.6146988, 0, 0.5648783)
+
+[node name="terminal2" parent="props" unique_id=430066637 instance=ExtResource("1_8ooy5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7244048, 0.18743303, -0.45650586)
+
+[node name="paper" parent="props/terminal2" unique_id=1377978053 instance=ExtResource("2_nqp2j")]
+transform = Transform3D(0.6170999, 0, 0.78688484, 0, 1, 0, -0.78688484, 0, 0.6170999, 0.18737203, 0.18, 0.15119842)
+
+[node name="pencil" parent="props/terminal2/paper" unique_id=2144322216 instance=ExtResource("3_44wff")]
+transform = Transform3D(0.36633068, 0, 0.9304848, 0, 1, 0, -0.9304848, 0, 0.36633068, -0.042684913, 0.0014756918, 0.107607126)
+
+[node name="terminal3" parent="props" unique_id=1116731443 instance=ExtResource("23_0ld12")]
+transform = Transform3D(-4.3711385e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.3711385e-08, 0.78018534, 1.1920929e-07, -0.17246705)
+
+[node name="walkietalkie" parent="props" unique_id=1841322629 instance=ExtResource("24_8yal4")]
+transform = Transform3D(0.6272336, 0, -0.7788312, 0, 1, 0, 0.7788312, 0, 0.6272336, 0.4827326, 0.29250082, -0.7009909)
+
+[node name="radio" parent="props" unique_id=194408429 instance=ExtResource("25_0u0dd")]
+transform = Transform3D(-0.4755353, 0, 0.87969667, 0, 1, 0, -0.87969667, 0, -0.4755353, 1.4688323, 0.7193932, -1.1211443)
+
+[node name="countdown" type="AudioStreamPlayer3D" parent="props/radio" unique_id=1738534504]
+unique_name_in_owner = true
+stream = ExtResource("26_rdrmg")
+unit_size = 1.0
+panning_strength = 3.0
+
+[node name="rocket" parent="." unique_id=414033897 instance=ExtResource("27_jwik5")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1979768259]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.7, -0.2)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=772108981]
+follow_viewport_enabled = true
+
+[node name="Label" type="Label" parent="UI" unique_id=1415483461]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -56.0
+offset_right = 20.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("29_fgl6r")
+theme_override_font_sizes/font_size = 85
+horizontal_alignment = 1
+
+[node name="Return to Title" type="Button" parent="UI" unique_id=1339147211]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.5
+offset_top = -61.0
+offset_right = 128.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8745098, 0.37254903, 0, 1)
+theme_override_fonts/font = ExtResource("29_fgl6r")
+theme_override_font_sizes/font_size = 40
+text = "Return to Title"
+flat = true
+
+[node name="Fade" type="ColorRect" parent="UI" unique_id=1369632998]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ambiance" type="AudioStreamPlayer3D" parent="." unique_id=1185548558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.310825, 0, 0)
+stream = ExtResource("29_to43n")
+volume_db = 10.0
+max_distance = 20.0
+
+[node name="ambiance2" type="AudioStreamPlayer3D" parent="." unique_id=1295909562]
+stream = ExtResource("30_to43n")
+volume_db = 7.0
+max_distance = 3.0
+
+[connection signal="pressed" from="UI/Return to Title" to="." method="_on_return_to_title_pressed"]
