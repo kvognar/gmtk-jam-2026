@@ -40,5 +40,3 @@ func rotate_tape() -> void:
 	global_rotation = (end_position- start_position).normalized().rotated(PI/2).angle()
 	
 	global_position = (start_position + end_position) / 2
-	
-	pass

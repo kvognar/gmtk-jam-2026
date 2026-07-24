@@ -18,7 +18,6 @@ func _ready() -> void:
 	
 	if get_parent() == get_tree().root:
 		begin()
-		fade_preview()
 
 func fade_preview() -> void:
 	var tween = get_tree().create_tween()
@@ -28,6 +27,8 @@ func _draw() -> void:
 	pass
 
 func begin() -> void:
+	print_debug('begin!!')
+	fade_preview()
 	scale=Vector2(1, 1)
 	$Prompt.text = prompt;
 	$Prompt.show()
