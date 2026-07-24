@@ -3,9 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_0wh4r"]
 [ext_resource type="Script" uid="uid://ba6y8ocisvqrn" path="res://entities/pigeon.gd" id="1_ho0rk"]
 [ext_resource type="AudioStream" uid="uid://dspx6jdbup0wy" path="res://assets/audio/pigeon-flutter-1.wav" id="3_majot"]
+[ext_resource type="AudioStream" uid="uid://ckmrgrd2all23" path="res://assets/audio/pigeon-flutter-2.mp3" id="4_wwexs"]
+[ext_resource type="AudioStream" uid="uid://rmq5xes5a5vk" path="res://assets/audio/pigeonstartle.ogg" id="5_mg2hf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6pnk7"]
 radius = 89.31
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gkdu3"]
+streams_count = 3
+stream_0/stream = ExtResource("3_majot")
+stream_1/stream = ExtResource("4_wwexs")
+stream_2/stream = ExtResource("5_mg2hf")
 
 [node name="Pigeon" type="CharacterBody2D" unique_id=540676680]
 script = ExtResource("1_ho0rk")
@@ -17,5 +25,5 @@ texture = ExtResource("1_0wh4r")
 shape = SubResource("CircleShape2D_6pnk7")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1991612719]
-stream = ExtResource("3_majot")
+stream = SubResource("AudioStreamRandomizer_gkdu3")
 bus = &"SFX"

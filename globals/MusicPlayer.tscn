@@ -9,10 +9,12 @@ script = ExtResource("1_24ffr")
 
 [node name="Track1" type="AudioStreamPlayer" parent="." unique_id=202206780]
 stream = ExtResource("2_olhdq")
+bus = &"BGM"
 parameters/looping = true
 
 [node name="Track2" type="AudioStreamPlayer" parent="." unique_id=169347774]
 stream = ExtResource("3_li5d2")
+bus = &"BGM"
 parameters/looping = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1036567634]

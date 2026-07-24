@@ -7,12 +7,6 @@ var state: STATES = STATES.waiting
 
 var flee_point: Vector2
 
-var sounds: Array[AudioStream] = [
-	load("res://assets/audio/pigeon-flutter-1.wav"), 
-	load("res://assets/audio/pigeon-flutter-2.mp3")
-	]
-
-
 signal shooed
 
 func shoo(broom: Node2D) -> void:
@@ -23,5 +17,4 @@ func shoo(broom: Node2D) -> void:
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, 'global_position', flee_point, 1.0)
 		shooed.emit()
-		$AudioStreamPlayer2D.stream = sounds.pick_random()
 		$AudioStreamPlayer2D.play()

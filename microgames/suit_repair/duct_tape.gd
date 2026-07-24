@@ -4,13 +4,6 @@ var start_position: Vector2
 var end_position: Vector2
 var active := false
 
-var tape_sounds = [
-	preload("res://assets/audio/tape1.ogg"),
-	preload("res://assets/audio/tape2.ogg")
-]
-
-func _ready() -> void:
-	$AudioStreamPlayer2D.stream = tape_sounds.pick_random()
 
 func _process(_delta: float) -> void:
 	
