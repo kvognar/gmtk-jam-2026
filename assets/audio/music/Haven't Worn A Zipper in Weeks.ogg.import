@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://brt8a0irh1jmh"
+path="res://.godot/imported/Haven't Worn A Zipper in Weeks.ogg-a4e799a5f35e62acd1e6e5f1d5bb754a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Haven't Worn A Zipper in Weeks.ogg"
+dest_files=["res://.godot/imported/Haven't Worn A Zipper in Weeks.ogg-a4e799a5f35e62acd1e6e5f1d5bb754a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bk5gojvoun8vx"
+path="res://.godot/imported/Don't Look Up (Look Up).ogg-ea0a1c343a95c476172f0b40e82bb8d1.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Don't Look Up (Look Up).ogg"
+dest_files=["res://.godot/imported/Don't Look Up (Look Up).ogg-ea0a1c343a95c476172f0b40e82bb8d1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

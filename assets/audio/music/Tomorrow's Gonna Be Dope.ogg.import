@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dnhnquldb4ave"
+path="res://.godot/imported/Tomorrow's Gonna Be Dope.ogg-9a372a163c54258694196f36a6f6ae3f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Tomorrow's Gonna Be Dope.ogg"
+dest_files=["res://.godot/imported/Tomorrow's Gonna Be Dope.ogg-9a372a163c54258694196f36a6f6ae3f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
