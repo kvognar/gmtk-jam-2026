@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://ciua6wtyhdn4e"]
 
 [ext_resource type="Script" uid="uid://dynodnom3ljsq" path="res://microgames/suit_repair/suit_hole.gd" id="1_w0hs4"]
-[ext_resource type="Texture2D" uid="uid://ekmrovolkdmr" path="res://microgames/suit_repair/assets/suit_hole.png" id="2_w0hs4"]
+[ext_resource type="Texture2D" uid="uid://c4x2oy4prjmjc" path="res://microgames/suit_repair/assets/hole2.png" id="2_w0hs4"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ejdy6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejdy6"]
-radius = 47.26521
+radius = 30.0
 
 [node name="SuitHole" type="Node2D" unique_id=118899803]
+modulate = Color(0.95686275, 0.61960787, 0.21568628, 1)
 script = ExtResource("1_w0hs4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1726973013]
@@ -17,6 +18,7 @@ scale = Vector2(0.23199996, 0.23199996)
 texture = ExtResource("2_w0hs4")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=396674692]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1874625354]
 shape = SubResource("CircleShape2D_ejdy6")

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://wm3xdow6p6m8"]
+
+[ext_resource type="Texture2D" uid="uid://bgx2th8m23vr7" path="res://assets/sprites/leesuit-halftone.png" id="1_3vbf6"]
+[ext_resource type="Script" uid="uid://cqgjcjsqvx6wo" path="res://entities/space_lee.gd" id="1_6mvnu"]
+[ext_resource type="Texture2D" uid="uid://dgmhknu5eusns" path="res://assets/sprites/leehappy-halftone.png" id="2_6mvnu"]
+[ext_resource type="Texture2D" uid="uid://3a28ma1hy5lr" path="res://assets/sprites/leesad-halftone.png" id="3_kbh8b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ejdy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6mvnu")
+}],
+"loop": 1,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kbh8b")
+}],
+"loop": 1,
+"name": &"sad",
+"speed": 5.0
+}]
+
+[node name="SpaceLee" type="Node2D" unique_id=1028427855]
+script = ExtResource("1_6mvnu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1581257285]
+texture = ExtResource("1_3vbf6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=24321250]
+sprite_frames = SubResource("SpriteFrames_ejdy6")
+animation = &"sad"
+autoplay = "sad"

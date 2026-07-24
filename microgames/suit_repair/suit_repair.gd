@@ -9,12 +9,12 @@ func _ready() -> void:
 	for hole in $Suit/Holes.get_children():
 		hole.patched.connect(log_hole_patched)
 		total_holes += 1
-	
 	super()
 
 func log_hole_patched(hole: SuitHole) -> void:
 	patched_holes[hole] = true
 	if patched_holes.size() >= total_holes:
+		$Suit/SpaceLee.happy()
 		win()
 
 func _process(delta: float) -> void:
@@ -25,5 +25,3 @@ func _process(delta: float) -> void:
 		tape.start_position = get_global_mouse_position()
 	
 	super(delta)
-		
-		

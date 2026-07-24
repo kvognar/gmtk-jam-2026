@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://btbqubsacvtce"]
 
-[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_vqbmb"]
 [ext_resource type="Script" uid="uid://curgqhheq2wcq" path="res://microgames/suit_repair/duct_tape.gd" id="1_wi8b2"]
+[ext_resource type="Texture2D" uid="uid://c0vqrulbupkky" path="res://microgames/suit_repair/assets/tape.png" id="2_wi8b2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejdy6"]
-size = Vector2(128, 128)
+size = Vector2(150, 355)
 
 [node name="DuctTape" type="Node2D" unique_id=777641968]
 scale = Vector2(1, 1e-05)
 script = ExtResource("1_wi8b2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1321330358]
-texture = ExtResource("1_vqbmb")
+texture = ExtResource("2_wi8b2")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1751950279]
 
