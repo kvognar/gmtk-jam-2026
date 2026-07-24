@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://kyggwnl5nqun" path="res://microgames/suit_repair/suit.tscn" id="3_kpxw4"]
 [ext_resource type="Texture2D" uid="uid://6ukgwgjpro27" path="res://microgames/suit_repair/assets/DucttapeRoll.png" id="4_kpuhl"]
 [ext_resource type="PackedScene" uid="uid://b65odl2j2cxfa" path="res://components/hover.tscn" id="5_86mxg"]
+[ext_resource type="PackedScene" uid="uid://4gwd3bhrmvea" path="res://entities/sparkler.tscn" id="6_wwekc"]
 
 [node name="SuitRepair" unique_id=1956794833 instance=ExtResource("1_3egq7")]
 script = ExtResource("2_bq3qb")
@@ -20,5 +21,8 @@ texture = ExtResource("4_kpuhl")
 
 [node name="Hover" parent="DucttapeRoll" index="0" unique_id=653452688 instance=ExtResource("5_86mxg")]
 angle = 4.0
+
+[node name="Sparkler" parent="." index="8" unique_id=1291353786 instance=ExtResource("6_wwekc")]
+position = Vector2(360, 119)
 
 [editable path="Suit"]

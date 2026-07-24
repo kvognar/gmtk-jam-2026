@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://4gwd3bhrmvea"]
+
+[ext_resource type="Texture2D" uid="uid://bpjjn7uc6unnh" path="res://assets/sprites/star_08.png" id="1_olptc"]
+
+[node name="Sparkler" type="CPUParticles2D" unique_id=1291353786]
+emitting = false
+texture = ExtResource("1_olptc")
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 180.0
+initial_velocity_min = 274.72
+initial_velocity_max = 753.76
+angular_velocity_min = -422.52
+angular_velocity_max = 478.56
+scale_amount_min = 0.1
+scale_amount_max = 0.2

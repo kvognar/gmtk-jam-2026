@@ -15,6 +15,7 @@ func log_hole_patched(hole: SuitHole) -> void:
 	patched_holes[hole] = true
 	if patched_holes.size() >= total_holes:
 		$Suit/SpaceLee.happy()
+		$Sparkler.emitting = true
 		win()
 
 func _process(delta: float) -> void:
