@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c1dv42fa6lssc"]
+
+[ext_resource type="PackedScene" uid="uid://d13lavfkbwwvw" path="res://assets/3D/glbs/walkietalkie.glb" id="1_c4xy6"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_0s5fw"]
+
+[node name="walkietalkie" unique_id=1841322629 instance=ExtResource("1_c4xy6")]
+
+[node name="walkietalkie" parent="." index="0" unique_id=752955785]
+material_override = ExtResource("2_0s5fw")

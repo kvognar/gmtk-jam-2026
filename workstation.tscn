@@ -14,6 +14,15 @@
 [ext_resource type="PackedScene" uid="uid://blrf3onqr0ncf" path="res://assets/3D/props/binder.tscn" id="10_527rt"]
 [ext_resource type="PackedScene" uid="uid://c74vivqha7pn0" path="res://assets/3D/terminal3.tscn" id="11_6bswh"]
 [ext_resource type="PackedScene" uid="uid://bovwwt2kwxq2n" path="res://assets/3D/props/phone.tscn" id="11_8txgb"]
+[ext_resource type="PackedScene" uid="uid://dt6i36hw8owgm" path="res://assets/3D/props/pen.tscn" id="13_8ts6e"]
+[ext_resource type="Texture2D" uid="uid://dsgb66hmmov4d" path="res://assets/textures/motivationalposter.png" id="13_y3vsm"]
+[ext_resource type="PackedScene" uid="uid://dx7q7u7ugh2kr" path="res://assets/3D/props/stapler.tscn" id="14_3cqpm"]
+[ext_resource type="PackedScene" uid="uid://bhvuesy4h4udy" path="res://assets/3D/props/terminal4.tscn" id="15_moqvm"]
+[ext_resource type="PackedScene" uid="uid://q3gemwtnifsm" path="res://assets/3D/props/tapething.tscn" id="16_y3vsm"]
+[ext_resource type="PackedScene" uid="uid://dbov07i2l060u" path="res://assets/3D/props/open_binder2.tscn" id="17_o17yg"]
+[ext_resource type="PackedScene" uid="uid://42lp1pvoklh4" path="res://assets/3D/props/office_chair.tscn" id="18_tklhv"]
+[ext_resource type="PackedScene" uid="uid://3mrt3b5lddah" path="res://assets/3D/props/open_binder.tscn" id="20_o17yg"]
+[ext_resource type="PackedScene" uid="uid://c1dv42fa6lssc" path="res://assets/3D/props/walkietalkie.tscn" id="23_hxn30"]
 
 [sub_resource type="Environment" id="Environment_ejdy6"]
 ambient_light_source = 2
@@ -25,7 +34,7 @@ script = ExtResource("1_j81i1")
 song = ExtResource("2_3cqpm")
 
 [node name="terminal2" parent="." unique_id=430066637 instance=ExtResource("2_yfhe6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7442686, 0.18743303, -0.45650586)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1009303, 0.18743303, -0.45650586)
 
 [node name="room" parent="." unique_id=235516147 instance=ExtResource("1_un3qw")]
 
@@ -66,6 +75,21 @@ layout_mode = 2
 
 [node name="props" type="Node3D" parent="." unique_id=346376335]
 
+[node name="terminal4" parent="props" unique_id=1765224464 instance=ExtResource("15_moqvm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.1644356, 0, 0.17332053)
+
+[node name="tapething" parent="props/terminal4" unique_id=466067286 instance=ExtResource("16_y3vsm")]
+transform = Transform3D(0.6713895, 0, 0.74110466, 0, 1, 0, -0.74110466, 0, 0.6713895, -0.17582361, 0.2911808, 0.12945199)
+
+[node name="open_binder" parent="props/terminal4" unique_id=1406536435 instance=ExtResource("17_o17yg")]
+transform = Transform3D(-0.086011276, 0, 0.99629414, 0, 1, 0, -0.99629414, 0, -0.086011276, -0.051866516, 0.79061913, -0.20786834)
+
+[node name="office_chair3" parent="props" unique_id=27165987 instance=ExtResource("18_tklhv")]
+transform = Transform3D(0.9316124, 0, 0.36345348, 0, 1, 0, -0.36345348, 0, 0.9316124, 0.7431282, 0, -1.3008647)
+
+[node name="office_chair4" parent="props" unique_id=1625529765 instance=ExtResource("18_tklhv")]
+transform = Transform3D(-0.5551224, 0, 0.8317687, 0, 1, 0, -0.8317687, 0, -0.5551224, -1.2173383, 1.1920929e-07, 1.0835519)
+
 [node name="pie" parent="props" unique_id=1943440283 instance=ExtResource("6_bsjfv")]
 transform = Transform3D(0.9434516, 0, 0.33151034, 0, 1, 0, -0.33151034, 0, 0.9434516, 0.22261935, 0.8729107, -1.3828315)
 
@@ -73,10 +97,10 @@ transform = Transform3D(0.9434516, 0, 0.33151034, 0, 1, 0, -0.33151034, 0, 0.943
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 1.5057015)
 
 [node name="pencil" parent="props" unique_id=2144322216 instance=ExtResource("7_nqpf1")]
-transform = Transform3D(-0.5061217, 0, 0.86246204, 0, 1, 0, -0.86246204, 0, -0.5061217, -0.49856293, 0.36890873, -0.20531496)
+transform = Transform3D(-0.5061217, 0, 0.86246204, 0, 1, 0, -0.86246204, 0, -0.5061217, -0.85522467, 0.36890873, -0.20531496)
 
 [node name="paper" parent="props" unique_id=1377978053 instance=ExtResource("8_7fv2r")]
-transform = Transform3D(0.6170999, 0, 0.78688484, 0, 1, 0, -0.78688484, 0, 0.6170999, -0.55689657, 0.36743304, -0.30530745)
+transform = Transform3D(0.6170999, 0, 0.78688484, 0, 1, 0, -0.78688484, 0, 0.6170999, -0.9135583, 0.36743304, -0.30530745)
 
 [node name="coffeecup" parent="props" unique_id=1962544746 instance=ExtResource("3_yfhe6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24799629, 0.28577247, -0.8239763)
@@ -84,8 +108,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24799629, 0.28577247, -0.8
 [node name="binder" parent="props" unique_id=479138083 instance=ExtResource("10_527rt")]
 transform = Transform3D(0.9380351, 0, -0.34654027, 0, 1, 0, 0.34654027, 0, 0.9380351, 1.1010087, 0.8727921, -0.19095367)
 
+[node name="pen" parent="props/binder" unique_id=133651095 instance=ExtResource("13_8ts6e")]
+transform = Transform3D(0.893232, 0, 0.44959572, 0, 1, 0, -0.44959572, 0, 0.893232, -0.05443871, 0.039376497, 0.07080346)
+
 [node name="phone" parent="props" unique_id=184188855 instance=ExtResource("11_8txgb")]
 transform = Transform3D(-0.82989216, 0, -0.5579238, 0, 1, 0, 0.5579238, 0, -0.82989216, 0.5283268, 0.28753218, 0.32995236)
+
+[node name="Sprite3D" type="Sprite3D" parent="props" unique_id=327664269]
+transform = Transform3D(-4.3711386e-09, -3.943759e-18, -0.1, -0.0057717897, 0.099833295, 2.5229302e-10, 0.099833295, 0.0057717897, -4.3638524e-09, 1.4772931, 1.1098202, 0.5172322)
+texture = ExtResource("13_y3vsm")
+
+[node name="stapler" parent="props" unique_id=1011541332 instance=ExtResource("14_3cqpm")]
+transform = Transform3D(-0.8757663, 0, 0.48273537, 0, 1, 0, -0.48273537, 0, -0.8757663, 1.0454199, 0.8748635, -0.60869986)
+
+[node name="office_chair" parent="props" unique_id=1342068046 instance=ExtResource("18_tklhv")]
+transform = Transform3D(0.43989348, 0, -0.89804995, 0, 1, 0, 0.89804995, 0, 0.43989348, -1.2609291, 0, -1.2980058)
+
+[node name="office_chair2" parent="props" unique_id=2138066518 instance=ExtResource("18_tklhv")]
+transform = Transform3D(-0.9978852, 0, -0.06500101, 0, 1, 0, 0.06500101, 0, -0.9978852, -0.75170857, -1.1920929e-07, -1.2359815)
+
+[node name="phone" parent="props/office_chair2" unique_id=2046607727 instance=ExtResource("11_8txgb")]
+transform = Transform3D(-0.7032848, 0, -0.7109082, 0, 1, 0, 0.7109082, 0, -0.7032848, 0, 0.34144694, 0)
+
+[node name="open_binder" parent="props" unique_id=2116206237 instance=ExtResource("20_o17yg")]
+transform = Transform3D(0.15092269, 0, -0.98854554, 0, 1, 0, 0.98854554, 0, 0.15092269, 0.5335608, 0.28624013, -0.35756868)
+
+[node name="pencil" parent="props/open_binder" unique_id=114146702 instance=ExtResource("7_nqpf1")]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -0.13005435, 0.06545287, -0.06348616)
+
+[node name="coffeecup2" parent="props" unique_id=1323037957 instance=ExtResource("3_yfhe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0402292, 0.8709638, 0.3708517)
+
+[node name="coffeecup3" parent="props" unique_id=114213986 instance=ExtResource("3_yfhe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.091356, 0.8709638, 0.40298998)
+
+[node name="coffeecup4" parent="props" unique_id=427273827 instance=ExtResource("3_yfhe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0959147, 0.8709638, 0.25274056)
+
+[node name="tapething" parent="props" unique_id=653005474 instance=ExtResource("16_y3vsm")]
+transform = Transform3D(0.13800727, 0, -0.9904312, 0, 1, 0, 0.9904312, 0, 0.13800727, 1.0285405, 0.8781471, 0.16206706)
+
+[node name="phone2" parent="props" unique_id=2077229958 instance=ExtResource("11_8txgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3466492, 0, 0.6193495)
 
 [node name="counter" parent="." unique_id=457422934 instance=ExtResource("2_b5nh1")]
 transform = Transform3D(1, 0, 0, 0, 0.98792636, -0.15492435, 0, 0.15492435, 0.98792636, 0.41945773, 1.1070285, -1.4673011)
@@ -95,3 +159,6 @@ enable_test_input = false
 
 [node name="terminal3" parent="." unique_id=1116731443 instance=ExtResource("11_6bswh")]
 transform = Transform3D(-4.3711385e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.3711385e-08, 0.78018534, 1.1920929e-07, -0.17246705)
+
+[node name="walkietalkie" parent="." unique_id=1841322629 instance=ExtResource("23_hxn30")]
+transform = Transform3D(0.6272336, 0, -0.7788312, 0, 1, 0, 0.7788312, 0, 0.6272336, 0.4827326, 0.29250082, -0.7009909)
