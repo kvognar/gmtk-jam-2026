@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dom2ycs1rnxmv"]
+
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_rv5si"]
+[ext_resource type="Script" uid="uid://ua56xt0r1cro" path="res://microgames/firefighting/extinguisher.gd" id="1_vrime"]
+
+[node name="Extinguisher" type="Node2D" unique_id=2082727700]
+script = ExtResource("1_vrime")
+
+[node name="Nozzle" type="Node2D" parent="." unique_id=1031325203]
+position = Vector2(0, -244)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=405119117]
+position = Vector2(0, -117)
+scale = Vector2(1, 2)
+texture = ExtResource("1_rv5si")
+
+[node name="Waters" type="Node2D" parent="." unique_id=398632012]
+top_level = true

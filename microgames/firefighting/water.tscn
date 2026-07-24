@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://6iuuujp61d6j"]
+
+[ext_resource type="Script" uid="uid://dsbmowgd8yqvq" path="res://microgames/firefighting/water.gd" id="1_fnmyy"]
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_ppgxn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ejdy6"]
+radius = 63.126858
+
+[node name="Water" type="CharacterBody2D" unique_id=1363994161]
+collision_mask = 0
+script = ExtResource("1_fnmyy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1227393081]
+texture = ExtResource("1_ppgxn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1322214152]
+shape = SubResource("CircleShape2D_ejdy6")

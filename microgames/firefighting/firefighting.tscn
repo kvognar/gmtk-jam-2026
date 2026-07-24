@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c5envoiilvw15"]
+
+[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_skxcj"]
+[ext_resource type="Script" uid="uid://cwsm7fo3kmvb5" path="res://microgames/firefighting/firefighting.gd" id="2_gkdu3"]
+[ext_resource type="PackedScene" uid="uid://dom2ycs1rnxmv" path="res://microgames/firefighting/extinguisher.tscn" id="2_le7e8"]
+
+[node name="Firefighting" unique_id=1956794833 instance=ExtResource("1_skxcj")]
+script = ExtResource("2_gkdu3")
+prompt = "Fire!"
+
+[node name="Extinguisher" parent="." index="5" unique_id=2082727700 instance=ExtResource("2_le7e8")]
+position = Vector2(809, 867)
+
+[node name="Fires" type="Node2D" parent="." index="6" unique_id=1177640934]
