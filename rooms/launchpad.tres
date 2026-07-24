@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_huuoo"]
 [ext_resource type="PackedScene" uid="uid://dkii2wf8iirkv" path="res://microgames/pigeons/pigeons.tscn" id="1_is7mf"]
 [ext_resource type="PackedScene" uid="uid://cki0rsiaa0rg7" path="res://microgames/comms_game/comms.tscn" id="2_64ydy"]
+[ext_resource type="PackedScene" uid="uid://p8t1si54eplu" path="res://microgames/kid_kick/kid_kick.tscn" id="4_64ydy"]
 
 [resource]
 script = ExtResource("1_132b4")
 name = "launchpad"
-games = Array[PackedScene]([ExtResource("1_64ydy"), ExtResource("2_64ydy"), ExtResource("1_is7mf")])
+games = Array[PackedScene]([ExtResource("1_64ydy"), ExtResource("2_64ydy"), ExtResource("1_is7mf"), ExtResource("4_64ydy")])
 metadata/_custom_type_script = "uid://ulf2dkpf8wec"
