@@ -2,8 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://d13lavfkbwwvw" path="res://assets/3D/glbs/walkietalkie.glb" id="1_c4xy6"]
 [ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_0s5fw"]
+[ext_resource type="AudioStream" uid="uid://v0uqq3xyl0q6" path="res://assets/audio/radio1.ogg" id="3_nebiw"]
+[ext_resource type="AudioStream" uid="uid://bpsvoxjbib3al" path="res://assets/audio/radio2.ogg" id="4_0qayy"]
+[ext_resource type="AudioStream" uid="uid://b5bx1uglkhmjx" path="res://assets/audio/radio3.ogg" id="5_v6sfk"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wqjaw"]
+streams_count = 3
+stream_0/stream = ExtResource("3_nebiw")
+stream_1/stream = ExtResource("4_0qayy")
+stream_2/stream = ExtResource("5_v6sfk")
 
 [node name="walkietalkie" unique_id=1841322629 instance=ExtResource("1_c4xy6")]
 
-[node name="walkietalkie" parent="." index="0" unique_id=752955785]
+[node name="walkietalkie" parent="." index="0" unique_id=25329305]
 material_override = ExtResource("2_0s5fw")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="1" unique_id=1989707624]
+stream = SubResource("AudioStreamRandomizer_wqjaw")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://che24gjmqr67v"]
+
+[ext_resource type="PackedScene" uid="uid://bdnfftegkm3sl" path="res://assets/3D/glbs/radio.glb" id="1_0b3t4"]
+[ext_resource type="Material" uid="uid://cbx8qnw433ofm" path="res://assets/materials/countdown.tres" id="2_1hs6y"]
+[ext_resource type="Texture2D" uid="uid://dyghy566ckt6e" path="res://assets/textures/radiolabel.png" id="3_q4v3i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0b3t4"]
+albedo_texture = ExtResource("3_q4v3i")
+
+[node name="radio" unique_id=194408429 instance=ExtResource("1_0b3t4")]
+
+[node name="radio" parent="." index="0" unique_id=986875873]
+material_override = ExtResource("2_1hs6y")
+
+[node name="radio_label" parent="." index="1" unique_id=1756049340]
+surface_material_override/0 = SubResource("StandardMaterial3D_0b3t4")
