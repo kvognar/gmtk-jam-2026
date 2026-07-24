@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c4tuhk0adi4x4" path="res://microgames/microgame.gd" id="1_u3unr"]
 [ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="2_3ht7m"]
 [ext_resource type="AudioStream" uid="uid://bm6vve3gh83ff" path="res://assets/audio/music/Shinjuku Isn't Overrated.ogg" id="3_iaa0p"]
+[ext_resource type="PackedScene" uid="uid://d16qt40vwnvl1" path="res://components/interest_layer.tscn" id="4_asc8w"]
 
 [node name="Microgame" type="Control" unique_id=1956794833]
 layout_mode = 3
@@ -15,7 +16,10 @@ script = ExtResource("1_u3unr")
 preview_image = ExtResource("2_3ht7m")
 song = ExtResource("3_iaa0p")
 
+[node name="InterestLayer" parent="." unique_id=1085978377 instance=ExtResource("4_asc8w")]
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=842226354]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d16qt40vwnvl1"]
+
+[ext_resource type="Script" uid="uid://bqs3l4bc1lqqw" path="res://components/interest_layer.gd" id="1_hw5oe"]
+
+[node name="InterestLayer" type="Node2D" unique_id=1085978377]
+script = ExtResource("1_hw5oe")
