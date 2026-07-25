@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="2_3ht7m"]
 [ext_resource type="AudioStream" uid="uid://bm6vve3gh83ff" path="res://assets/audio/music/Shinjuku Isn't Overrated.ogg" id="3_iaa0p"]
 [ext_resource type="PackedScene" uid="uid://d16qt40vwnvl1" path="res://components/interest_layer.tscn" id="4_asc8w"]
+[ext_resource type="PackedScene" uid="uid://i10vqqnnp413" path="res://ui/tape.tscn" id="5_rmyh0"]
 
 [node name="Microgame" type="Control" unique_id=1956794833]
 layout_mode = 3
@@ -82,18 +83,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Prompt" type="Label" parent="CenterContainer" unique_id=616038800]
-unique_name_in_owner = true
-z_index = 100
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Prompt!"
-
 [node name="Result" type="Label" parent="CenterContainer" unique_id=1582345726]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Result"
+
+[node name="Prompt" parent="CenterContainer" unique_id=1619993942 instance=ExtResource("5_rmyh0")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="PromptTimer" type="Timer" parent="." unique_id=1339207167]
 

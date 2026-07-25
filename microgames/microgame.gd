@@ -25,7 +25,7 @@ func _draw() -> void:
 
 func begin() -> void:
 	scale=Vector2(1, 1)
-	%Prompt.text = prompt;
+	%Prompt.set_text(prompt);
 	%Prompt.show()
 	%Result.hide()
 	$Timer.start()
