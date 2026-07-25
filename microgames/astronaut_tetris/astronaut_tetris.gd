@@ -1,36 +1,36 @@
 extends Microgame
 class_name AstronautTetris
 
-const FLIGHT_DURATION = 4.75
-const DESCENT_DURATION = 2.0
-const SIT_DURATION = 1.0
-const SPAWN_DELAY = 0.80
 const ASTRONAUT_TEXTURE_PATH = "res://assets/textures/astronaut_tetris/astro-sit.png"
-const POOL_TEXTURE_PATHS = [
-	ASTRONAUT_TEXTURE_PATH,
-	"res://assets/textures/astronaut_tetris/monke.png",
-	"res://assets/textures/dog_halftone.png"
-]
 
 enum DIRECTION { LEFT, DOWN, NONE }
 
 var movement_direction: DIRECTION = DIRECTION.LEFT
 var flight_speed: float = 500
-var astro_tween: Tween
-var victory_texture: Texture2D
-var entity_scene: PackedScene
 var entity_textures: Dictionary[String, Texture2D] = {}
-var current_entity
-var is_correct: bool = false
+var current_entity: Variant
+var current_entity_path: String
+var victory_texture: Texture2D = preload("res://assets/textures/astronaut_tetris/astro-sit-inchair.png")
+var entity_scene: PackedScene = preload("res://entities/tetris_mover.tscn")
+var pool_texture_data = {
+	ASTRONAUT_TEXTURE_PATH: null, # this one should never be invokved
+	"res://assets/textures/astronaut_tetris/monke.png": {
+		'position': Vector2(823, 635),
+		'scale': 0.309
+	},
+	"res://assets/textures/dog_halftone.png": {
+		'position': Vector2(823, 542),
+		'scale': 0.359
+	}
+}
+var outstanding_entity_paths = pool_texture_data.keys()
 
 func _ready() -> void:
 	preload_resources()
 	super()
 
 func preload_resources() -> void:
-	victory_texture = preload("res://assets/textures/astronaut_tetris/astro-sit-inchair.png")
-	entity_scene = preload("res://entities/tetris_mover.tscn")
-	for path in POOL_TEXTURE_PATHS:
+	for path in outstanding_entity_paths:
 		entity_textures[path] = load(path)
 	
 
@@ -57,7 +57,7 @@ func move_entity(delta) -> void:
 	current_entity.position += movement_vector * flight_speed * delta
 	if entity_out_of_bounds():
 		current_entity.free()
-		if is_correct:
+		if is_correct():
 			lose()
 			return
 		else:
@@ -76,10 +76,18 @@ func _on_chair_area_entered(area: Area2D) -> void:
 	$Timer.stop()
 	movement_direction = DIRECTION.NONE
 	current_entity.hide()
-	if is_correct:
+	if is_correct():
 		$Chair/ChairSprite.texture = victory_texture
 		win()
 	else:
+		var transforms = pool_texture_data[current_entity_path]
+		var new_sprite = Sprite2D.new()
+		new_sprite.texture = entity_textures[current_entity_path]
+		new_sprite.position = transforms['position']
+		new_sprite.scale = Vector2(transforms['scale'], transforms['scale'])
+		new_sprite.z_index = 2
+		new_sprite.show()
+		add_child(new_sprite)
 		lose()
 	
 func begin() -> void:
@@ -102,14 +110,17 @@ func spawn_entity() -> void:
 	entity.set_texture(texture_result[1])
 	entity.show()
 	movement_direction = DIRECTION.LEFT
-	is_correct = texture_result[0] == ASTRONAUT_TEXTURE_PATH
+	current_entity_path = texture_result[0]
 	add_child(entity)
 
+func is_correct() -> bool:
+	return current_entity_path == ASTRONAUT_TEXTURE_PATH
+
 func random_entity_texture() -> Array:
-	var size = entity_textures.size()
-	var random_key = entity_textures.keys()[randi() % size]
+	var size = outstanding_entity_paths.size()
+	var random_key = outstanding_entity_paths[randi() % size]
 	var texture = entity_textures[random_key]
-	entity_textures.erase(random_key)
+	outstanding_entity_paths.erase(random_key)
 	return [random_key, texture]
 	
 func entity_out_of_bounds() -> bool:
