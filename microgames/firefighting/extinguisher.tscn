@@ -22,3 +22,4 @@ top_level = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2001978667]
 stream = ExtResource("3_gk8aw")
+bus = &"SFX"

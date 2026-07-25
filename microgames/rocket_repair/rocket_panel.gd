@@ -16,6 +16,7 @@ func _on_click_and_drag_dropped() -> void:
 	monitoring = true
 	if !locked:
 		%Hover.enable()
+		$AudioStreamPlayer2D.play()
 
 func _on_click_and_drag_lifted() -> void:
 	monitoring = false

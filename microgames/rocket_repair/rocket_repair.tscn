@@ -29,7 +29,7 @@ mouse_filter = 2
 [node name="Control" parent="MarginContainer/VBoxContainer" index="0" unique_id=1708068097]
 mouse_filter = 2
 
-[node name="ProgressBar" parent="MarginContainer/VBoxContainer" index="1" unique_id=184280485]
+[node name="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer" parent_id_path=PackedInt32Array(1305033777) index="1" unique_id=184280485]
 mouse_filter = 2
 
 [node name="RocketHalftone" type="Sprite2D" parent="." index="5" unique_id=1160668705]

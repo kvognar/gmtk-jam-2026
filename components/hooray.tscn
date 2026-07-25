@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cta6w8sceojqu"]
+
+[ext_resource type="AudioStream" uid="uid://dd786tfwyn2t4" path="res://assets/audio/positive2.ogg" id="1_fu7p2"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qx2s7"]
+random_pitch = 1.122462
+streams_count = 1
+stream_0/stream = ExtResource("1_fu7p2")
+
+[node name="Hooray" type="AudioStreamPlayer2D" unique_id=1343109513]
+stream = SubResource("AudioStreamRandomizer_qx2s7")
+bus = &"SFX"

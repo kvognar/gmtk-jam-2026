@@ -20,6 +20,8 @@ func activate() -> void:
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed('action'):
 		bolting = true
+		if !$AudioStreamPlayer2D.playing && !affixed:
+			$AudioStreamPlayer2D.play(randf_range(0.5, 4.0))
 
 func _process(delta: float) -> void:
 	if bolting:
@@ -31,5 +33,8 @@ func _process(delta: float) -> void:
 			input_pickable = false
 			bolted.emit()
 			$Sprite2D.modulate = Color.WHITE
+			$AudioStreamPlayer2D.stop()
+			$Hooray.play()
 		if Input.is_action_just_released('action'):
 			bolting = false
+			$AudioStreamPlayer2D.stop()
