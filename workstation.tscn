@@ -182,6 +182,13 @@ initial_value = 14
 start_spin_delay = 0.25
 enable_test_input = false
 
+[node name="GamesLeftCounter" parent="." unique_id=1178865601 instance=ExtResource("2_b5nh1")]
+unique_name_in_owner = true
+transform = Transform3D(0.0012999423, 0.121761285, -0.3705031, -0.0004206982, 0.3705053, 0.12176054, 0.38999757, -6.183825e-06, 0.0013663082, 0.93908805, 0.79750067, -0.33979312)
+initial_value = 10
+start_spin_delay = 0.25
+enable_test_input = false
+
 [node name="terminal3" parent="." unique_id=1116731443 instance=ExtResource("11_6bswh")]
 transform = Transform3D(-4.3711385e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.3711385e-08, 0.78018534, 1.1920929e-07, -0.17246705)
 
