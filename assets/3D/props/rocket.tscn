@@ -105,7 +105,7 @@ radius = 1.409
 [node name="rocket" unique_id=414033897 instance=ExtResource("1_rrgww")]
 script = ExtResource("2_r3mvd")
 
-[node name="mercury_rocket" parent="." index="0" unique_id=1714033025]
+[node name="mercury_rocket" parent="." index="0" unique_id=1003104104]
 material_override = ExtResource("2_rbb0h")
 
 [node name="fire" type="Node3D" parent="." index="1" unique_id=1579562824]

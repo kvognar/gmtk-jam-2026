@@ -27,11 +27,14 @@ extends Node3D
 @onready var camera: Camera3D = %Camera
 @onready var message: Label = %Label
 @onready var fade: ColorRect = %Fade
-@onready var outdoors: AudioStreamPlayer3D = $ambiance
-@onready var indoors: AudioStreamPlayer3D = $ambiance2
+@onready var outdoors: AudioStreamPlayer3D = %ambiance
+@onready var indoors: AudioStreamPlayer3D = %ambiance2
 @onready var title: Button = %"Return to Title"
 
 var rocket_home: Vector3
+
+var wins := 0
+var losses := 0
 
 func _ready():
 	rocket_home = rocket.position
@@ -50,11 +53,17 @@ func _ready():
 		fade.color.a = 1.0
 
 	await fade_in()
+
+
+func show_ending(victories: int, failures: int) -> void:
+	wins = victories
+	losses = failures
 	await glide_camera()
 
 #when these are global variables, switch them out
-	var wins  := get_wins()
-	var losses := get_losses()
+	if use_test_values:
+		wins = get_wins()
+		losses = get_losses()
 
 #this is the current logic but feel free to make it anything, obvs
 	if wins >= losses * 2:

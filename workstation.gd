@@ -11,11 +11,12 @@ var game_index = 0
 
 func _ready() -> void:
 	MusicPlayer.switch_to(song)
-	countdown.play()
+	#countdown.play()
 	show_scores()
 	for container: MicrogameContainer in get_tree().get_nodes_in_group('microgame_containers'):
 		container.failure.connect(_on_game_fail)
 		container.success.connect(_on_game_success)
+		container.complete.connect(_on_games_completed)
 
 func _process(_delta: float) -> void:
 	pass
@@ -30,6 +31,10 @@ func _on_game_success() -> void:
 	MusicPlayer.switch_to(song)
 	wins += 1
 	show_scores()
+
+func _on_games_completed() -> void:
+	%EndingOrchestrator.show_ending(wins, losses)
+	print_debug('its all done')
 
 func show_scores() -> void:
 	%Wins.text = 'Wins: ' + str(wins)

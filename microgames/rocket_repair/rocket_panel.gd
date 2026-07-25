@@ -17,14 +17,12 @@ func _on_click_and_drag_dropped() -> void:
 
 
 func _on_click_and_drag_lifted() -> void:
-	print_debug('lifted')
 	monitoring = false
 	pass # Replace with function body.
 
 
 func _on_area_entered(area: Area2D) -> void:
 	area.lock()
-	print_debug('an area!!')
 	global_position = area.global_position
 	locked = true
 	for bolt: Bolt in $Bolts.get_children():
@@ -36,6 +34,5 @@ func _on_area_entered(area: Area2D) -> void:
 func log_bolts() -> void:
 	total_bolted += 1
 	if total_bolted >= total_bolts:
-		print_debug('panel done!')
 		finished.emit()
 	

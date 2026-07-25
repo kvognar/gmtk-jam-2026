@@ -12,6 +12,8 @@ var running := false
 signal failure
 signal success
 
+signal complete
+
 func _ready() -> void:
 	games = room.games
 	prepare_game()
@@ -20,10 +22,10 @@ func _ready() -> void:
 		start_game()
 	
 func prepare_game() -> void:
-	current_game = games[current_game_index].instantiate()
-	current_game_index += 1
 	if current_game_index >= games.size():
 		current_game_index = 0
+
+	current_game = games[current_game_index].instantiate()
 	for child in %SubViewport.get_children():
 		if !child.is_class('TextureRect'):
 			child.queue_free()
@@ -41,7 +43,6 @@ func start_game() -> void:
 	current_game.process_mode = Node.PROCESS_MODE_INHERIT
 	
 func fade_preview() -> void:
-	print_debug('fading')
 	var tween = get_tree().create_tween()
 	tween.tween_property(%PreviewImage, 'modulate', Color('ffffff00'), 0.5)
 	tween.finished.connect(hidePreview)
@@ -63,7 +64,14 @@ func show_screen() -> void:
 func hide_screen() -> void:
 	running = false
 	%GameScreen.hide()
+	current_game_index += 1
+	check_for_finished()
 	prepare_game()
+
+func check_for_finished() -> void:
+	if current_game_index == games.size():
+		complete.emit()
+
 
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event.is_action_pressed("action"):
