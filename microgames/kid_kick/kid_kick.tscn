@@ -11,16 +11,7 @@ script = ExtResource("2_4udp4")
 prompt = "Kick the kid!"
 preview_image = null
 
-[node name="Prompt" type="Label" parent="." index="1" unique_id=616038800]
-layout_mode = 0
-offset_left = 590.0
-offset_top = 215.0
-offset_right = 978.0
-offset_bottom = 284.0
-theme_override_font_sizes/font_size = 50
-text = "Kick the kid out!"
-
-[node name="KickPrompt" type="Label" parent="." index="2" unique_id=560987756]
+[node name="KickPrompt" type="Label" parent="." index="1" unique_id=560987756]
 layout_mode = 0
 offset_left = 730.0
 offset_top = 140.0
@@ -29,7 +20,7 @@ offset_bottom = 209.0
 theme_override_font_sizes/font_size = 50
 text = "Kick!"
 
-[node name="PowerMeter" type="ProgressBar" parent="." index="5" unique_id=40033573]
+[node name="PowerMeter" type="ProgressBar" parent="." index="4" unique_id=40033573]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 102.0
@@ -38,12 +29,12 @@ offset_bottom = 583.0
 step = 1.0
 fill_mode = 3
 
-[node name="KidSprite" type="Sprite2D" parent="." index="6" unique_id=75782374]
+[node name="KidSprite" type="Sprite2D" parent="." index="5" unique_id=75782374]
 position = Vector2(1158.0001, 583)
 scale = Vector2(0.18684909, 0.14127606)
 texture = ExtResource("4_x73dp")
 
-[node name="FootPivot" type="Node2D" parent="." index="7" unique_id=1393403061]
+[node name="FootPivot" type="Node2D" parent="." index="6" unique_id=1393403061]
 position = Vector2(693, 365.00003)
 
 [node name="FootSprite" type="Sprite2D" parent="FootPivot" index="0" unique_id=1696844071]
@@ -52,17 +43,16 @@ texture = ExtResource("3_0mbnp")
 centered = false
 flip_h = true
 
-[node name="KidOof" type="AudioStreamPlayer" parent="." index="8" unique_id=1652827537]
+[node name="KidOof" type="AudioStreamPlayer" parent="." index="7" unique_id=1652827537]
 stream = ExtResource("5_x73dp")
 volume_db = 1.825
 
-[node name="MarginContainer" parent="." index="9" unique_id=866576842]
+[node name="MarginContainer" parent="." index="8" unique_id=866576842]
 offset_left = -1.0
 offset_top = -1.0
 offset_right = -1.0
 offset_bottom = -1.0
 
-[node name="KidTimer" type="Timer" parent="." index="13" unique_id=774635023]
+[node name="KidTimer" type="Timer" parent="." index="12" unique_id=774635023]
 
 [connection signal="timeout" from="PromptTimer" to="." method="_on_prompt_timer_timeout"]
-[connection signal="timeout" from="KidTimer" to="." method="_kid_blast_off_start"]
