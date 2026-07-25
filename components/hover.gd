@@ -8,10 +8,10 @@ var elapsed_time := 0.0
 var angle_vector: Vector2
 
 func _ready() -> void:
-	base_position = get_parent().global_position
+	base_position = get_parent().position
 	angle_vector = Vector2.from_angle(angle).normalized()
 	
 
 func _process(delta: float) -> void:
 	elapsed_time += delta
-	get_parent().global_position = base_position + (angle_vector * amplitude * sin(elapsed_time))
+	get_parent().position = base_position + (angle_vector * amplitude * sin(elapsed_time))

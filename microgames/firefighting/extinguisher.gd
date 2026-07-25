@@ -18,6 +18,6 @@ func create_water() -> void:
 	fire_delay = fire_rate
 	var water: Node2D = water_bottle.instantiate()
 	water.velocity = water_velocity.rotated(global_rotation)
-	water.global_position = $Nozzle.global_position
+	water.global_position = %Nozzle.global_position
 	
 	$Waters.add_child(water)

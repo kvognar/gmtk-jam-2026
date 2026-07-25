@@ -11,6 +11,7 @@ func _ready() -> void:
 		total_holes += 1
 	super()
 
+
 func log_hole_patched(hole: SuitHole) -> void:
 	patched_holes[hole] = true
 	if patched_holes.size() >= total_holes:
@@ -19,6 +20,8 @@ func log_hole_patched(hole: SuitHole) -> void:
 		win()
 
 func _process(delta: float) -> void:
+	$DucttapeRoll.global_position = get_global_mouse_position()
+	
 	if Input.is_action_just_pressed("action"):
 		var tape = tape_roll.instantiate()
 		$Tapes.add_child(tape)

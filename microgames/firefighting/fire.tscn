@@ -1,17 +1,53 @@
 [gd_scene format=3 uid="uid://dhujgqlu8ylj7"]
 
 [ext_resource type="Script" uid="uid://cc3wn4njlfxwa" path="res://microgames/firefighting/fire.gd" id="1_0javi"]
-[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_sf7ke"]
+[ext_resource type="Texture2D" uid="uid://b6d62l3tkpef8" path="res://microgames/firefighting/assets/fire1.png" id="2_hm5ia"]
+[ext_resource type="Texture2D" uid="uid://cpiqbi84uatp1" path="res://microgames/firefighting/assets/fire2.png" id="3_0bix6"]
+[ext_resource type="Texture2D" uid="uid://bl8wqjhof4dum" path="res://microgames/firefighting/assets/fire3.png" id="4_bltmy"]
+[ext_resource type="Texture2D" uid="uid://0dvoh6n6krrn" path="res://microgames/firefighting/assets/fire4.png" id="5_d4q1k"]
+[ext_resource type="Texture2D" uid="uid://dgmq205xjwp6q" path="res://microgames/firefighting/assets/fire5.png" id="6_lo17g"]
+[ext_resource type="Texture2D" uid="uid://bkawn3544pddn" path="res://microgames/firefighting/assets/fire6.png" id="7_wq8aj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ejdy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hm5ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0bix6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bltmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d4q1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lo17g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wq8aj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejdy6"]
-radius = 63.07139
+radius = 66.4
 
 [node name="Fire" type="Node2D" unique_id=1070025702]
 script = ExtResource("1_0javi")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=460772134]
-modulate = Color(3.37865, 0.22444245, 0, 1)
-texture = ExtResource("1_sf7ke")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1883007223]
+modulate = Color(0.95686275, 0.61960787, 0.21568628, 1)
+position = Vector2(6, -47)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ejdy6")
+autoplay = "default"
+frame = 3
+frame_progress = 0.44949335
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1606145759]
 

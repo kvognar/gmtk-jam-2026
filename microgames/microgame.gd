@@ -5,6 +5,7 @@ class_name Microgame
 @export var time_limit := 5.0
 @export var preview_image: Texture2D
 @export var song: AudioStream
+@export var hide_mouse := false
 
 signal success
 signal failure
@@ -35,11 +36,17 @@ func begin() -> void:
 	await $PromptTimer.timeout
 	%Prompt.hide()
 	playing = true
+	if hide_mouse:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
+func show_mouse() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func fail() -> void:
 	playing = false
 	await get_tree().create_timer(1.0).timeout
 	failure.emit()
+	show_mouse()
 
 func lose() -> void:
 	%Result.text = 'Oh no!'
@@ -54,6 +61,7 @@ func win() -> void:
 	playing = false
 	await get_tree().create_timer(1.0).timeout
 	success.emit()
+	show_mouse()
 	
 func _process(_delta: float) -> void:
 	%ProgressBar.value = ($Timer.time_left / $Timer.wait_time) * %ProgressBar.max_value

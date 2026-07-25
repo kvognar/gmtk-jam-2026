@@ -10,19 +10,23 @@
 [node name="SuitRepair" unique_id=1956794833 instance=ExtResource("1_3egq7")]
 script = ExtResource("2_bq3qb")
 prompt = "Patch up!"
+hide_mouse = true
 
 [node name="Suit" parent="." index="5" unique_id=645462558 instance=ExtResource("3_kpxw4")]
 
 [node name="Tapes" type="Node2D" parent="." index="6" unique_id=133206157]
 
-[node name="DucttapeRoll" type="Sprite2D" parent="." index="7" unique_id=1261579013]
-position = Vector2(1304, 742)
+[node name="Sparkler" parent="." index="7" unique_id=1291353786 instance=ExtResource("6_wwekc")]
+position = Vector2(360, 119)
+amount = 16
+
+[node name="DucttapeRoll" type="Node2D" parent="." index="10" unique_id=123248936]
+
+[node name="DucttapeRoll" type="Sprite2D" parent="DucttapeRoll" index="0" unique_id=1261579013]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_kpuhl")
 
-[node name="Hover" parent="DucttapeRoll" index="0" unique_id=653452688 instance=ExtResource("5_86mxg")]
+[node name="Hover" parent="DucttapeRoll/DucttapeRoll" index="0" unique_id=653452688 instance=ExtResource("5_86mxg")]
 angle = 4.0
-
-[node name="Sparkler" parent="." index="8" unique_id=1291353786 instance=ExtResource("6_wwekc")]
-position = Vector2(360, 119)
 
 [editable path="Suit"]

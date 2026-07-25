@@ -1,17 +1,38 @@
 [gd_scene format=3 uid="uid://6iuuujp61d6j"]
 
 [ext_resource type="Script" uid="uid://dsbmowgd8yqvq" path="res://microgames/firefighting/water.gd" id="1_fnmyy"]
-[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_ppgxn"]
+[ext_resource type="Texture2D" uid="uid://ekmfmj1lwh4k" path="res://microgames/firefighting/assets/particle1.png" id="2_bx0qx"]
+[ext_resource type="Texture2D" uid="uid://cjsplsy111p7m" path="res://microgames/firefighting/assets/particle2.png" id="3_y0okg"]
+[ext_resource type="Texture2D" uid="uid://kww8b05pxavd" path="res://microgames/firefighting/assets/particle3.png" id="4_nvfio"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejdy6"]
 radius = 63.126858
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ejdy6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bx0qx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y0okg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nvfio")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Water" type="CharacterBody2D" unique_id=1363994161]
 collision_mask = 0
 script = ExtResource("1_fnmyy")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1227393081]
-texture = ExtResource("1_ppgxn")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1322214152]
 shape = SubResource("CircleShape2D_ejdy6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=201111025]
+sprite_frames = SubResource("SpriteFrames_ejdy6")
+autoplay = "default"
+frame_progress = 0.86235964
