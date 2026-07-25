@@ -8,9 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://p8t1si54eplu" path="res://microgames/kid_kick/kid_kick.tscn" id="4_64ydy"]
 [ext_resource type="PackedScene" uid="uid://c5envoiilvw15" path="res://microgames/firefighting/firefighting.tscn" id="5_mjwi6"]
 [ext_resource type="PackedScene" uid="uid://x642vv6ljkc3" path="res://microgames/rocket_repair/rocket_repair.tscn" id="6_y3hpc"]
+[ext_resource type="PackedScene" uid="uid://jeifa2ceu0l3" path="res://microgames/paparazzi/paparazzi.tscn" id="7_sk5op"]
+[ext_resource type="PackedScene" uid="uid://b6tsmdjhsmx7x" path="res://microgames/astronaut_tetris/astronaut_tetris.tscn" id="8_big10"]
 
 [resource]
 script = ExtResource("1_132b4")
 name = "launchpad"
-games = Array[PackedScene]([ExtResource("6_y3hpc"), ExtResource("1_64ydy"), ExtResource("2_64ydy"), ExtResource("1_is7mf"), ExtResource("4_64ydy"), ExtResource("5_mjwi6")])
+games = Array[PackedScene]([ExtResource("6_y3hpc"), ExtResource("1_64ydy"), ExtResource("2_64ydy"), ExtResource("1_is7mf"), ExtResource("4_64ydy"), ExtResource("5_mjwi6"), ExtResource("7_sk5op"), ExtResource("8_big10")])
 metadata/_custom_type_script = "uid://ulf2dkpf8wec"
