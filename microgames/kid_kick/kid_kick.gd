@@ -8,7 +8,7 @@ const ROTATION_SPEED = 2 * PI
 
 var target_power: int
 var on_target: bool = false
-var animate_game: bool = true
+var animate_game: bool = false
 var blasting_off: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -27,10 +27,9 @@ func adjust_kick_status(value: float) -> void:
 	$FootPivot.rotation = rad_rotate
 
 func win() -> void:
-	super()
-	animate_game = false
 	start_kick()
 	start_kid_timer()
+	super()
 
 func start_kid_timer() -> void:
 	$KidTimer.wait_time = KICK_DURATION * 0.75
@@ -42,28 +41,30 @@ func start_kick() -> void:
 	tween.tween_property($FootPivot, "rotation", deg_to_rad(-65), 0.5)
 	
 func _kid_blast_off_start() -> void:
+	$KidTimer.stop()
 	$KidOof.play()
-	var tween = $KidSprite.create_tween().bind_node($KidSprite)
 	blasting_off = true
+	var tween = $KidSprite.create_tween().bind_node($KidSprite)
 	tween.tween_property($KidSprite, "position", Vector2(1800, 300), 0.75)
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	super(delta)
-	var time_value = ($Timer.wait_time - $Timer.time_left) * METER_SPEED
-	var value: float = abs(sin(time_value)) * $PowerMeter.max_value
-	on_target = value >= target_power - POWER_GRACE && value <= target_power + POWER_GRACE
-	if animate_game:
+	if animate_game && playing:
+		var time_value = ($Timer.wait_time - $PromptTimer.wait_time - $Timer.time_left) * METER_SPEED
+		var value: float = abs(sin(time_value)) * $PowerMeter.max_value
+		on_target = value >= target_power - POWER_GRACE && value <= target_power + POWER_GRACE
 		adjust_kick_status(value)
 		$PowerMeter.value =  value
 
 	if Input.is_action_just_pressed('action') && playing:
+		animate_game = false
 		if on_target:
 			win()
 		else:
 			fail()
-		
+			
 	if blasting_off:
 		$KidSprite.rotation += delta * ROTATION_SPEED
 		
@@ -72,3 +73,6 @@ func begin() -> void:
 	super()
 	$KickPrompt.hide()
 	randomize_power_level()
+
+func _on_prompt_timer_timeout() -> void:
+	animate_game = true

@@ -31,7 +31,8 @@ func begin() -> void:
 	$Timer.start()
 	if song:
 		MusicPlayer.switch_to(song)
-	await get_tree().create_timer(1.0).timeout
+	$PromptTimer.start()
+	await $PromptTimer.timeout
 	%Prompt.hide()
 	playing = true
 
