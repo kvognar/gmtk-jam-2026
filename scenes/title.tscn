@@ -88,9 +88,11 @@ environment = SubResource("Environment_wqjaw")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1183904982]
 stream = ExtResource("4_pyl7j")
 volume_db = 8.0
+parameters/looping = true
 
 [node name="music" type="AudioStreamPlayer2D" parent="." unique_id=1600951275]
 stream = ExtResource("6_4rr2b")
+parameters/looping = true
 
 [connection signal="pressed" from="CanvasLayer/Panel/menu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/menu/Quit" to="." method="_on_quit_pressed"]
