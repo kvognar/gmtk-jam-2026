@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6ukgwgjpro27"
-path="res://.godot/imported/DucttapeRoll.png-2b8af76b148cc9893f3d4e99695d509a.ctex"
+uid="uid://hy1de2mmg5nc"
+path="res://.godot/imported/ducttape_halftone.png-d91a10230f5b9f5cd667c678cd65a38f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://microgames/suit_repair/assets/DucttapeRoll.png"
-dest_files=["res://.godot/imported/DucttapeRoll.png-2b8af76b148cc9893f3d4e99695d509a.ctex"]
+source_file="res://microgames/suit_repair/assets/ducttape_halftone.png"
+dest_files=["res://.godot/imported/ducttape_halftone.png-d91a10230f5b9f5cd667c678cd65a38f.ctex"]
 
 [params]
 

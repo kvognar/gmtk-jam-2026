@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_3egq7"]
 [ext_resource type="Script" uid="uid://btkst3nl2tis" path="res://microgames/suit_repair/suit_repair.gd" id="2_bq3qb"]
 [ext_resource type="PackedScene" uid="uid://kyggwnl5nqun" path="res://microgames/suit_repair/suit.tscn" id="3_kpxw4"]
-[ext_resource type="Texture2D" uid="uid://6ukgwgjpro27" path="res://microgames/suit_repair/assets/DucttapeRoll.png" id="4_kpuhl"]
 [ext_resource type="PackedScene" uid="uid://b65odl2j2cxfa" path="res://components/hover.tscn" id="5_86mxg"]
+[ext_resource type="Texture2D" uid="uid://hy1de2mmg5nc" path="res://microgames/suit_repair/assets/ducttape_halftone.png" id="5_wwekc"]
 [ext_resource type="PackedScene" uid="uid://4gwd3bhrmvea" path="res://entities/sparkler.tscn" id="6_wwekc"]
 
 [node name="SuitRepair" unique_id=1956794833 instance=ExtResource("1_3egq7")]
@@ -23,8 +23,8 @@ amount = 16
 [node name="DucttapeRoll" type="Node2D" parent="." index="10" unique_id=123248936]
 
 [node name="DucttapeRoll" type="Sprite2D" parent="DucttapeRoll" index="0" unique_id=1261579013]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_kpuhl")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_wwekc")
 
 [node name="Hover" parent="DucttapeRoll/DucttapeRoll" index="0" unique_id=653452688 instance=ExtResource("5_86mxg")]
 angle = 4.0
