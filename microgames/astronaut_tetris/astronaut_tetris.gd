@@ -55,10 +55,6 @@ func _on_chair_area_entered(area: Area2D) -> void:
 	$Astronaut.hide()
 	$Chair/ChairSprite.texture = victory_texture
 	win()
-
-func win() -> void:
-	print_debug('won!')
-	super()
 	
 func begin() -> void:
 	$Astronaut.hide()
