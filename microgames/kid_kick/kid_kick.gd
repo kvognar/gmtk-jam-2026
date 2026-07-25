@@ -11,11 +11,8 @@ var on_target: bool = false
 var animate_game: bool = false
 var blasting_off: bool = false
 
-var evade_texture: Texture2D
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	evade_texture = preload('res://assets/textures/kid_evade_placeholder.png')
 	super()
 
 func randomize_power_level() -> void:
@@ -72,12 +69,13 @@ func _kid_blast_off_start() -> void:
 
 func _kid_evade_start() -> void:
 	$KidTimer.stop()
-	var tween: Tween = $KidSprite.create_tween().bind_node($KidSprite)
+	var position_tween: Tween = $KidSprite.create_tween().bind_node($KidSprite)
 	var cur_pos: Vector2 = $KidSprite.position
-	cur_pos.x -= 650
-	tween.tween_property($KidSprite, "position", cur_pos, 0.5)
-	$KidSprite.texture = evade_texture
-	tween.tween_callback(lose)
+	cur_pos.x -= 450
+	position_tween.tween_property($KidSprite, "position", cur_pos, 0.5)
+	var tbag_tween: Tween = $KidSprite.create_tween().bind_node($KidSprite).set_loops()
+	tbag_tween.tween_callback(func(): $KidSprite.flip_h = !$KidSprite.flip_h).set_delay(0.15)
+	lose()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

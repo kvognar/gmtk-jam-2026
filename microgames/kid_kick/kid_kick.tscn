@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_khhlu"]
 [ext_resource type="Script" uid="uid://cpr22ryhwxdxd" path="res://microgames/kid_kick/kid_kick.gd" id="2_4udp4"]
-[ext_resource type="Texture2D" uid="uid://2yhnsfbya7ak" path="res://assets/textures/foot_placeholder.png" id="3_0mbnp"]
-[ext_resource type="Texture2D" uid="uid://dariaik6vq0f0" path="res://assets/textures/kid_placeholder.png" id="4_x73dp"]
+[ext_resource type="Texture2D" uid="uid://dhe2upeqmxnx6" path="res://assets/textures/kid.png" id="3_x73dp"]
+[ext_resource type="Texture2D" uid="uid://dcs43qs78n6l3" path="res://assets/textures/boot_halftone.png" id="4_xaqlw"]
 [ext_resource type="AudioStream" uid="uid://csr77fedd1qkm" path="res://assets/audio/freesound_community-homemadeoof-47509.mp3" id="5_x73dp"]
+[ext_resource type="Texture2D" uid="uid://cy8l3lt17mnff" path="res://assets/textures/stoaway-capsule-halftone.png" id="6_xaqlw"]
 
 [node name="Microgame2" unique_id=1956794833 instance=ExtResource("1_khhlu")]
 script = ExtResource("2_4udp4")
@@ -30,18 +31,20 @@ step = 1.0
 fill_mode = 3
 
 [node name="KidSprite" type="Sprite2D" parent="." index="5" unique_id=75782374]
-position = Vector2(1158.0001, 583)
-scale = Vector2(0.18684909, 0.14127606)
-texture = ExtResource("4_x73dp")
+z_index = 2
+position = Vector2(1151, 607)
+scale = Vector2(1.2245713, 0.7057733)
+texture = ExtResource("3_x73dp")
+flip_h = true
 
 [node name="FootPivot" type="Node2D" parent="." index="6" unique_id=1393403061]
-position = Vector2(693, 365.00003)
+position = Vector2(779, 117)
 
 [node name="FootSprite" type="Sprite2D" parent="FootPivot" index="0" unique_id=1696844071]
-position = Vector2(-117.37061, -20.836052)
-texture = ExtResource("3_0mbnp")
+z_index = 2
+position = Vector2(-106, 17)
+texture = ExtResource("4_xaqlw")
 centered = false
-flip_h = true
 
 [node name="KidOof" type="AudioStreamPlayer" parent="." index="7" unique_id=1652827537]
 stream = ExtResource("5_x73dp")
@@ -53,6 +56,16 @@ offset_top = -1.0
 offset_right = -1.0
 offset_bottom = -1.0
 
+[node name="PreviewImage" parent="." index="9" unique_id=287436211]
+visible = true
+
+[node name="CenterContainer" parent="." index="10" unique_id=1036090613]
+visible = false
+
 [node name="KidTimer" type="Timer" parent="." index="12" unique_id=774635023]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="13" unique_id=1382050968]
+position = Vector2(670, 464)
+texture = ExtResource("6_xaqlw")
 
 [connection signal="timeout" from="PromptTimer" to="." method="_on_prompt_timer_timeout"]
