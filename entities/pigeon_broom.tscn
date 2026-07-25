@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgibssfk5vj5v"]
 
 [ext_resource type="Script" uid="uid://1ypbequ14l56" path="res://entities/pigeon_broom.gd" id="1_ghjjy"]
-[ext_resource type="Texture2D" uid="uid://b3gvm4moqc6fc" path="res://assets/sprites/broom.png" id="2_ghjjy"]
+[ext_resource type="Texture2D" uid="uid://elk8ywuuhorg" path="res://assets/sprites/broom.png" id="2_ghjjy"]
 
 [sub_resource type="Animation" id="Animation_ghjjy"]
 length = 0.001
