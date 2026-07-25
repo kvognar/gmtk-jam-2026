@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://luoqa2dbhtbb" path="res://microgames/paparazzi/photographer.tscn" id="2_dgqdq"]
 [ext_resource type="Script" uid="uid://c7sja0jxjmsof" path="res://microgames/paparazzi/paparazzi.gd" id="2_epbu8"]
 [ext_resource type="AudioStream" uid="uid://dvu4kjdq47nre" path="res://assets/audio/paparazzi/paparazzi_group.ogg" id="3_17ayv"]
+[ext_resource type="AudioStream" uid="uid://dsqvu3pdn7bhj" path="res://assets/audio/music/Don't Bother Me I'm Meditating.ogg" id="3_db8k4"]
 [ext_resource type="PackedScene" uid="uid://bwyuhtyw2d1xa" path="res://microgames/paparazzi/photographer2.tscn" id="3_jruib"]
 [ext_resource type="PackedScene" uid="uid://v7t6k1fmonra" path="res://microgames/paparazzi/photographer3.tscn" id="4_s16q4"]
 [ext_resource type="AudioStream" uid="uid://cwb2w03o4vqn0" path="res://assets/audio/paparazzi/paparazzi_cameras.ogg" id="4_tplil"]
@@ -19,8 +20,12 @@ resource_local_to_scene = true
 size = Vector2(297.00003, 364)
 
 [node name="Paparazzi" unique_id=1956794833 instance=ExtResource("1_c7drm")]
+offset_left = 8.0
+offset_right = 8.0
 script = ExtResource("2_epbu8")
 prompt = "Scram!"
+song = ExtResource("3_db8k4")
+hide_mouse = true
 
 [node name="LaunchpadHalftone" type="Sprite2D" parent="." index="7" unique_id=25246384]
 position = Vector2(879, 448)

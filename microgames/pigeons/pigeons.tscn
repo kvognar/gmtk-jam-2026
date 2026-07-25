@@ -8,6 +8,7 @@
 [node name="Microgame" unique_id=1956794833 instance=ExtResource("1_sdkxx")]
 script = ExtResource("2_86bxv")
 prompt = "Shoo!"
+hide_mouse = true
 
 [node name="PigeonBroom" parent="." index="5" unique_id=2064054785 instance=ExtResource("2_kirvr")]
 
