@@ -3,13 +3,25 @@
 [ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_rd5ky"]
 [ext_resource type="PackedScene" uid="uid://1qtw15oqfu8a" path="res://microgames/rocket_repair/rocket_hole.tscn" id="2_6iksm"]
 [ext_resource type="Script" uid="uid://ddmmfdjg1syh2" path="res://microgames/rocket_repair/rocket_repair.gd" id="2_wkg5i"]
+[ext_resource type="AudioStream" uid="uid://c4h7k8pdhh60u" path="res://assets/audio/music/Problemsolving.ogg" id="3_3w1g0"]
+[ext_resource type="Texture2D" uid="uid://dxhc3031qjjju" path="res://microgames/rocket_repair/rocket-halftone.png" id="3_or628"]
 [ext_resource type="PackedScene" uid="uid://bk4gmp70cc54k" path="res://microgames/rocket_repair/rocket_panel.tscn" id="3_wkg5i"]
+[ext_resource type="Texture2D" uid="uid://wm2r60q0ueox" path="res://microgames/rocket_repair/assets/rocket-side-halftone.png" id="5_im2dg"]
+[ext_resource type="Shader" uid="uid://cjjcp442txi2y" path="res://microgames/pie_time/mask.gdshader" id="8_q6dhj"]
+[ext_resource type="Texture2D" uid="uid://b6w6mj3xi1mo" path="res://microgames/rocket_repair/assets/AstronautJeff.png" id="9_gkxda"]
+[ext_resource type="PackedScene" uid="uid://dt3yrl5pns44y" path="res://components/hopping.tscn" id="10_gkxda"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dlgio"]
+shader = ExtResource("8_q6dhj")
+shader_parameter/masking_color = Color(0, 0, 0, 1)
+shader_parameter/masking_range = 0.1
 
 [node name="RocketRepair" unique_id=1956794833 instance=ExtResource("1_rd5ky")]
 mouse_filter = 2
 script = ExtResource("2_wkg5i")
 prompt = "Fix it up!"
 time_limit = 7.0
+song = ExtResource("3_3w1g0")
 
 [node name="VBoxContainer" parent="MarginContainer" parent_id_path=PackedInt32Array(866576842) index="0" unique_id=360461297]
 mouse_filter = 2
@@ -20,13 +32,34 @@ mouse_filter = 2
 [node name="ProgressBar" parent="MarginContainer/VBoxContainer" index="1" unique_id=184280485]
 mouse_filter = 2
 
-[node name="Holes" type="Node2D" parent="." index="5" unique_id=1934608099]
+[node name="RocketHalftone" type="Sprite2D" parent="." index="5" unique_id=1160668705]
+visible = false
+position = Vector2(1098, -72.94116)
+scale = Vector2(2.228758, 2.228758)
+texture = ExtResource("3_or628")
+
+[node name="RocketSideHalftone" type="Sprite2D" parent="." index="6" unique_id=423679629]
+position = Vector2(1006, 185)
+scale = Vector2(1.7904624, 1.6588889)
+texture = ExtResource("5_im2dg")
+
+[node name="Holes" type="Node2D" parent="." index="7" unique_id=1934608099]
 
 [node name="RocketHole" parent="Holes" index="0" unique_id=709104314 instance=ExtResource("2_6iksm")]
 position = Vector2(1139, 245)
+scale = Vector2(0.75, 0.75)
 
-[node name="Panels" type="Node2D" parent="." index="6" unique_id=1361732386]
+[node name="Panels" type="Node2D" parent="." index="8" unique_id=1361732386]
 
 [node name="Panel" parent="Panels" index="0" unique_id=1859559947 instance=ExtResource("3_wkg5i")]
-position = Vector2(1236, 782)
+position = Vector2(346, 702)
+scale = Vector2(0.75, 0.75)
 monitorable = false
+
+[node name="Circle" type="Sprite2D" parent="." index="11" unique_id=1442011617]
+material = SubResource("ShaderMaterial_dlgio")
+position = Vector2(1140, 389)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_gkxda")
+
+[node name="Hopping" parent="Circle" index="0" unique_id=1632497499 instance=ExtResource("10_gkxda")]

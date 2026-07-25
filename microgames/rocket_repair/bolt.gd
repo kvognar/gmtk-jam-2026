@@ -14,6 +14,8 @@ func _ready() -> void:
 
 func activate() -> void:
 	input_pickable = true
+	$Sprite2D.modulate = Color('F7E28F')
+	$AnimationPlayer.play("shine")
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed('action'):
@@ -28,5 +30,6 @@ func _process(delta: float) -> void:
 			affixed = true
 			input_pickable = false
 			bolted.emit()
+			$Sprite2D.modulate = Color.WHITE
 		if Input.is_action_just_released('action'):
 			bolting = false

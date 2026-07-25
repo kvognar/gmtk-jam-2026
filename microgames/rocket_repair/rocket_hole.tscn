@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1qtw15oqfu8a"]
 
-[ext_resource type="Texture2D" uid="uid://cfbvxdvg6gg0c" path="res://microgames/rocket_repair/rocket_hole.png" id="1_7y48m"]
+[ext_resource type="Texture2D" uid="uid://cfbvxdvg6gg0c" path="res://microgames/rocket_repair/assets/rocket_hole.png" id="1_7y48m"]
 [ext_resource type="Script" uid="uid://crp8kxi7lqolu" path="res://microgames/rocket_repair/rocket_hole.gd" id="1_sms8a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejdy6"]

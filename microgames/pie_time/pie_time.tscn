@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://co6xrau5xagxq"]
+
+[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_i8u8l"]
+[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="2_4a6bq"]
+[ext_resource type="Texture2D" uid="uid://cfbvxdvg6gg0c" path="res://microgames/rocket_repair/assets/rocket_hole.png" id="3_e01st"]
+[ext_resource type="Shader" uid="uid://cjjcp442txi2y" path="res://microgames/pie_time/mask.gdshader" id="3_krhuc"]
+[ext_resource type="Texture2D" uid="uid://cta7lqcugxlyk" path="res://microgames/rocket_repair/assets/AstronautJeff.png" id="5_dwwie"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3d6nw"]
+light_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ejdy6"]
+resource_local_to_scene = true
+polygon = PackedVector2Array(904, -168, 1028, -155, 1014, -98, 963, -47, 888, -65, 847, -119)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e01st"]
+shader = ExtResource("3_krhuc")
+shader_parameter/masking_color = Color(0, 0, 0, 1)
+shader_parameter/masking_range = 0.1
+
+[node name="PieTime" unique_id=1956794833 instance=ExtResource("1_i8u8l")]
+prompt = "Pie!"
+
+[node name="ColorRect2" type="ColorRect" parent="." index="5" unique_id=453737586]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 506.0
+offset_right = 928.0
+offset_bottom = 546.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="6" unique_id=699137967]
+material = SubResource("CanvasItemMaterial_3d6nw")
+position = Vector2(1102, 408)
+scale = Vector2(3, 3)
+texture = ExtResource("2_4a6bq")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="7" unique_id=1581249840]
+position = Vector2(2, 332)
+occluder = SubResource("OccluderPolygon2D_ejdy6")
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="8" unique_id=245347270]
+position = Vector2(1129, 387)
+scale = Vector2(4.7265625, 4.1171875)
+energy = 0.0
+texture = ExtResource("2_4a6bq")
+
+[node name="RocketHole" type="Sprite2D" parent="." index="11" unique_id=89195342]
+position = Vector2(449, 635)
+texture = ExtResource("3_e01st")
+
+[node name="Circle" type="Sprite2D" parent="." index="12" unique_id=621327419]
+material = SubResource("ShaderMaterial_e01st")
+position = Vector2(518, 860)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_dwwie")

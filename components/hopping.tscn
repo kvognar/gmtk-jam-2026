@@ -4,7 +4,7 @@
 
 [node name="Hopping" type="Node" unique_id=1632497499]
 script = ExtResource("1_8g5yo")
-gravity = 10.0
-impulse = 20.0
+gravity = 10000.0
+impulse = 1000.0
 min_jump_wait = 0.5
 max_jump_wait = 1.0

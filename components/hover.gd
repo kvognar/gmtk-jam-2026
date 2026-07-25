@@ -6,6 +6,7 @@ extends Node
 var base_position: Vector2
 var elapsed_time := 0.0
 var angle_vector: Vector2
+var enabled := true
 
 func _ready() -> void:
 	base_position = get_parent().position
@@ -13,5 +14,14 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	elapsed_time += delta
-	get_parent().position = base_position + (angle_vector * amplitude * sin(elapsed_time))
+	if enabled:
+		elapsed_time += delta
+		get_parent().position = base_position + (angle_vector * amplitude * sin(elapsed_time))
+
+func disable() -> void:
+	enabled = false 
+	elapsed_time = 0
+	get_parent().position = base_position
+
+func enable() -> void:
+	enabled = true
