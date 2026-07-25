@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgibssfk5vj5v"]
 
 [ext_resource type="Script" uid="uid://1ypbequ14l56" path="res://entities/pigeon_broom.gd" id="1_ghjjy"]
-[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_tlwo6"]
+[ext_resource type="Texture2D" uid="uid://b3gvm4moqc6fc" path="res://assets/sprites/broom.png" id="2_ghjjy"]
 
 [sub_resource type="Animation" id="Animation_ghjjy"]
 length = 0.001
@@ -63,8 +63,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1tlpq"]
-radius = 60.0
-height = 228.0
+radius = 94.57
+height = 1024.0
 
 [node name="PigeonBroom" type="Node2D" unique_id=2064054785]
 script = ExtResource("1_ghjjy")
@@ -76,15 +76,14 @@ libraries/ = SubResource("AnimationLibrary_vb1sx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=410928618]
 position = Vector2(0, -156.99997)
-scale = Vector2(1, 3.7070313)
-texture = ExtResource("1_tlwo6")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ghjjy")
 
 [node name="Area2D" type="Area2D" parent="Pivot/Sprite2D" unique_id=620557562]
-position = Vector2(0, -2.0580874e-06)
+position = Vector2(0, -312.00006)
 scale = Vector2(0.99999994, 0.26975763)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Sprite2D/Area2D" unique_id=816495494]
-position = Vector2(-2, -153)
 shape = SubResource("CapsuleShape2D_1tlpq")
 disabled = true
 
