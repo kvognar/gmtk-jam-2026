@@ -1,4 +1,4 @@
-extends NinePatchRect
+extends PanelContainer
 class_name Tape
 
 @export var text: String
