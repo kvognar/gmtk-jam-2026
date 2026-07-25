@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="2_3ht7m"]
 [ext_resource type="AudioStream" uid="uid://bm6vve3gh83ff" path="res://assets/audio/music/Shinjuku Isn't Overrated.ogg" id="3_iaa0p"]
 [ext_resource type="PackedScene" uid="uid://d16qt40vwnvl1" path="res://components/interest_layer.tscn" id="4_asc8w"]
+[ext_resource type="Texture2D" uid="uid://cfxsnmhq14bb1" path="res://assets/sprites/test_id.png" id="5_6a7ib"]
 [ext_resource type="PackedScene" uid="uid://i10vqqnnp413" path="res://ui/tape.tscn" id="5_rmyh0"]
 
 [node name="Microgame" type="Control" unique_id=1956794833]
@@ -18,17 +19,6 @@ preview_image = ExtResource("2_3ht7m")
 song = ExtResource("3_iaa0p")
 
 [node name="InterestLayer" parent="." unique_id=1085978377 instance=ExtResource("4_asc8w")]
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=842226354]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.009742783, 0, 0.33725142, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=761398493]
 wait_time = 5.0
@@ -55,10 +45,18 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=184280485]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1305033777]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1554912526]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=184280485]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+size_flags_horizontal = 3
 max_value = 5.0
 value = 5.0
 show_percentage = false
@@ -94,5 +92,14 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="PromptTimer" type="Timer" parent="." unique_id=1339207167]
+
+[node name="ID" type="TextureRect" parent="." unique_id=2037154648]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 586.0
+offset_right = 219.0
+offset_bottom = 886.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("5_6a7ib")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
