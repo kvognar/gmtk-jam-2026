@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bwyuhtyw2d1xa"]
+
+[ext_resource type="PackedScene" uid="uid://luoqa2dbhtbb" path="res://microgames/paparazzi/photographer.tscn" id="1_7gbcq"]
+[ext_resource type="Texture2D" uid="uid://dd2m6o01w7o8n" path="res://microgames/paparazzi/assets/paparazzi2.png" id="2_fp32e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp32e"]
+resource_local_to_scene = true
+size = Vector2(396, 160.99998)
+
+[node name="Photographer" unique_id=1787866726 instance=ExtResource("1_7gbcq")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1528119636]
+texture = ExtResource("2_fp32e")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1642985058]
+position = Vector2(3.5, -5.000004)
+shape = SubResource("RectangleShape2D_fp32e")

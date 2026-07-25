@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://luoqa2dbhtbb"]
+
+[ext_resource type="Script" uid="uid://mr8er160tqta" path="res://microgames/paparazzi/photographer.gd" id="1_dpxdj"]
+[ext_resource type="Texture2D" uid="uid://bokqpl8knoht8" path="res://microgames/paparazzi/assets/paparazzi1.png" id="2_dfphn"]
+[ext_resource type="PackedScene" uid="uid://dt3yrl5pns44y" path="res://components/hopping.tscn" id="3_sdppg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8g5yo"]
+resource_local_to_scene = true
+size = Vector2(201.00003, 263)
+
+[sub_resource type="Animation" id="Animation_dfphn"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_dpxdj"]
+resource_name = "hop"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.038623415, 0, 0, 0, 0, -0.04470992, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.23174047, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -20, -0.038623415, 3.3333335, 0, 0, 0, -0.04470992, -3.3333335, 0, 0),
+"times": PackedFloat32Array(0, 0.23174047, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dfphn"]
+_data = {
+&"RESET": SubResource("Animation_dfphn"),
+&"hop": SubResource("Animation_dpxdj")
+}
+
+[node name="Photographer" type="CharacterBody2D" unique_id=1787866726]
+script = ExtResource("1_dpxdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1528119636]
+texture = ExtResource("2_dfphn")
+
+[node name="Hopping" parent="Sprite2D" unique_id=1632497499 instance=ExtResource("3_sdppg")]
+gravity = 10000.0
+impulse = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1642985058]
+position = Vector2(3.5000079, -1.4999962)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_8g5yo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1945561176]
+libraries/ = SubResource("AnimationLibrary_dfphn")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1364645211]

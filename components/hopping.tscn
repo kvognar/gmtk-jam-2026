@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dt3yrl5pns44y"]
+
+[ext_resource type="Script" uid="uid://dv4vxhep8vbr1" path="res://components/hopping.gd" id="1_8g5yo"]
+
+[node name="Hopping" type="Node" unique_id=1632497499]
+script = ExtResource("1_8g5yo")
+gravity = 10.0
+impulse = 20.0
+min_jump_wait = 0.5
+max_jump_wait = 1.0

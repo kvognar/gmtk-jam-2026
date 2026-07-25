@@ -13,18 +13,6 @@ var colors = [
 	{"color": Color8(245, 245, 245), "dark":false}  ## white, F0F0F0, LIGHT
 ]
 
-const COLORS: Array[Color] = [
-	Color('000000'),
-	Color('FFFFFF'),
-	Color('3C779B'),
-	Color('A397AB'),
-	Color('B0464E'),
-	Color('F49E37'),
-	Color('F7E28F')
-	
-]
-
-
 ## again quick and dirty, because I do't want to deal with searching arrays, no 0 or 6 because we want color, not black and white
 var light_colors = [1, 3]
 var dark_colors = [2, 4, 5]

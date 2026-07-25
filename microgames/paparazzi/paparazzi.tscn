@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://jeifa2ceu0l3"]
+
+[ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_c7drm"]
+[ext_resource type="PackedScene" uid="uid://luoqa2dbhtbb" path="res://microgames/paparazzi/photographer.tscn" id="2_dgqdq"]
+[ext_resource type="Script" uid="uid://c7sja0jxjmsof" path="res://microgames/paparazzi/paparazzi.gd" id="2_epbu8"]
+[ext_resource type="AudioStream" uid="uid://dvu4kjdq47nre" path="res://assets/audio/paparazzi/paparazzi_group.ogg" id="3_17ayv"]
+[ext_resource type="PackedScene" uid="uid://bwyuhtyw2d1xa" path="res://microgames/paparazzi/photographer2.tscn" id="3_jruib"]
+[ext_resource type="PackedScene" uid="uid://v7t6k1fmonra" path="res://microgames/paparazzi/photographer3.tscn" id="4_s16q4"]
+[ext_resource type="AudioStream" uid="uid://cwb2w03o4vqn0" path="res://assets/audio/paparazzi/paparazzi_cameras.ogg" id="4_tplil"]
+[ext_resource type="Texture2D" uid="uid://dhjqdlnwlulvm" path="res://microgames/paparazzi/assets/launchpad-halftone.png" id="7_s16q4"]
+[ext_resource type="PackedScene" uid="uid://cgibssfk5vj5v" path="res://entities/pigeon_broom.tscn" id="8_sofkd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epbu8"]
+resource_local_to_scene = true
+size = Vector2(396, 160.99998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_db8k4"]
+resource_local_to_scene = true
+size = Vector2(297.00003, 364)
+
+[node name="Paparazzi" unique_id=1956794833 instance=ExtResource("1_c7drm")]
+script = ExtResource("2_epbu8")
+prompt = "Scram!"
+
+[node name="LaunchpadHalftone" type="Sprite2D" parent="." index="7" unique_id=25246384]
+position = Vector2(879, 448)
+texture = ExtResource("7_s16q4")
+
+[node name="Photographers" type="Node2D" parent="." index="8" unique_id=4479648]
+
+[node name="Photographer" parent="Photographers" index="0" unique_id=1787866726 instance=ExtResource("2_dgqdq")]
+position = Vector2(1442, 818)
+
+[node name="Photographer5" parent="Photographers" index="1" unique_id=1606759008 instance=ExtResource("2_dgqdq")]
+position = Vector2(684, 820)
+
+[node name="Photographer2" parent="Photographers" index="2" unique_id=471098521 instance=ExtResource("3_jruib")]
+position = Vector2(94, 753)
+
+[node name="Photographer6" parent="Photographers" index="3" unique_id=463824545 instance=ExtResource("3_jruib")]
+position = Vector2(1239, 733)
+
+[node name="Sprite2D" parent="Photographers/Photographer6" index="0" unique_id=1528119636]
+flip_h = true
+
+[node name="CollisionShape2D" parent="Photographers/Photographer6" index="1" unique_id=1642985058]
+shape = SubResource("RectangleShape2D_epbu8")
+
+[node name="Photographer3" parent="Photographers" index="4" unique_id=543112837 instance=ExtResource("4_s16q4")]
+position = Vector2(357, 780)
+
+[node name="Photographer4" parent="Photographers" index="5" unique_id=20635489 instance=ExtResource("4_s16q4")]
+position = Vector2(968, 806)
+
+[node name="Sprite2D" parent="Photographers/Photographer4" index="0" unique_id=1528119636]
+flip_h = true
+
+[node name="CollisionShape2D" parent="Photographers/Photographer4" index="1" unique_id=1642985058]
+shape = SubResource("RectangleShape2D_db8k4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9" unique_id=1786200917]
+stream = ExtResource("3_17ayv")
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="10" unique_id=1007010322]
+stream = ExtResource("4_tplil")
+autoplay = true
+
+[node name="PigeonBroom" parent="." index="11" unique_id=2064054785 instance=ExtResource("8_sofkd")]
+rotation = 2.7925267
+
+[editable path="Photographers/Photographer6"]
+[editable path="Photographers/Photographer4"]
