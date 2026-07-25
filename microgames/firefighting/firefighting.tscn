@@ -12,11 +12,11 @@ prompt = "Fire!"
 song = ExtResource("3_lw17s")
 hide_mouse = true
 
-[node name="Extinguisher" parent="." index="5" unique_id=2082727700 instance=ExtResource("2_le7e8")]
-position = Vector2(809, 867)
-
-[node name="Fires" type="Node2D" parent="." index="6" unique_id=1177640934]
-
-[node name="FuelTankHalftone" type="Sprite2D" parent="." index="9" unique_id=1087225853]
+[node name="FuelTankHalftone" type="Sprite2D" parent="." index="5" unique_id=1087225853]
 position = Vector2(427, 576)
 texture = ExtResource("4_e2n38")
+
+[node name="Extinguisher" parent="." index="6" unique_id=2082727700 instance=ExtResource("2_le7e8")]
+position = Vector2(809, 867)
+
+[node name="Fires" type="Node2D" parent="." index="7" unique_id=1177640934]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ua56xt0r1cro" path="res://microgames/firefighting/extinguisher.gd" id="1_vrime"]
 [ext_resource type="Texture2D" uid="uid://copaieunwcxxj" path="res://microgames/firefighting/assets/fire-extinguisher.png" id="2_vrime"]
+[ext_resource type="AudioStream" uid="uid://cvsjqmmr2qfhu" path="res://assets/audio/aerosol_spray.ogg" id="3_gk8aw"]
 
 [node name="Extinguisher" type="Node2D" unique_id=2082727700]
 script = ExtResource("1_vrime")
@@ -18,3 +19,6 @@ scale = Vector2(1.6666666, 1.6666666)
 
 [node name="Waters" type="Node2D" parent="." unique_id=398632012]
 top_level = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2001978667]
+stream = ExtResource("3_gk8aw")

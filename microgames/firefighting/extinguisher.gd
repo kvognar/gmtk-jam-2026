@@ -9,8 +9,13 @@ var fire_delay = 0
 
 func _process(delta: float) -> void:
 	fire_delay -= delta
-	if Input.is_action_pressed('action') and fire_delay <= 0:
-		create_water()
+	if Input.is_action_pressed('action'):
+		if !$AudioStreamPlayer2D.playing:
+			$AudioStreamPlayer2D.play()
+		if fire_delay <= 0:
+			create_water()
+	else:
+		$AudioStreamPlayer2D.stop()
 	look_at(get_global_mouse_position())
 	rotate(PI / 2)
 	

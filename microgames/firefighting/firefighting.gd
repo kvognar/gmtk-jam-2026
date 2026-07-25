@@ -13,7 +13,6 @@ func _ready() -> void:
 	super()
 
 func _on_fire_extinguished(fire: Node2D) -> void:
-	fire.queue_free()
 	fires_extinguished += 1
 	if fires_extinguished >= num_fires:
 		win()
