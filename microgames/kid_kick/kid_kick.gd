@@ -59,7 +59,10 @@ func _process(delta: float) -> void:
 		$PowerMeter.value =  value
 
 	if Input.is_action_just_pressed('action') && playing:
-		await win() if on_target else await fail()
+		if on_target:
+			win()
+		else:
+			fail()
 		
 	if blasting_off:
 		$KidSprite.rotation += delta * ROTATION_SPEED

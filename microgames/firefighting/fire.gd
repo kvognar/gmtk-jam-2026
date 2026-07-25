@@ -5,7 +5,7 @@ var current_health = max_health
 
 signal extinguished
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if current_health <= 0:
 		return
 	current_health -= 10
