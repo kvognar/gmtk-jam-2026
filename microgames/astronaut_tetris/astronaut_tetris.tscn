@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_f55m4"]
 [ext_resource type="Script" uid="uid://bpln2dw1ctmlc" path="res://microgames/astronaut_tetris/astronaut_tetris.gd" id="2_f3xhg"]
-[ext_resource type="Texture2D" uid="uid://wu6ecwlmov2l" path="res://assets/textures/chair_placeholder.png" id="3_a8k54"]
-[ext_resource type="Texture2D" uid="uid://me2vyjp8v2pm" path="res://assets/textures/stick_figure_placeholder.png" id="4_pkedx"]
+[ext_resource type="Texture2D" uid="uid://c44ie5wvjfy2x" path="res://assets/textures/astronaut_tetris/chair.png" id="3_wc6vg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4ys5s"]
-radius = 131.02
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f3xhg"]
+radius = 88.0
+height = 360.0
 
 [node name="Microgame" unique_id=1956794833 instance=ExtResource("1_f55m4")]
 script = ExtResource("2_f3xhg")
@@ -21,32 +21,25 @@ visible = true
 visible = true
 
 [node name="CenterContainer" parent="." index="5" unique_id=1036090613]
-offset_left = -11.0
-offset_top = -341.0
-offset_right = -11.0
-offset_bottom = -341.0
+offset_left = 2.0
+offset_top = -232.0
+offset_right = 2.0
+offset_bottom = -232.0
 
-[node name="Astronaut" type="Area2D" parent="." index="6" unique_id=902754246]
-position = Vector2(159, 323)
-
-[node name="AstronautCollision" type="CollisionShape2D" parent="Astronaut" index="0" unique_id=1522799580]
-shape = SubResource("CircleShape2D_4ys5s")
-
-[node name="AstronautSprite" type="Sprite2D" parent="Astronaut" index="1" unique_id=1223954501]
-scale = Vector2(0.3703125, 0.46875)
-texture = ExtResource("4_pkedx")
-
-[node name="Chair" type="Area2D" parent="." index="7" unique_id=1723336476]
+[node name="Chair" type="Area2D" parent="." index="6" unique_id=1723336476]
 position = Vector2(159, 323)
 
 [node name="ChairCollision" type="CollisionShape2D" parent="Chair" index="0" unique_id=1347716657]
 position = Vector2(622, 298)
-shape = SubResource("CircleShape2D_4ys5s")
+shape = SubResource("CapsuleShape2D_f3xhg")
 
 [node name="ChairSprite" type="Sprite2D" parent="Chair" index="1" unique_id=444758739]
 position = Vector2(624, 298)
 scale = Vector2(0.3703125, 0.46875)
-texture = ExtResource("3_a8k54")
+texture = ExtResource("3_wc6vg")
+
+[node name="EntitySpawner" type="Node2D" parent="." index="8" unique_id=307322619]
+position = Vector2(0, 250)
 
 [connection signal="area_entered" from="Chair" to="." method="_on_chair_area_entered"]
 [connection signal="timeout" from="PromptTimer" to="." method="_on_prompt_timer_timeout"]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://db8rqs50ngaau"]
+
+[ext_resource type="Script" uid="uid://fe83qdvnbu16" path="res://entities/tetris_mover.gd" id="1_f71qm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ys5s"]
+radius = 125.0
+
+[node name="TetrisMover" type="Area2D" unique_id=897127010]
+script = ExtResource("1_f71qm")
+
+[node name="TetrisCollision" type="CollisionShape2D" parent="." unique_id=459740322]
+shape = SubResource("CircleShape2D_4ys5s")
+
+[node name="TetrisSprite" type="Sprite2D" parent="." unique_id=1915816110]
+scale = Vector2(0.3703125, 0.46875)
