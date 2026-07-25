@@ -4,9 +4,6 @@
 [ext_resource type="Script" uid="uid://cyoj127ukcmcg" path="res://workstation/microgame_container.gd" id="1_tf7i1"]
 [ext_resource type="Resource" uid="uid://br3v8kg43bixv" path="res://rooms/launchpad.tres" id="2_bll85"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tf7i1"]
-viewport_path = NodePath("SubViewport")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_tf7i1"]
 size = Vector3(0.33972168, 0.2565918, 0.44726563)
 
@@ -14,25 +11,34 @@ size = Vector3(0.33972168, 0.2565918, 0.44726563)
 script = ExtResource("1_tf7i1")
 room = ExtResource("2_bll85")
 
-[node name="GameScreen" type="TextureRect" parent="." unique_id=1720335106]
+[node name="GameScreen" type="SubViewportContainer" parent="." unique_id=342889695]
+unique_name_in_owner = true
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
-texture = SubResource("ViewportTexture_tf7i1")
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=189914907]
+[node name="SubViewport" type="SubViewport" parent="GameScreen" unique_id=189914907]
+unique_name_in_owner = true
 disable_3d = true
-handle_input_locally = false
 audio_listener_enable_2d = true
+physics_object_picking = true
 size = Vector2i(1600, 900)
 render_target_update_mode = 4
 
-[node name="Microgame2" parent="SubViewport" unique_id=1956794833 instance=ExtResource("1_on6lx")]
+[node name="Microgame2" parent="GameScreen/SubViewport" unique_id=1956794833 instance=ExtResource("1_on6lx")]
 unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="GameScreen/SubViewport" unique_id=1290398556]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=684932858]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2047067590]
+shape = SubResource("BoxShape3D_tf7i1")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1876793938]
 
 [node name="PreviewImage" type="TextureRect" parent="SubViewport" unique_id=162483242]
 unique_name_in_owner = true
@@ -43,12 +49,4 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Camera2D" type="Camera2D" parent="SubViewport" unique_id=1290398556]
-
-[node name="Area3D" type="Area3D" parent="." unique_id=684932858]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2047067590]
-shape = SubResource("BoxShape3D_tf7i1")
-
-[connection signal="gui_input" from="GameScreen" to="." method="_on_game_screen_gui_input"]
 [connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

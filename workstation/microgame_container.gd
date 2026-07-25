@@ -7,6 +7,7 @@ var current_game: Microgame
 
 var games: Array[PackedScene]
 var current_game_index := 0
+var running := false
 
 signal failure
 signal success
@@ -17,21 +18,17 @@ func _ready() -> void:
 	if get_tree().root == get_parent():
 		print_debug('running in test mode')
 		start_game()
-
-# We're using a TextureRect as a proxy for the viewport, so events need to be forwarded along
-func _on_game_screen_gui_input(event: InputEvent) -> void:
-	$SubViewport.push_input(event)
 	
 func prepare_game() -> void:
 	current_game = games[current_game_index].instantiate()
 	current_game_index += 1
 	if current_game_index >= games.size():
 		current_game_index = 0
-	for child in $SubViewport.get_children():
+	for child in %SubViewport.get_children():
 		if !child.is_class('TextureRect'):
 			child.queue_free()
 	%PreviewImage.texture = room.preview
-	$SubViewport.add_child(current_game)
+	%SubViewport.add_child(current_game)
 	current_game.process_mode = Node.PROCESS_MODE_DISABLED
 
 func start_game() -> void:
@@ -40,6 +37,7 @@ func start_game() -> void:
 	current_game.failure.connect(_on_game_fail)
 	current_game.success.connect(_on_game_success)
 	show_screen()
+	running = true
 	current_game.process_mode = Node.PROCESS_MODE_INHERIT
 	
 func fade_preview() -> void:
@@ -60,10 +58,11 @@ func _on_game_success() -> void:
 	hide_screen()
 	
 func show_screen() -> void:
-	$GameScreen.show()
+	%GameScreen.show()
 	
 func hide_screen() -> void:
-	$GameScreen.hide()
+	running = false
+	%GameScreen.hide()
 	prepare_game()
 
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:

@@ -16,7 +16,7 @@ func activate() -> void:
 	input_pickable = true
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if Input.is_action_just_pressed('action'):
+	if event.is_action_pressed('action'):
 		bolting = true
 
 func _process(delta: float) -> void:

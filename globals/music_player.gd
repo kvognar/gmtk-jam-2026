@@ -23,7 +23,6 @@ func crossfade(from_track: AudioStreamPlayer, to_track: AudioStreamPlayer) -> vo
 	tween_in.tween_property(to_track, 'volume_db', 0, 0.5)
 	current_player = to_track
 	to_track.play()
-	tween_in.finished
 
 
 #func _process(delta: float) -> void:

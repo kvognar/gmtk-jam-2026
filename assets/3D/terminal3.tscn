@@ -22,12 +22,6 @@ albedo_texture = SubResource("ViewportTexture_1nske")
 [sub_resource type="BoxShape3D" id="BoxShape3D_wqjaw"]
 size = Vector3(0.0503418, 0.0994751, 0.042558596)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_aed1g"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_nv02p"]
-viewport_path = NodePath("SubViewport")
-
 [node name="terminal3" type="Node3D" unique_id=1116731443]
 
 [node name="terminal" parent="." unique_id=1500894608 instance=ExtResource("1_1kp1j")]
@@ -87,20 +81,22 @@ shape = SubResource("BoxShape3D_wqjaw")
 [node name="MicrogameContainer" parent="." unique_id=686309062 instance=ExtResource("3_1kp1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21761441, 0.56795865, -0.2561602)
 
-[node name="GameScreen" parent="MicrogameContainer" index="0" unique_id=1720335106]
-texture = SubResource("ViewportTexture_aed1g")
+[node name="SubViewport" parent="MicrogameContainer/GameScreen" parent_id_path=PackedInt32Array(686309062, 342889695) index="0" unique_id=189914907]
+handle_input_locally = false
+render_target_update_mode = 0
 
-[node name="Microgame2" parent="MicrogameContainer/SubViewport" parent_id_path=PackedInt32Array(686309062, 189914907) index="0" unique_id=1956794833]
+[node name="Microgame2" parent="MicrogameContainer/GameScreen/SubViewport" index="0" unique_id=1956794833]
 preview_image = null
 
 [node name="MicrogameContainer2" parent="." unique_id=1526180774 instance=ExtResource("3_1kp1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24237159, 0.54900855, -0.21812828)
 room = ExtResource("4_38bu6")
 
-[node name="GameScreen" parent="MicrogameContainer2" index="0" unique_id=1720335106]
-texture = SubResource("ViewportTexture_nv02p")
+[node name="SubViewport" parent="MicrogameContainer2/GameScreen" parent_id_path=PackedInt32Array(1526180774, 342889695) index="0" unique_id=189914907]
+handle_input_locally = false
+render_target_update_mode = 0
 
-[node name="Microgame2" parent="MicrogameContainer2/SubViewport" parent_id_path=PackedInt32Array(1526180774, 189914907) index="0" unique_id=1956794833]
+[node name="Microgame2" parent="MicrogameContainer2/GameScreen/SubViewport" index="0" unique_id=1956794833]
 preview_image = null
 
 [editable path="terminal"]
