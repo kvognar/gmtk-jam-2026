@@ -26,8 +26,10 @@ texture = SubResource("ViewportTexture_tf7i1")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=189914907]
 disable_3d = true
+handle_input_locally = false
 audio_listener_enable_2d = true
 size = Vector2i(1600, 900)
+render_target_update_mode = 4
 
 [node name="Microgame2" parent="SubViewport" unique_id=1956794833 instance=ExtResource("1_on6lx")]
 unique_name_in_owner = true
@@ -39,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Camera2D" type="Camera2D" parent="SubViewport" unique_id=1290398556]
 

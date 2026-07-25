@@ -11,24 +11,19 @@ signal failure
 
 var playing: bool = false
 
+
 func _ready() -> void:
 	scale = Vector2(0, 0)
 	$Timer.wait_time = time_limit
-	
-	$PreviewImage.texture = preview_image
-	
+		
 	if get_parent() == get_tree().root:
 		begin()
 
-func fade_preview() -> void:
-	var tween = get_tree().create_tween()
-	tween.tween_property($PreviewImage, 'modulate', Color('ffffff00'), 0.5)
 	
 func _draw() -> void:
 	pass
 
 func begin() -> void:
-	fade_preview()
 	scale=Vector2(1, 1)
 	%Prompt.text = prompt;
 	%Prompt.show()

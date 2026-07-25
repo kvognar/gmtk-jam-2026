@@ -5,13 +5,25 @@ var VARIANCE := 300.0
 
 var colors = [
 	{"color": Color8(10, 10, 10), "dark":true},    ## black, 050609, DARK
-	{"color": Color8(247, 226, 143), "dark":true},  ## yellow, F7E28F, LIGHT
+	{"color": Color8(247, 226, 143), "dark":false},  ## yellow, F7E28F, LIGHT
 	{"color": Color8(60, 119, 155), "dark":true},   ## blue, 3C779B, DARK
-	{"color": Color8(163, 151, 171), "dark":true},  ## purple, A397AB, LIGHT
+	{"color": Color8(163, 151, 171), "dark":false},  ## purple, A397AB, LIGHT
 	{"color": Color8(176, 70, 78), "dark":true},    ## red, B0464E, DARK
 	{"color": Color8(244, 158, 55), "dark":true},   ## orange, F49E37, DARK
-	{"color": Color8(245, 245, 245), "dark":true}  ## white, F0F0F0, LIGHT
+	{"color": Color8(245, 245, 245), "dark":false}  ## white, F0F0F0, LIGHT
 ]
+
+const COLORS: Array[Color] = [
+	Color('000000'),
+	Color('FFFFFF'),
+	Color('3C779B'),
+	Color('A397AB'),
+	Color('B0464E'),
+	Color('F49E37'),
+	Color('F7E28F')
+	
+]
+
 
 ## again quick and dirty, because I do't want to deal with searching arrays, no 0 or 6 because we want color, not black and white
 var light_colors = [1, 3]
@@ -47,6 +59,7 @@ func create_interest_layer()-> void:
 	VARIANCE = min(WIDTH/6, HEIGHT/3)
 	
 	bg_color_index = randi() % colors.size()
+	$Wallpaper.modulate = colors[bg_color_index].color
 	bg_is_dark = colors[bg_color_index].dark
 	
 	queue_redraw()
