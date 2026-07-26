@@ -69,6 +69,7 @@ func win() -> void:
 	%Result.text = 'Mission complete.'
 	%ResultContainer.show()
 	playing = false
+	radio_win()
 	await get_tree().create_timer(win_time).timeout
 	success.emit()
 	show_mouse()
@@ -88,6 +89,12 @@ func radio_loss() -> void:
 		var radio: WalkieTalkie = get_tree().get_first_node_in_group('walkie_talkie')
 		if radio:
 			radio.set_audio(lose_line)
+
+func radio_win() -> void:
+	if win_line:
+		var radio: WalkieTalkie = get_tree().get_first_node_in_group('walkie_talkie')
+		if radio:
+			radio.set_audio(win_line)
 
 func _on_timer_timeout() -> void:
 	time_up()

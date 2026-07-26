@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b60ewwomjuqc8" path="res://assets/audio/music/Are Things Getting Better?.ogg" id="3_lw17s"]
 [ext_resource type="Texture2D" uid="uid://c7hyk322w3xxb" path="res://microgames/firefighting/assets/fuel_tank_halftone.png" id="4_e2n38"]
 [ext_resource type="AudioStream" uid="uid://15dkmkurhseh" path="res://assets/audio/voice/fire_2.ogg" id="5_kewvd"]
+[ext_resource type="AudioStream" uid="uid://ddvhxxafb52rx" path="res://assets/audio/voice/goodjob_6.ogg" id="6_nc0tc"]
 
 [node name="Firefighting" unique_id=1956794833 instance=ExtResource("1_skxcj")]
 script = ExtResource("2_gkdu3")
@@ -14,6 +15,7 @@ preview_image = ExtResource("4_e2n38")
 song = ExtResource("3_lw17s")
 hide_mouse = true
 intro_line = ExtResource("5_kewvd")
+win_line = ExtResource("6_nc0tc")
 
 [node name="FuelTankHalftone" type="Sprite2D" parent="." index="5" unique_id=1087225853]
 position = Vector2(427, 576)

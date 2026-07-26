@@ -8,7 +8,7 @@
 [ext_resource type="Theme" uid="uid://cyxf867p4jpul" path="res://papercut.tres" id="5_drmw1"]
 [ext_resource type="PackedScene" uid="uid://i10vqqnnp413" path="res://ui/tape.tscn" id="5_rmyh0"]
 
-[node name="Microgame" type="Control" unique_id=1956794833]
+[node name="Microgame2" type="Control" unique_id=1956794833]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
