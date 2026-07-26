@@ -49,6 +49,7 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1554912526]
+visible = false
 custom_minimum_size = Vector2(210, 0)
 layout_mode = 2
 
@@ -94,6 +95,7 @@ layout_mode = 2
 [node name="PromptTimer" type="Timer" parent="." unique_id=1339207167]
 
 [node name="ID" type="TextureRect" parent="." unique_id=2037154648]
+visible = false
 layout_mode = 0
 offset_left = 23.0
 offset_top = 586.0
