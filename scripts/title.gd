@@ -20,6 +20,8 @@ func _ready():
 	ambiance.play()
 	theme.play()
 	rocket_area.input_event.connect(_on_rocket_clicked)
+	if OS.get_name() == 'Web':
+		%Quit.hide()
 
 func _on_rocket_clicked(_camera, event, _position, _normal, _shape_idx) -> void:
 	if not (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT):
@@ -54,3 +56,13 @@ func _on_play_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_credits_pressed() -> void:
+	$TitleUI.hide()
+	$Credits.show()
+
+
+func _on_credits_back_button_pressed() -> void:
+	$TitleUI.show()
+	$Credits.hide()

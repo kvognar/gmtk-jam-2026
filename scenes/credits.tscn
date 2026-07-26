@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://t3ia52bsqfx3"]
+
+[ext_resource type="Theme" uid="uid://cyxf867p4jpul" path="res://papercut.tres" id="1_0bpdh"]
+[ext_resource type="Texture2D" uid="uid://dsgb66hmmov4d" path="res://assets/textures/motivationalposter.png" id="2_2ckv8"]
+
+[node name="Credits" type="Control" unique_id=631954412]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1658688562]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0bpdh")
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1368250875]
+layout_mode = 2
+theme = ExtResource("1_0bpdh")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=2081188159]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1514986073]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=553125683]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BackButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Control" unique_id=1966871740]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 17.0
+offset_right = 186.0
+offset_bottom = 45.0
+text = "<< back to title"
+flat = true
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1493516305]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1487286514]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2079965228]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1425849047]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1237544888]
+layout_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=460572576]
+layout_mode = 2
+
+[node name="KevinV" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer4" unique_id=2132739149]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer4/KevinV" unique_id=298815171]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Kevin Vognar"
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer4/KevinV" unique_id=759477615]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Programming
+Game design
+A couple pigeon photos"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=519451353]
+layout_mode = 2
+
+[node name="KevinH" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2" unique_id=1507114378]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/KevinH" unique_id=1819237330]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Kevin Huang"
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer2/KevinH" unique_id=93708929]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Programming
+Game design"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1493462790]
+layout_mode = 2
+
+[node name="Leo" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer3" unique_id=1457179685]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer3/Leo" unique_id=700295981]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Leo Wiggins"
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer3/Leo" unique_id=346272160]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "3D art
+Illustration
+Music
+Voiceover
+Programming
+Game design"
+
+[node name="Control2" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2108956828]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=614608266]
+layout_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=928386895]
+layout_mode = 2
+
+[node name="Lee" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer4" unique_id=940211493]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer4/Lee" unique_id=1546126463]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Lee Cody"
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer4/Lee" unique_id=2108564776]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Art direction
+Game design
+Graphic design"
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=743303457]
+layout_mode = 2
+
+[node name="Ian" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer5" unique_id=1818525854]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer5/Ian" unique_id=2033695847]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Ian Sentelik"
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer5/Ian" unique_id=1409572126]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Game design
+Illustration
+Writing"
+
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1285509791]
+layout_mode = 2
+
+[node name="Laurel" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer6" unique_id=1366408438]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer6/Laurel" unique_id=625011903]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Laurel Deel"
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/MarginContainer6/Laurel" unique_id=684376903]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Game design
+Graphic design
+Production"
+
+[node name="Control3" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1837604078]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.38
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Control3" unique_id=1491671646]
+layout_mode = 0
+offset_left = -60.999996
+offset_top = -186.99998
+offset_right = 539.0
+offset_bottom = 613.0
+rotation = 0.075049154
+scale = Vector2(0.7, 0.7)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_2ckv8")
+
+[node name="Control3" type="Control" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=254120536]
+layout_mode = 2
+size_flags_vertical = 3

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://sk55jmsihod4" path="res://ui/paper_rip_panel.tscn" id="4_yql1r"]
 [ext_resource type="Theme" uid="uid://cyxf867p4jpul" path="res://papercut.tres" id="5_ia1n6"]
 [ext_resource type="AudioStream" uid="uid://ck6ip6tetwjn6" path="res://assets/audio/music/countdown_title.ogg" id="6_4rr2b"]
+[ext_resource type="PackedScene" uid="uid://t3ia52bsqfx3" path="res://scenes/credits.tscn" id="8_ia1n6"]
 
 [sub_resource type="Environment" id="Environment_wqjaw"]
 background_energy_multiplier = 15.0
@@ -25,43 +26,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1038048445]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 22, 12, -12.005)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1590320087]
+[node name="TitleUI" type="CanvasLayer" parent="." unique_id=1590320087]
 
-[node name="Title" parent="CanvasLayer" unique_id=1830197398 instance=ExtResource("4_yql1r")]
+[node name="Title" parent="TitleUI" unique_id=1830197398 instance=ExtResource("4_yql1r")]
 offset_left = 18.0
 offset_top = 167.0
 offset_right = 959.0
 offset_bottom = 303.0
 theme = ExtResource("5_ia1n6")
 
-[node name="Label" type="Label" parent="CanvasLayer/Title/MarginContainer" parent_id_path=PackedInt32Array(1830197398, 1704292946) index="0" unique_id=1310385765]
+[node name="Label" type="Label" parent="TitleUI/Title/MarginContainer" parent_id_path=PackedInt32Array(1830197398, 1704292946) index="0" unique_id=1310385765]
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "We Have a PROBLEM"
 
-[node name="PaperRipPanel" parent="CanvasLayer" unique_id=1064665724 instance=ExtResource("4_yql1r")]
+[node name="PaperRipPanel" parent="TitleUI" unique_id=1064665724 instance=ExtResource("4_yql1r")]
 offset_left = 195.0
 offset_top = 385.0
 offset_right = 562.0
 offset_bottom = 609.0
 theme = ExtResource("5_ia1n6")
 
-[node name="menu" type="VBoxContainer" parent="CanvasLayer/PaperRipPanel/MarginContainer" parent_id_path=PackedInt32Array(1064665724, 1704292946) index="0" unique_id=563070750]
+[node name="menu" type="VBoxContainer" parent="TitleUI/PaperRipPanel/MarginContainer" parent_id_path=PackedInt32Array(1064665724, 1704292946) index="0" unique_id=563070750]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Play" type="Button" parent="CanvasLayer/PaperRipPanel/MarginContainer/menu" unique_id=1702661742]
+[node name="Play" type="Button" parent="TitleUI/PaperRipPanel/MarginContainer/menu" unique_id=1702661742]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Play the Game!"
 flat = true
 
-[node name="Quit" type="Button" parent="CanvasLayer/PaperRipPanel/MarginContainer/menu" unique_id=127455323]
+[node name="Quit" type="Button" parent="TitleUI/PaperRipPanel/MarginContainer/menu" unique_id=127455323]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
 text = "Quit the Game!"
+flat = true
+
+[node name="Credits" type="Button" parent="TitleUI/PaperRipPanel/MarginContainer/menu" unique_id=760580594]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Credits"
 flat = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1426914645]
@@ -76,8 +84,16 @@ parameters/looping = true
 stream = ExtResource("6_4rr2b")
 parameters/looping = true
 
-[connection signal="pressed" from="CanvasLayer/PaperRipPanel/MarginContainer/menu/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/PaperRipPanel/MarginContainer/menu/Quit" to="." method="_on_quit_pressed"]
+[node name="Credits" type="CanvasLayer" parent="." unique_id=1135531531]
+visible = false
 
-[editable path="CanvasLayer/Title"]
-[editable path="CanvasLayer/PaperRipPanel"]
+[node name="Credits" parent="Credits" unique_id=631954412 instance=ExtResource("8_ia1n6")]
+
+[connection signal="pressed" from="TitleUI/PaperRipPanel/MarginContainer/menu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TitleUI/PaperRipPanel/MarginContainer/menu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="TitleUI/PaperRipPanel/MarginContainer/menu/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Credits/Credits/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Control/BackButton" to="." method="_on_credits_back_button_pressed"]
+
+[editable path="TitleUI/Title"]
+[editable path="TitleUI/PaperRipPanel"]
+[editable path="Credits/Credits"]
