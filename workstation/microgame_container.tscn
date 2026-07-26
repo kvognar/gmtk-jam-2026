@@ -35,6 +35,7 @@ unique_name_in_owner = true
 [node name="Camera2D" type="Camera2D" parent="GameScreen/SubViewport" unique_id=1290398556]
 
 [node name="Area3D" type="Area3D" parent="." unique_id=684932858]
+input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2047067590]
 shape = SubResource("BoxShape3D_tf7i1")

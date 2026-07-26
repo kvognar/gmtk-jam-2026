@@ -4,6 +4,8 @@ class_name MicrogameContainer
 var current_game: Microgame
 
 @export var room: Room
+@export var is_main_container := false
+@export var endless_mode := false
 
 var games: Array[PackedScene]
 var current_game_index := 0
@@ -18,6 +20,8 @@ signal complete
 func _ready() -> void:
 	games = room.games
 	radio = get_tree().get_first_node_in_group('walkie_talkie')
+	if is_main_container:
+		radio.announcement_finished.connect(start_game)
 	prepare_game()
 	if get_tree().root == get_parent():
 		print_debug('running in test mode')
@@ -25,7 +29,10 @@ func _ready() -> void:
 	
 func prepare_game() -> void:
 	if current_game_index >= games.size():
-		current_game_index = 0
+		if endless_mode:
+			current_game_index = 0
+		else:
+			return
 
 	current_game = games[current_game_index].instantiate()
 	for child in %SubViewport.get_children():
@@ -67,7 +74,6 @@ func hide_screen() -> void:
 func check_for_finished() -> void:
 	if current_game_index == games.size():
 		complete.emit()
-
 
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event.is_action_pressed("action"):

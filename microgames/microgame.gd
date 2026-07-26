@@ -18,10 +18,8 @@ var playing: bool = false
 func _ready() -> void:
 	scale = Vector2(0, 0)
 	$Timer.wait_time = time_limit
-		
 	if get_parent() == get_tree().root:
 		begin()
-
 	
 func _draw() -> void:
 	pass
@@ -74,7 +72,6 @@ func _process(_delta: float) -> void:
 func time_up() -> void:
 	if !playing:
 		return
-	playing = false
 	%Result.text = 'Time up!!'
 	%Result.show()
 	fail()

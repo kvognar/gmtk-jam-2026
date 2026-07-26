@@ -80,23 +80,16 @@ shape = SubResource("BoxShape3D_wqjaw")
 
 [node name="MicrogameContainer" parent="." unique_id=686309062 instance=ExtResource("3_1kp1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21761441, 0.56795865, -0.2561602)
+is_main_container = true
 
-[node name="SubViewport" parent="MicrogameContainer/GameScreen" parent_id_path=PackedInt32Array(686309062, 342889695) index="0" unique_id=189914907]
-handle_input_locally = false
-render_target_update_mode = 0
-
-[node name="Microgame2" parent="MicrogameContainer/GameScreen/SubViewport" index="0" unique_id=1956794833]
+[node name="Microgame2" parent="MicrogameContainer/GameScreen/SubViewport" parent_id_path=PackedInt32Array(686309062, 189914907) index="0" unique_id=1956794833]
 preview_image = null
 
 [node name="MicrogameContainer2" parent="." unique_id=1526180774 instance=ExtResource("3_1kp1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24237159, 0.54900855, -0.21812828)
 room = ExtResource("4_38bu6")
 
-[node name="SubViewport" parent="MicrogameContainer2/GameScreen" parent_id_path=PackedInt32Array(1526180774, 342889695) index="0" unique_id=189914907]
-handle_input_locally = false
-render_target_update_mode = 0
-
-[node name="Microgame2" parent="MicrogameContainer2/GameScreen/SubViewport" index="0" unique_id=1956794833]
+[node name="Microgame2" parent="MicrogameContainer2/GameScreen/SubViewport" parent_id_path=PackedInt32Array(1526180774, 189914907) index="0" unique_id=1956794833]
 preview_image = null
 
 [editable path="terminal"]
