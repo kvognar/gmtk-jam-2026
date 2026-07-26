@@ -39,6 +39,20 @@ ambient_light_source = 2
 ambient_light_color = Color(0.5682058, 0.42399585, 0.350675, 1)
 ambient_light_energy = 6.92
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_27me4"]
+viewport_path = NodePath("../MicrogameContainer/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4dwm"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_27me4")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6qaqr"]
+viewport_path = NodePath("../MicrogameContainer2/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4oc7"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_6qaqr")
+
 [node name="Workstation" type="Node3D" unique_id=2105439346]
 script = ExtResource("1_j81i1")
 song = ExtResource("2_3cqpm")
@@ -192,6 +206,12 @@ enable_test_input = false
 [node name="terminal3" parent="." unique_id=1116731443 instance=ExtResource("11_6bswh")]
 transform = Transform3D(-4.3711385e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.3711385e-08, 0.78018534, 1.1920929e-07, -0.17246705)
 
+[node name="terminal3_screen1" parent="terminal3/terminal" parent_id_path=PackedInt32Array(1116731443, 1500894608) index="0" unique_id=577929088]
+material_override = SubResource("StandardMaterial3D_x4dwm")
+
+[node name="terminal3_screen2" parent="terminal3/terminal" parent_id_path=PackedInt32Array(1116731443, 1500894608) index="3" unique_id=2036262159]
+material_override = SubResource("StandardMaterial3D_l4oc7")
+
 [node name="walkietalkie" parent="." unique_id=1841322629 instance=ExtResource("23_hxn30")]
 transform = Transform3D(0.6272336, 0, -0.7788312, 0, 1, 0, 0.7788312, 0, 0.6272336, 0.4827326, 0.29250082, -0.7009909)
 
@@ -279,3 +299,8 @@ max_distance = 3.0
 parameters/looping = true
 
 [connection signal="pressed" from="EndingOrchestrator/UI/Return to Title" to="EndingOrchestrator" method="_on_return_to_title_pressed"]
+
+[editable path="terminal3"]
+[editable path="terminal3/terminal"]
+[editable path="terminal3/MicrogameContainer"]
+[editable path="terminal3/MicrogameContainer2"]

@@ -4,6 +4,8 @@ extends Node3D
 
 @onready var countdown: AudioStreamPlayer3D = %countdown
 
+var winning_song = preload("res://assets/audio/music/Tomorrow's Gonna Be Dope.ogg")
+
 var wins := 0
 var losses := 0
 
@@ -27,7 +29,6 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	pass
-
 		
 func _on_game_fail() -> void:
 	MusicPlayer.switch_to(song)
@@ -42,6 +43,7 @@ func _on_game_success() -> void:
 func _on_games_completed() -> void:
 	await get_tree().create_timer(1.5).timeout
 	%EndingOrchestrator.show_ending(wins, losses)
+	MusicPlayer.switch_to(winning_song)
 	print_debug('its all done')
 
 func show_scores() -> void:

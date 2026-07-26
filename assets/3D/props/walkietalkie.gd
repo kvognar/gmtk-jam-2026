@@ -19,4 +19,5 @@ func _on_audio_stream_player_3d_finished() -> void:
 		$AudioStreamPlayer3D.stream = queued_lines.pop_front()
 		$AudioStreamPlayer3D.play()
 	else:
+		pass
 		announcement_finished.emit()
