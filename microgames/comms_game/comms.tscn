@@ -76,6 +76,7 @@ stream = ExtResource("5_psaj7")
 wait_time = 1.25
 
 [node name="Radio" type="Area2D" parent="." index="11" unique_id=1616783302]
+position = Vector2(-207, 60)
 priority = 1
 
 [node name="RadioImage" type="Sprite2D" parent="Radio" index="0" unique_id=962124978]
@@ -84,19 +85,18 @@ scale = Vector2(1.3175539, 1.2697474)
 texture = ExtResource("6_tb5d2")
 
 [node name="Dial" type="Area2D" parent="Radio" index="1" unique_id=1050349489]
+unique_name_in_owner = true
 z_index = 1
-position = Vector2(910.62494, 407.87497)
+position = Vector2(1408, 556)
 scale = Vector2(1.3175539, 1.2697474)
 priority = 1
 
 [node name="DialSprite" type="Sprite2D" parent="Radio/Dial" index="0" unique_id=763621727]
 modulate = Color(0.95686275, 0.61960787, 0.21568628, 1)
-position = Vector2(368.8654, 117.34617)
 scale = Vector2(0.96615237, 0.89105874)
 texture = ExtResource("3_psaj7")
 
 [node name="DialCollision" type="CollisionShape2D" parent="Radio/Dial" index="1" unique_id=360945755]
-position = Vector2(369.62433, 116.55861)
 shape = SubResource("CircleShape2D_4ys5s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Radio" index="2" unique_id=283653093]
@@ -106,4 +106,3 @@ disabled = true
 
 [connection signal="timeout" from="PromptTimer" to="." method="_on_prompt_timer_timeout"]
 [connection signal="input_event" from="Radio/Dial" to="." method="_on_dial_input_event"]
-[connection signal="mouse_exited" from="Radio/Dial" to="." method="_on_dial_mouse_exited"]

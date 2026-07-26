@@ -7,7 +7,6 @@ var target_frequency: int
 var current_frequency: float
 var dial: Node
 var is_dragging: bool = false
-var angular_velocity: float = 0
 
 const FREQ_CHANGE_RATE = 250.0
 const ROTATION_RATE = 2 * PI
@@ -63,8 +62,7 @@ func _process(delta: float) -> void:
 	super(delta)
 	if !playing:
 		return
-	$Radio/Dial/DialSprite.rotation += angular_velocity * delta * ROTATION_RATE
-	if current_frequency >= target_frequency_range.x && current_frequency <= target_frequency_range.y && playing:
+	if current_frequency >= target_frequency_range.x && current_frequency <= target_frequency_range.y && !is_dragging:
 		win()
 
 func _on_prompt_timer_timeout() -> void:
@@ -73,11 +71,24 @@ func _on_prompt_timer_timeout() -> void:
 
 func stop_dragging() -> void:
 	is_dragging = false
-	angular_velocity = 0
 
-func _on_dial_mouse_exited() -> void:
-	print_debug('mouse exited!!!')
-	stop_dragging()
+func _input(event: InputEvent) -> void:
+	if event.is_action_released('action'):
+		stop_dragging()
+	if event is InputEventMouseMotion:
+			if !is_dragging:
+				return
+			
+			var current_mouse_position = get_global_mouse_position()
+			var last_mouse_position = current_mouse_position - event.relative
+			
+			var ba: Vector2 = last_mouse_position - %Dial.global_position
+			var bc: Vector2 = current_mouse_position - %Dial.global_position
+			
+			var new_angle = bc.angle_to(ba)
+			
+			%Dial.rotation -= new_angle
+			update_frequency(new_angle * FREQ_CHANGE_RATE)
 
 func _on_dial_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if !playing:
@@ -87,16 +98,6 @@ func _on_dial_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 		is_dragging = event.pressed
 		if !is_dragging:
 			stop_dragging()
-	elif event is InputEventMouseMotion:
-			if !is_dragging:
-				return
-			
-			#var dial_center_to_mouse: Vector2 = event.position - $Radio/Dial.position
-			var v1 = event.global_position
-			#var directional_vector: Vector2 = v1 + event.relative
-			#print_debug('debug', event.position, dial_center_to_mouse, rad_to_deg(directional_vector.angle()))
-			var clockwise = is_clockwise(v1, event.relative)
-			angular_velocity = -event.relative.angle() if clockwise else event.relative.angle()
 			
 # is other vector clockwise of base
 # https://gamedev.stackexchange.com/questions/45412/understanding-math-used-to-determine-if-vector-is-clockwise-counterclockwise-f
