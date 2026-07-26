@@ -39,8 +39,6 @@ var losses := 0
 func _ready():
 	rocket_home = rocket.position
 
-	camera.position = cam_start_pos
-	camera.rotation_degrees = cam_start_rot
 	camera.make_current() 
 	outdoors.play()
 	indoors.play()
