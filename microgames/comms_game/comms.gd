@@ -82,9 +82,10 @@ func _input(event: InputEvent) -> void:
 			var current_mouse_position = get_global_mouse_position()
 			var last_mouse_position = current_mouse_position - event.relative
 			
+			# We need to rotate by the angle defined by the previous mouse position,
+			# the dial's position, and the current mouse position
 			var ba: Vector2 = last_mouse_position - %Dial.global_position
 			var bc: Vector2 = current_mouse_position - %Dial.global_position
-			
 			var new_angle = bc.angle_to(ba)
 			
 			%Dial.rotation -= new_angle
