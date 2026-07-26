@@ -7,25 +7,64 @@
 [ext_resource type="AudioStream" uid="uid://ds0w3luha1hh1" path="res://assets/audio/dragon-studio-radio-static-323621.mp3" id="5_psaj7"]
 [ext_resource type="Texture2D" uid="uid://tykw3is6q2m3" path="res://assets/textures/Radio-halftone.png" id="6_tb5d2"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ys5s"]
+radius = 94.11389
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_duscq"]
+points = PackedVector2Array(578, 447, 1522, 453, 1503, 745, 594, 730)
+
 [node name="Microgame" unique_id=1956794833 instance=ExtResource("1_ccj6e")]
+mouse_filter = 1
 script = ExtResource("2_gndaa")
 prompt = "Tune the radio! (A/D)"
+time_limit = 5.25
+
+[node name="MarginContainer" parent="." index="2" unique_id=866576842]
+mouse_behavior_recursive = 1
+
+[node name="VBoxContainer" parent="MarginContainer" index="0" unique_id=360461297]
+mouse_filter = 2
+
+[node name="Control" parent="MarginContainer/VBoxContainer" index="0" unique_id=1708068097]
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="HBoxContainer" parent="MarginContainer/VBoxContainer" index="1" unique_id=1305033777]
+mouse_filter = 2
+
+[node name="Control" parent="MarginContainer/VBoxContainer/HBoxContainer" index="0" unique_id=1554912526]
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer" index="1" unique_id=184280485]
+mouse_filter = 2
+mouse_behavior_recursive = 1
 
 [node name="TargetFrequency" type="Label" parent="." index="4" unique_id=1419827306]
+visible = false
 layout_mode = 0
-offset_left = 123.0
-offset_top = 89.0
-offset_right = 243.0
-offset_bottom = 144.0
+offset_left = 938.0
+offset_top = 87.0
+offset_right = 1058.0
+offset_bottom = 142.0
 theme_override_font_sizes/font_size = 40
 
 [node name="CurrentFrequency" type="Label" parent="." index="5" unique_id=980260948]
+visible = false
 layout_mode = 0
-offset_left = 123.0
-offset_top = 156.0
-offset_right = 243.0
-offset_bottom = 211.0
+offset_left = 998.0
+offset_top = 177.0
+offset_right = 1118.0
+offset_bottom = 232.0
 theme_override_font_sizes/font_size = 40
+
+[node name="CenterContainer" parent="." index="6" unique_id=1036090613]
+offset_top = -312.0
+offset_bottom = -312.0
+
+[node name="Prompt" parent="CenterContainer" index="1" unique_id=1619993942]
+z_index = 100
+text = "Tune the radio! (A or D)"
 
 [node name="VictoryVoice" type="AudioStreamPlayer" parent="." index="7" unique_id=506152646]
 stream = ExtResource("4_gndaa")
@@ -33,22 +72,38 @@ stream = ExtResource("4_gndaa")
 [node name="Static" type="AudioStreamPlayer" parent="." index="8" unique_id=185689938]
 stream = ExtResource("5_psaj7")
 
-[node name="CenterContainer" parent="." index="9" unique_id=1036090613]
-offset_left = 122.0
-offset_top = -281.0
-offset_right = 122.0
-offset_bottom = -281.0
+[node name="PromptTimer" parent="." index="9" unique_id=1339207167]
+wait_time = 1.25
 
-[node name="Prompt" parent="CenterContainer" index="1" unique_id=1619993942]
-z_index = 100
-text = "Tune the radio! (A or D)"
+[node name="Radio" type="Area2D" parent="." index="11" unique_id=1616783302]
+priority = 1
 
-[node name="RadioImage" type="Sprite2D" parent="." index="11" unique_id=962124978]
-position = Vector2(938, 455)
+[node name="RadioImage" type="Sprite2D" parent="Radio" index="0" unique_id=962124978]
+position = Vector2(902.99994, 400.99997)
+scale = Vector2(1.3175539, 1.2697474)
 texture = ExtResource("6_tb5d2")
 
-[node name="Dial" type="Sprite2D" parent="RadioImage" index="0" unique_id=763621727]
+[node name="Dial" type="Area2D" parent="Radio" index="1" unique_id=1050349489]
+z_index = 1
+position = Vector2(910.62494, 407.87497)
+scale = Vector2(1.3175539, 1.2697474)
+priority = 1
+
+[node name="DialSprite" type="Sprite2D" parent="Radio/Dial" index="0" unique_id=763621727]
 modulate = Color(0.95686275, 0.61960787, 0.21568628, 1)
-position = Vector2(375, 122)
-scale = Vector2(0.65, 0.65)
+position = Vector2(368.8654, 117.34617)
+scale = Vector2(0.96615237, 0.89105874)
 texture = ExtResource("3_psaj7")
+
+[node name="DialCollision" type="CollisionShape2D" parent="Radio/Dial" index="1" unique_id=360945755]
+position = Vector2(369.62433, 116.55861)
+shape = SubResource("CircleShape2D_4ys5s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radio" index="2" unique_id=283653093]
+position = Vector2(-1, 0)
+shape = SubResource("ConvexPolygonShape2D_duscq")
+disabled = true
+
+[connection signal="timeout" from="PromptTimer" to="." method="_on_prompt_timer_timeout"]
+[connection signal="input_event" from="Radio/Dial" to="." method="_on_dial_input_event"]
+[connection signal="mouse_exited" from="Radio/Dial" to="." method="_on_dial_mouse_exited"]
