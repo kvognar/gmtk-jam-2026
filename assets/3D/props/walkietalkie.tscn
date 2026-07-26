@@ -13,6 +13,12 @@ stream_0/stream = ExtResource("3_nebiw")
 stream_1/stream = ExtResource("4_0qayy")
 stream_2/stream = ExtResource("5_v6sfk")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0qayy"]
+streams_count = 3
+stream_0/stream = ExtResource("3_nebiw")
+stream_1/stream = ExtResource("4_0qayy")
+stream_2/stream = ExtResource("5_v6sfk")
+
 [node name="walkietalkie" unique_id=1841322629 groups=["walkie_talkie"] instance=ExtResource("1_c4xy6")]
 script = ExtResource("2_0qayy")
 
@@ -21,3 +27,9 @@ material_override = ExtResource("2_0s5fw")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="1" unique_id=1989707624]
 stream = SubResource("AudioStreamRandomizer_wqjaw")
+bus = &"Voice"
+
+[node name="Cough" type="AudioStreamPlayer3D" parent="." index="2" unique_id=438051836]
+stream = SubResource("AudioStreamRandomizer_0qayy")
+
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

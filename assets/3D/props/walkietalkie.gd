@@ -4,3 +4,7 @@ class_name WalkieTalkie
 func set_audio(audio: AudioStream) -> void:
 	$AudioStreamPlayer3D.stream = audio
 	$AudioStreamPlayer3D.play()
+
+
+func _on_audio_stream_player_3d_finished() -> void:
+	$Cough.play()
