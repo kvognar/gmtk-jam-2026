@@ -2,10 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_ccj6e"]
 [ext_resource type="Script" uid="uid://1pqq68pga041" path="res://microgames/comms_game/comms.gd" id="2_gndaa"]
+[ext_resource type="AudioStream" uid="uid://dynuvff55u7gj" path="res://assets/audio/voice/majortom_2.ogg" id="3_cjvwc"]
 [ext_resource type="Texture2D" uid="uid://bykgjf4s26hgn" path="res://assets/textures/dial.png" id="3_psaj7"]
 [ext_resource type="AudioStream" uid="uid://crowysncr73tj" path="res://assets/audio/640170main_Roger20Roll.mp3" id="4_gndaa"]
 [ext_resource type="AudioStream" uid="uid://ds0w3luha1hh1" path="res://assets/audio/dragon-studio-radio-static-323621.mp3" id="5_psaj7"]
 [ext_resource type="Texture2D" uid="uid://tykw3is6q2m3" path="res://assets/textures/Radio-halftone.png" id="6_tb5d2"]
+[ext_resource type="Theme" uid="uid://cyxf867p4jpul" path="res://papercut.tres" id="7_clhp2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ys5s"]
 radius = 94.11389
@@ -13,11 +15,52 @@ radius = 94.11389
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_duscq"]
 points = PackedVector2Array(578, 447, 1522, 453, 1503, 745, 594, 730)
 
+[sub_resource type="Animation" id="Animation_cjvwc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Radio/Dial/DialSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_clhp2"]
+resource_name = "dial_pulse"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Radio/Dial/DialSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.09964469, 0.21602556),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(0.95, 0.95), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cjvwc"]
+_data = {
+&"RESET": SubResource("Animation_cjvwc"),
+&"dial_pulse": SubResource("Animation_clhp2")
+}
+
 [node name="Microgame" unique_id=1956794833 instance=ExtResource("1_ccj6e")]
 mouse_filter = 1
 script = ExtResource("2_gndaa")
 prompt = "Tune the radio! (A/D)"
 time_limit = 5.25
+preview_image = ExtResource("6_tb5d2")
+song = null
+intro_line = ExtResource("3_cjvwc")
 
 [node name="MarginContainer" parent="." index="2" unique_id=866576842]
 mouse_behavior_recursive = 1
@@ -40,25 +83,7 @@ mouse_behavior_recursive = 1
 mouse_filter = 2
 mouse_behavior_recursive = 1
 
-[node name="TargetFrequency" type="Label" parent="." index="4" unique_id=1419827306]
-visible = false
-layout_mode = 0
-offset_left = 938.0
-offset_top = 87.0
-offset_right = 1058.0
-offset_bottom = 142.0
-theme_override_font_sizes/font_size = 40
-
-[node name="CurrentFrequency" type="Label" parent="." index="5" unique_id=980260948]
-visible = false
-layout_mode = 0
-offset_left = 998.0
-offset_top = 177.0
-offset_right = 1118.0
-offset_bottom = 232.0
-theme_override_font_sizes/font_size = 40
-
-[node name="CenterContainer" parent="." index="6" unique_id=1036090613]
+[node name="CenterContainer" parent="." index="4" unique_id=1036090613]
 offset_top = -312.0
 offset_bottom = -312.0
 
@@ -66,16 +91,16 @@ offset_bottom = -312.0
 z_index = 100
 text = "Tune the radio! (A or D)"
 
-[node name="VictoryVoice" type="AudioStreamPlayer" parent="." index="7" unique_id=506152646]
+[node name="VictoryVoice" type="AudioStreamPlayer" parent="." index="5" unique_id=506152646]
 stream = ExtResource("4_gndaa")
 
-[node name="Static" type="AudioStreamPlayer" parent="." index="8" unique_id=185689938]
+[node name="Static" type="AudioStreamPlayer" parent="." index="6" unique_id=185689938]
 stream = ExtResource("5_psaj7")
 
-[node name="PromptTimer" parent="." index="9" unique_id=1339207167]
+[node name="PromptTimer" parent="." index="7" unique_id=1339207167]
 wait_time = 1.25
 
-[node name="Radio" type="Area2D" parent="." index="11" unique_id=1616783302]
+[node name="Radio" type="Area2D" parent="." index="9" unique_id=1616783302]
 position = Vector2(-207, 60)
 priority = 1
 
@@ -93,7 +118,7 @@ priority = 1
 
 [node name="DialSprite" type="Sprite2D" parent="Radio/Dial" index="0" unique_id=763621727]
 modulate = Color(0.95686275, 0.61960787, 0.21568628, 1)
-scale = Vector2(0.96615237, 0.89105874)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_psaj7")
 
 [node name="DialCollision" type="CollisionShape2D" parent="Radio/Dial" index="1" unique_id=360945755]
@@ -103,6 +128,35 @@ shape = SubResource("CircleShape2D_4ys5s")
 position = Vector2(-1, 0)
 shape = SubResource("ConvexPolygonShape2D_duscq")
 disabled = true
+
+[node name="Frequencies" type="PanelContainer" parent="." index="10" unique_id=1945283670]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 939.0
+offset_top = 265.0
+offset_right = 979.0
+offset_bottom = 387.0
+theme = ExtResource("7_clhp2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Frequencies" index="0" unique_id=1024191005]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Frequencies/MarginContainer" index="0" unique_id=2108273281]
+layout_mode = 2
+
+[node name="TargetFrequency" type="Label" parent="Frequencies/MarginContainer/VBoxContainer" index="0" unique_id=1419827306]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="CurrentFrequency" type="Label" parent="Frequencies/MarginContainer/VBoxContainer" index="1" unique_id=980260948]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="11" unique_id=1400163994]
+libraries/ = SubResource("AnimationLibrary_cjvwc")
+autoplay = &"dial_pulse"
 
 [connection signal="timeout" from="PromptTimer" to="." method="_on_prompt_timer_timeout"]
 [connection signal="input_event" from="Radio/Dial" to="." method="_on_dial_input_event"]

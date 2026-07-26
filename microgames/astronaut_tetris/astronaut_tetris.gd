@@ -10,7 +10,7 @@ var flight_speed: float = 1000
 var entity_textures: Dictionary[String, Texture2D] = {}
 var current_entity: TetrisMover
 var victory_texture: Texture2D = preload("res://assets/textures/astronaut_tetris/astro-sit-inchair.png")
-var missing_sound: AudioStream = preload("res://assets/audio/voice/majortom_1.ogg")
+var missing_sound: AudioStream = preload("res://assets/audio/negative1.ogg")
 
 func _ready() -> void:
 	for entity in entities:
@@ -20,6 +20,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	super(delta)
 	if !playing:
 		return
 

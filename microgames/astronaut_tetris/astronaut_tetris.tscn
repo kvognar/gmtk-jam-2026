@@ -22,7 +22,7 @@ script = ExtResource("2_f3xhg")
 entities = [NodePath("MonkeMover"), NodePath("DogMover"), NodePath("AstronautMover")]
 prompt = "Sit down for mission briefing!"
 time_limit = 7.0
-preview_image = null
+preview_image = ExtResource("3_wc6vg")
 song = ExtResource("3_f3xhg")
 intro_line = ExtResource("4_738fv")
 

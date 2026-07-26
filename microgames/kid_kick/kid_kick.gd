@@ -10,6 +10,7 @@ var target_power: int
 var on_target: bool = false
 var animate_game: bool = false
 var blasting_off: bool = false
+var can_kick: bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,14 +29,13 @@ func adjust_kick_status(value: float) -> void:
 
 # reset state so that win() doesn't return early
 func win_manual() -> void:
-	playing = true
 	win()
 
 func start_end_sequence(winning: bool) -> void:
 	$Timer.stop()
 	$KickPrompt.hide()
 	# disable input while the animation is playing
-	playing = false
+	can_kick = false
 	start_kick(winning)
 	start_kid_timer(winning)
 
@@ -80,14 +80,14 @@ func _kid_evade_start() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	super(delta)
-	if animate_game && playing:
+	if animate_game && can_kick:
 		var time_value: float = ($Timer.wait_time - $PromptTimer.wait_time - $Timer.time_left) * METER_SPEED
 		var value: float = abs(sin(time_value)) * $PowerMeter.max_value
 		on_target = value >= target_power - POWER_GRACE && value <= target_power + POWER_GRACE
 		adjust_kick_status(value)
 		$PowerMeter.value =  value
 
-	if Input.is_action_just_pressed('action') && playing:
+	if Input.is_action_just_pressed('action') && can_kick:
 		animate_game = false
 		start_end_sequence(on_target)
 			

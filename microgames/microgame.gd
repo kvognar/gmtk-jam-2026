@@ -36,6 +36,8 @@ func begin() -> void:
 	$Timer.start()
 	if song:
 		MusicPlayer.switch_to(song)
+	else:
+		MusicPlayer.hush()
 	$PromptTimer.start()
 	await $PromptTimer.timeout
 	get_tree().create_tween().tween_property(%Prompt, 'modulate:a', 0, 0.5)

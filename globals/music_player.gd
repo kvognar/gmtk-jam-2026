@@ -10,6 +10,13 @@ func switch_to(new_song: AudioStream) -> void:
 		$Track1.stream = new_song
 		crossfade($Track2, $Track1)
 
+func hush() -> void:
+	var tween_out = get_tree().create_tween()
+	tween_out.set_ease(Tween.EASE_IN)
+	
+	tween_out.tween_property(current_player, 'volume_db', -80.0, 0.5)
+
+
 func crossfade(from_track: AudioStreamPlayer, to_track: AudioStreamPlayer) -> void:
 	to_track.volume_db = -80.0
 	

@@ -8,7 +8,7 @@ var current_frequency: float
 var dial: Node
 var is_dragging: bool = false
 
-const FREQ_CHANGE_RATE = 250.0
+const FREQ_CHANGE_RATE = 50.0
 const ROTATION_RATE = 2 * PI
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +22,7 @@ func begin() -> void:
 	initialize_frequencies()
 	update_current_frequency_text()
 	$Static.play()
-	$Timer.stop()
+
 
 func initialize_frequencies() -> void:
 	initialize_target_frequency()
@@ -35,12 +35,12 @@ func initialize_current_frequency() -> void:
 	update_current_frequency_text()
 	
 func update_current_frequency_text() -> void:
-	$CurrentFrequency.text = "Current: %2.f mHz" % current_frequency
+	%CurrentFrequency.text = "Current: %2.f mHz" % current_frequency
 
 func initialize_target_frequency() -> void:
 	target_frequency = randi() % 100 + 2050
 	target_frequency_range = Vector2(target_frequency - 50, target_frequency + 50)
-	$TargetFrequency.text = "Target: %s - %s mHz" % [target_frequency_range.x, target_frequency_range.y]
+	%TargetFrequency.text = "Target: %s - %s mHz" % [target_frequency_range.x, target_frequency_range.y]
 
 func update_frequency(increment) -> void:
 	var new_frequency = current_frequency + increment
@@ -66,8 +66,7 @@ func _process(delta: float) -> void:
 		win()
 
 func _on_prompt_timer_timeout() -> void:
-	$TargetFrequency.show()
-	$CurrentFrequency.show()
+	%Frequencies.show()
 
 func stop_dragging() -> void:
 	is_dragging = false
@@ -89,7 +88,7 @@ func _input(event: InputEvent) -> void:
 			var new_angle = bc.angle_to(ba)
 			
 			%Dial.rotation -= new_angle
-			update_frequency(new_angle * FREQ_CHANGE_RATE)
+			update_frequency(-new_angle * FREQ_CHANGE_RATE)
 
 func _on_dial_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if !playing:
@@ -97,6 +96,7 @@ func _on_dial_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> 
 	
 	if event is InputEventMouseButton:
 		is_dragging = event.pressed
+		$AnimationPlayer.play('RESET')
 		if !is_dragging:
 			stop_dragging()
 			

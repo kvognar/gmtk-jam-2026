@@ -11,8 +11,8 @@
 
 [node name="Microgame2" unique_id=1956794833 instance=ExtResource("1_khhlu")]
 script = ExtResource("2_4udp4")
-prompt = "Kick the kid!"
-preview_image = null
+prompt = "Give him the boot!"
+preview_image = ExtResource("6_xaqlw")
 intro_line = ExtResource("3_6h5q7")
 lose_line = ExtResource("4_cwljs")
 
@@ -63,8 +63,8 @@ volume_db = 1.825
 [node name="PreviewImage" parent="." index="8" unique_id=287436211]
 visible = true
 
-[node name="CenterContainer" parent="." index="9" unique_id=1036090613]
-visible = false
+[node name="Prompt" parent="CenterContainer" parent_id_path=PackedInt32Array(1036090613) index="1" unique_id=1619993942]
+visible = true
 
 [node name="KidTimer" type="Timer" parent="." index="12" unique_id=774635023]
 
