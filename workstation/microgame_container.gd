@@ -29,26 +29,18 @@ func prepare_game() -> void:
 	for child in %SubViewport.get_children():
 		if !child.is_class('TextureRect'):
 			child.queue_free()
-	%PreviewImage.texture = room.preview
+	%PreviewImage.texture = current_game.preview_image
+	%PreviewImage.show()
 	%SubViewport.add_child(current_game)
 	current_game.process_mode = Node.PROCESS_MODE_DISABLED
 
 func start_game() -> void:
-	fade_preview()
 	current_game.begin()
 	current_game.failure.connect(_on_game_fail)
 	current_game.success.connect(_on_game_success)
 	show_screen()
 	running = true
 	current_game.process_mode = Node.PROCESS_MODE_INHERIT
-	
-func fade_preview() -> void:
-	var tween = get_tree().create_tween()
-	tween.tween_property(%PreviewImage, 'modulate', Color('ffffff00'), 0.5)
-	tween.finished.connect(hidePreview)
-
-func hidePreview() -> void:
-	%PreviewImage.hide()
 
 func _on_game_fail() -> void:
 	failure.emit()

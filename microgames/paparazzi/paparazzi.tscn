@@ -11,11 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://dhjqdlnwlulvm" path="res://microgames/paparazzi/assets/launchpad-halftone.png" id="7_s16q4"]
 [ext_resource type="PackedScene" uid="uid://cgibssfk5vj5v" path="res://entities/pigeon_broom.tscn" id="8_sofkd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_epbu8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_db8k4"]
 resource_local_to_scene = true
 size = Vector2(396, 160.99998)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_db8k4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq6vp"]
 resource_local_to_scene = true
 size = Vector2(297.00003, 364)
 
@@ -24,6 +24,7 @@ offset_left = 8.0
 offset_right = 8.0
 script = ExtResource("2_epbu8")
 prompt = "Scram!"
+preview_image = ExtResource("7_s16q4")
 song = ExtResource("3_db8k4")
 hide_mouse = true
 
@@ -49,7 +50,7 @@ position = Vector2(1239, 733)
 flip_h = true
 
 [node name="CollisionShape2D" parent="Photographers/Photographer6" index="1" unique_id=1642985058]
-shape = SubResource("RectangleShape2D_epbu8")
+shape = SubResource("RectangleShape2D_db8k4")
 
 [node name="Photographer3" parent="Photographers" index="4" unique_id=543112837 instance=ExtResource("4_s16q4")]
 position = Vector2(357, 780)
@@ -61,7 +62,7 @@ position = Vector2(968, 806)
 flip_h = true
 
 [node name="CollisionShape2D" parent="Photographers/Photographer4" index="1" unique_id=1642985058]
-shape = SubResource("RectangleShape2D_db8k4")
+shape = SubResource("RectangleShape2D_pq6vp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9" unique_id=1786200917]
 stream = ExtResource("3_17ayv")

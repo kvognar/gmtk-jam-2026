@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cxuosva6evwlw" path="res://microgames/suit_repair/suit_repair.tscn" id="1_64ydy"]
 [ext_resource type="Script" uid="uid://ulf2dkpf8wec" path="res://room.gd" id="1_132b4"]
-[ext_resource type="Texture2D" uid="uid://qcvi7h7ibyy2" path="res://icon.svg" id="1_huuoo"]
 [ext_resource type="PackedScene" uid="uid://dkii2wf8iirkv" path="res://microgames/pigeons/pigeons.tscn" id="1_is7mf"]
 [ext_resource type="PackedScene" uid="uid://cki0rsiaa0rg7" path="res://microgames/comms_game/comms.tscn" id="2_64ydy"]
 [ext_resource type="PackedScene" uid="uid://p8t1si54eplu" path="res://microgames/kid_kick/kid_kick.tscn" id="4_64ydy"]
@@ -10,9 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://x642vv6ljkc3" path="res://microgames/rocket_repair/rocket_repair.tscn" id="6_y3hpc"]
 [ext_resource type="PackedScene" uid="uid://jeifa2ceu0l3" path="res://microgames/paparazzi/paparazzi.tscn" id="7_sk5op"]
 [ext_resource type="PackedScene" uid="uid://b6tsmdjhsmx7x" path="res://microgames/astronaut_tetris/astronaut_tetris.tscn" id="8_big10"]
+[ext_resource type="Texture2D" uid="uid://c7hyk322w3xxb" path="res://microgames/firefighting/assets/fuel_tank_halftone.png" id="9_sk5op"]
 
 [resource]
 script = ExtResource("1_132b4")
 name = "launchpad"
 games = Array[PackedScene]([ExtResource("6_y3hpc"), ExtResource("1_64ydy"), ExtResource("2_64ydy"), ExtResource("1_is7mf"), ExtResource("4_64ydy"), ExtResource("5_mjwi6"), ExtResource("7_sk5op"), ExtResource("8_big10")])
+preview = ExtResource("9_sk5op")
 metadata/_custom_type_script = "uid://ulf2dkpf8wec"

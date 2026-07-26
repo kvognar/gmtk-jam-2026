@@ -9,6 +9,7 @@
 [node name="Firefighting" unique_id=1956794833 instance=ExtResource("1_skxcj")]
 script = ExtResource("2_gkdu3")
 prompt = "Fire!"
+preview_image = ExtResource("4_e2n38")
 song = ExtResource("3_lw17s")
 hide_mouse = true
 

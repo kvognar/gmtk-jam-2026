@@ -21,6 +21,7 @@ mouse_filter = 2
 script = ExtResource("2_wkg5i")
 prompt = "Fix it up!"
 time_limit = 7.0
+preview_image = ExtResource("5_im2dg")
 song = ExtResource("3_3w1g0")
 
 [node name="VBoxContainer" parent="MarginContainer" parent_id_path=PackedInt32Array(866576842) index="0" unique_id=360461297]
