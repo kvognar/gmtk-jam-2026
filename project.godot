@@ -32,6 +32,7 @@ window/stretch/mode="viewport"
 [global_group]
 
 microgame_containers=""
+walkie_talkie=""
 
 [input]
 

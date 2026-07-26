@@ -8,6 +8,7 @@ var current_game: Microgame
 var games: Array[PackedScene]
 var current_game_index := 0
 var running := false
+var radio: WalkieTalkie
 
 signal failure
 signal success
@@ -16,6 +17,7 @@ signal complete
 
 func _ready() -> void:
 	games = room.games
+	radio = get_tree().get_first_node_in_group('walkie_talkie')
 	prepare_game()
 	if get_tree().root == get_parent():
 		print_debug('running in test mode')
@@ -33,6 +35,8 @@ func prepare_game() -> void:
 	%PreviewImage.show()
 	%SubViewport.add_child(current_game)
 	current_game.process_mode = Node.PROCESS_MODE_DISABLED
+	if current_game.intro_line && radio:
+		radio.set_audio(current_game.intro_line)
 
 func start_game() -> void:
 	current_game.begin()

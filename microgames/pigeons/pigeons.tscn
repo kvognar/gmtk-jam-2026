@@ -5,12 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://cgibssfk5vj5v" path="res://entities/pigeon_broom.tscn" id="2_kirvr"]
 [ext_resource type="PackedScene" uid="uid://cxp1v8dcaowox" path="res://entities/pigeon.tscn" id="3_86bxv"]
 [ext_resource type="Texture2D" uid="uid://t4w15ojr6620" path="res://microgames/pigeons/assets/engine_halftoned.png" id="3_nvg47"]
+[ext_resource type="AudioStream" uid="uid://danp1dy5m70a0" path="res://assets/audio/voice/pigeons_1.ogg" id="4_pum1a"]
 
 [node name="Microgame" unique_id=1956794833 instance=ExtResource("1_sdkxx")]
 script = ExtResource("2_86bxv")
 prompt = "Shoo!"
 preview_image = ExtResource("3_nvg47")
 hide_mouse = true
+intro_line = ExtResource("4_pum1a")
 
 [node name="EngineHalftoned" type="Sprite2D" parent="." index="5" unique_id=327041633]
 position = Vector2(956, 392)

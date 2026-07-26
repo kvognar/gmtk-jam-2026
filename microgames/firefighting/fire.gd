@@ -17,13 +17,8 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if current_health <= 0:
 		extinguished.emit(self)
 		play_extinguish()
-		
-#func _process(delta: float) -> void:
-	#if Input.is_action_just_pressed('action'):
-		#play_extinguish()
-#
+
 func play_extinguish() -> void:
-	print_debug('pssts')
 	$AudioStreamPlayer2D.volume_linear = 1
 	$AudioStreamPlayer2D.stream = extinguish
 	$AudioStreamPlayer2D.play()

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bpln2dw1ctmlc" path="res://microgames/astronaut_tetris/astronaut_tetris.gd" id="2_f3xhg"]
 [ext_resource type="AudioStream" uid="uid://b60ewwomjuqc8" path="res://assets/audio/music/Are Things Getting Better?.ogg" id="3_f3xhg"]
 [ext_resource type="Texture2D" uid="uid://c44ie5wvjfy2x" path="res://assets/textures/astronaut_tetris/chair.png" id="3_wc6vg"]
+[ext_resource type="AudioStream" uid="uid://2185hue4y62a" path="res://assets/audio/voice/tetris_1.ogg" id="4_738fv"]
 [ext_resource type="PackedScene" uid="uid://db8rqs50ngaau" path="res://entities/tetris_mover.tscn" id="5_jntih"]
 [ext_resource type="AudioStream" uid="uid://clmnt2diojx1j" path="res://assets/audio/u_zpj3vbdres-monkey-128368.mp3" id="6_738fv"]
 [ext_resource type="Texture2D" uid="uid://h3tlr2f1sdm1" path="res://assets/textures/astronaut_tetris/monke.png" id="7_njlt4"]
@@ -23,6 +24,7 @@ prompt = "Sit down for mission briefing!"
 time_limit = 7.0
 preview_image = null
 song = ExtResource("3_f3xhg")
+intro_line = ExtResource("4_738fv")
 
 [node name="PreviewImage" parent="." index="3" unique_id=287436211]
 visible = true

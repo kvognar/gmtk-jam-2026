@@ -6,6 +6,9 @@ class_name Microgame
 @export var preview_image: Texture2D
 @export var song: AudioStream
 @export var hide_mouse := false
+@export var intro_line: AudioStream
+@export var win_line: AudioStream
+@export var lose_line: AudioStream
 
 signal success
 signal failure
