@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bm6vve3gh83ff" path="res://assets/audio/music/Shinjuku Isn't Overrated.ogg" id="3_iaa0p"]
 [ext_resource type="PackedScene" uid="uid://d16qt40vwnvl1" path="res://components/interest_layer.tscn" id="4_asc8w"]
 [ext_resource type="Texture2D" uid="uid://cfxsnmhq14bb1" path="res://assets/sprites/test_id.png" id="5_6a7ib"]
+[ext_resource type="Theme" uid="uid://cyxf867p4jpul" path="res://papercut.tres" id="5_drmw1"]
 [ext_resource type="PackedScene" uid="uid://i10vqqnnp413" path="res://ui/tape.tscn" id="5_rmyh0"]
 
 [node name="Microgame" type="Control" unique_id=1956794833]
@@ -82,7 +83,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Result" type="Label" parent="CenterContainer" unique_id=1582345726]
+[node name="ResultContainer" type="PanelContainer" parent="CenterContainer" unique_id=2014474847]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("5_drmw1")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/ResultContainer" unique_id=1798555537]
+layout_mode = 2
+
+[node name="Result" type="Label" parent="CenterContainer/ResultContainer/MarginContainer" unique_id=1582345726]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -90,6 +99,7 @@ text = "Result"
 
 [node name="Prompt" parent="CenterContainer" unique_id=1619993942 instance=ExtResource("5_rmyh0")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="PromptTimer" type="Timer" parent="." unique_id=1339207167]

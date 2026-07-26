@@ -61,6 +61,9 @@ position = Vector2(346, 702)
 scale = Vector2(0.75, 0.75)
 monitorable = false
 
+[node name="PromptTimer" parent="." index="9" unique_id=1339207167]
+wait_time = 1.5
+
 [node name="Circle" type="Sprite2D" parent="." index="11" unique_id=1442011617]
 material = SubResource("ShaderMaterial_dlgio")
 position = Vector2(1140, 389)

@@ -10,13 +10,16 @@ class_name Microgame
 @export var win_line: AudioStream
 @export var lose_line: AudioStream
 
+@export var win_time := 1.0
+@export var lose_time := 1.0
+
 signal success
 signal failure
 
 var playing: bool = false
 
 func _ready() -> void:
-	scale = Vector2(0, 0)
+	modulate.a = 0
 	$Timer.wait_time = time_limit
 	if get_parent() == get_tree().root:
 		begin()
@@ -25,16 +28,18 @@ func _draw() -> void:
 	pass
 
 func begin() -> void:
-	scale=Vector2(1, 1)
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, 'modulate:a', 1.0, 0.3)
 	%Prompt.set_text(prompt);
 	%Prompt.show()
-	%Result.hide()
+	%ResultContainer.hide()
 	$Timer.start()
 	if song:
 		MusicPlayer.switch_to(song)
 	$PromptTimer.start()
 	await $PromptTimer.timeout
-	%Prompt.hide()
+	get_tree().create_tween().tween_property(%Prompt, 'modulate:a', 0, 0.5)
+	#%Prompt.hide()
 	playing = true
 	if hide_mouse:
 		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -47,22 +52,22 @@ func fail() -> void:
 		return
 	playing = false
 	radio_loss()
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(lose_time).timeout
 	failure.emit()
 	show_mouse()
 
 func lose() -> void:
 	%Result.text = 'Oh no!'
-	%Result.show()
+	%ResultContainer.show()
 	fail()
 	
 func win() -> void:
 	if !playing:
 		return
 	%Result.text = 'Mission complete.'
-	%Result.show()
+	%ResultContainer.show()
 	playing = false
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(win_time).timeout
 	success.emit()
 	show_mouse()
 	
@@ -73,7 +78,7 @@ func time_up() -> void:
 	if !playing:
 		return
 	%Result.text = 'Time up!!'
-	%Result.show()
+	%ResultContainer.show()
 	fail()
 
 func radio_loss() -> void:

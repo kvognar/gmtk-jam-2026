@@ -1,0 +1,20 @@
+[gd_resource type="Theme" format=3 uid="uid://cyxf867p4jpul"]
+
+[ext_resource type="FontFile" uid="uid://f3nt1xqdm1py" path="res://assets/intro/Mom差___.ttf" id="1_be6kl"]
+[ext_resource type="Texture2D" uid="uid://dmr8ladbeyejq" path="res://ui/paper-rip1.png" id="2_7kfix"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kfix"]
+texture = ExtResource("2_7kfix")
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.6901961, 0.27450982, 0.30588236, 1)
+Button/colors/font_hover_color = Color(0.6901961, 0.27450982, 0.30588236, 1)
+Button/fonts/font = ExtResource("1_be6kl")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/fonts/font = ExtResource("1_be6kl")
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_7kfix")

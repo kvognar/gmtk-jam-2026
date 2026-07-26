@@ -98,7 +98,7 @@ func _make_label(preset: Control.LayoutPreset, align: int) -> Label:
 		label.add_theme_font_override(&"font", font)
 	var panel: PaperRipPanel = paper_rip_panel_box.instantiate()
 	panel.modulate.a = 0
-	panel.set_label(label)
+	panel.get_child(0).add_child(label)
 	slideshow.add_child(panel)
 	panel.set_anchors_and_offsets_preset(preset, Control.PRESET_MODE_MINSIZE, int(margin))
 	# Vertical growth so multi-line text expands away from its corner.

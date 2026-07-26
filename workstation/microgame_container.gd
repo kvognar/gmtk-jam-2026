@@ -66,9 +66,10 @@ func show_screen() -> void:
 	
 func hide_screen() -> void:
 	running = false
-	%GameScreen.hide()
 	current_game_index += 1
 	check_for_finished()
+	await create_tween().tween_property(current_game, 'modulate:a', 0, 0.3).finished
+	%GameScreen.hide()
 	prepare_game()
 
 func check_for_finished() -> void:

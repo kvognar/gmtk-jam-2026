@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bkej4ef0k7snc"]
 
-[ext_resource type="Texture2D" uid="uid://comkbn0nrw1i" path="res://assets/intro/slide1.png" id="1_ioskq"]
 [ext_resource type="Script" uid="uid://dbqlfsvmcqvoa" path="res://scripts/intro.gd" id="1_m3r7s"]
 [ext_resource type="AudioStream" uid="uid://b0p1mvcv7rm2x" path="res://assets/intro/morningambience.ogg" id="2_i2l1n"]
-[ext_resource type="Texture2D" uid="uid://bmr84ahh2kty0" path="res://assets/intro/slide2.png" id="3_wfs7u"]
+[ext_resource type="Texture2D" uid="uid://dh3ifxbrmaw7q" path="res://assets/intro/nada-mcc.png" id="2_m3r7s"]
 [ext_resource type="AudioStream" uid="uid://cs7tmbnp5631k" path="res://assets/intro/roomtone.ogg" id="4_es01l"]
+[ext_resource type="Texture2D" uid="uid://d3xm7hgr7mikr" path="res://assets/intro/control_room_b.png" id="4_xwriy"]
 [ext_resource type="AudioStream" uid="uid://bspnrwvfxsuqe" path="res://assets/intro/type1.ogg" id="6_m3r7s"]
 [ext_resource type="AudioStream" uid="uid://b3v4oe24addyf" path="res://assets/intro/type2.ogg" id="7_xwriy"]
 [ext_resource type="AudioStream" uid="uid://mr168wscrot6" path="res://assets/intro/type3.ogg" id="8_u5myo"]
@@ -37,7 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ioskq")
+texture = ExtResource("2_m3r7s")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="slideshow/slide1" unique_id=330212699]
 stream = ExtResource("2_i2l1n")
@@ -56,7 +56,7 @@ offset_right = 951.0
 offset_bottom = 601.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_wfs7u")
+texture = ExtResource("4_xwriy")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="slideshow/slide2" unique_id=1931234382]
 stream = ExtResource("4_es01l")
