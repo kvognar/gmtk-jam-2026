@@ -35,6 +35,8 @@ var _upper_left: Label
 var _slide1_db := 0.0
 var _slide2_db := 0.0
 
+var paper_rip_panel_box: PackedScene = preload('res://ui/paper_rip_panel.tscn')
+
 func _ready():
 	_slide1_db = slide1_audio.volume_db
 	_slide2_db = slide2_audio.volume_db
@@ -63,8 +65,8 @@ func _run():
 	await _wait(hold_after_text)
 
 	# Clear the text, then cross to slide 2.
-	_fade_node(_upper_right, 0.0, text_fade_out)
-	_fade_node(_lower_left, 0.0, text_fade_out)
+	_fade_node(_upper_right.get_parent().get_parent(), 0.0, text_fade_out)
+	_fade_node(_lower_left.get_parent().get_parent(), 0.0, text_fade_out)
 	await _wait(text_fade_out)
 
 	_fade_audio(slide1_audio, silent_db, crossfade)
@@ -77,7 +79,7 @@ func _run():
 	await _wait(hold_after_text)
 
 	_fade_audio(slide2_audio, silent_db, final_fade)
-	_fade_node(_upper_left, 0.0, text_fade_out)
+	_fade_node(_upper_left.get_parent().get_parent(), 0.0, text_fade_out)
 	_fade_node(slide2, 0.0, final_fade)
 	await _wait(final_fade)
 	_finish()
@@ -94,16 +96,20 @@ func _make_label(preset: Control.LayoutPreset, align: int) -> Label:
 	label.add_theme_font_size_override(&"font_size", font_size)
 	if font != null:
 		label.add_theme_font_override(&"font", font)
-	slideshow.add_child(label)
-	label.set_anchors_and_offsets_preset(preset, Control.PRESET_MODE_MINSIZE, int(margin))
+	var panel: PaperRipPanel = paper_rip_panel_box.instantiate()
+	panel.modulate.a = 0
+	panel.set_label(label)
+	slideshow.add_child(panel)
+	panel.set_anchors_and_offsets_preset(preset, Control.PRESET_MODE_MINSIZE, int(margin))
 	# Vertical growth so multi-line text expands away from its corner.
 	if preset == Control.PRESET_BOTTOM_LEFT:
-		label.grow_vertical = Control.GROW_DIRECTION_BEGIN
+		panel.grow_vertical = Control.GROW_DIRECTION_BEGIN
 	if align == HORIZONTAL_ALIGNMENT_RIGHT:
-		label.grow_horizontal = Control.GROW_DIRECTION_BEGIN
+		panel.grow_horizontal = Control.GROW_DIRECTION_BEGIN
 	return label
 
 func _type(label: Label, text: String):
+	label.get_parent().get_parent().modulate.a = 1.0
 	label.text = ""
 	label.modulate.a = 1.0
 	for i in text.length():

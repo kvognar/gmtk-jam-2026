@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://sk55jmsihod4"]
+
+[ext_resource type="Texture2D" uid="uid://dmr8ladbeyejq" path="res://ui/paper-rip1.png" id="1_jt4jx"]
+[ext_resource type="Script" uid="uid://ch6e7xe1mbn8n" path="res://ui/paper_rip_panel.gd" id="2_ke20r"]
+[ext_resource type="FontFile" uid="uid://f3nt1xqdm1py" path="res://assets/intro/Mom差___.ttf" id="2_oa0al"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4jyr"]
+texture = ExtResource("1_jt4jx")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="PaperRipPanel" type="PanelContainer" unique_id=1830197398]
+theme_override_styles/panel = SubResource("StyleBoxTexture_m4jyr")
+script = ExtResource("2_ke20r")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1704292946]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=702839476]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oa0al")
+text = "Good morning"
