@@ -2,25 +2,32 @@
 
 [ext_resource type="PackedScene" uid="uid://dwt1qdmghu1x2" path="res://microgames/microgame.tscn" id="1_f55m4"]
 [ext_resource type="Script" uid="uid://bpln2dw1ctmlc" path="res://microgames/astronaut_tetris/astronaut_tetris.gd" id="2_f3xhg"]
+[ext_resource type="AudioStream" uid="uid://b60ewwomjuqc8" path="res://assets/audio/music/Are Things Getting Better?.ogg" id="3_f3xhg"]
 [ext_resource type="Texture2D" uid="uid://c44ie5wvjfy2x" path="res://assets/textures/astronaut_tetris/chair.png" id="3_wc6vg"]
+[ext_resource type="PackedScene" uid="uid://db8rqs50ngaau" path="res://entities/tetris_mover.tscn" id="5_jntih"]
+[ext_resource type="AudioStream" uid="uid://clmnt2diojx1j" path="res://assets/audio/u_zpj3vbdres-monkey-128368.mp3" id="6_738fv"]
+[ext_resource type="Texture2D" uid="uid://h3tlr2f1sdm1" path="res://assets/textures/astronaut_tetris/monke.png" id="7_njlt4"]
+[ext_resource type="AudioStream" uid="uid://cc1jyxwi5nndt" path="res://assets/audio/dragon-studio-free-dog-bark-419014.mp3" id="8_oo8is"]
+[ext_resource type="Texture2D" uid="uid://dthu1b2dar6vh" path="res://assets/textures/dog_halftone.png" id="9_kip4j"]
+[ext_resource type="AudioStream" uid="uid://cr6vj5h4og1n3" path="res://assets/audio/success1.ogg" id="10_1kukn"]
+[ext_resource type="Texture2D" uid="uid://dlkq5wlhptf4y" path="res://assets/textures/astronaut_tetris/astro-sit.png" id="11_51fdn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f3xhg"]
 radius = 88.0
 height = 360.0
 
-[node name="Microgame" unique_id=1956794833 instance=ExtResource("1_f55m4")]
+[node name="AstronautTetris" unique_id=1956794833 node_paths=PackedStringArray("entities") instance=ExtResource("1_f55m4")]
 script = ExtResource("2_f3xhg")
+entities = [NodePath("MonkeMover"), NodePath("DogMover"), NodePath("AstronautMover")]
 prompt = "Sit down for mission briefing!"
+time_limit = 7.0
 preview_image = null
-song = null
+song = ExtResource("3_f3xhg")
 
-[node name="ColorRect" parent="." index="1" unique_id=842226354]
+[node name="PreviewImage" parent="." index="3" unique_id=287436211]
 visible = true
 
-[node name="PreviewImage" parent="." index="4" unique_id=287436211]
-visible = true
-
-[node name="CenterContainer" parent="." index="5" unique_id=1036090613]
+[node name="CenterContainer" parent="." index="4" unique_id=1036090613]
 offset_left = 2.0
 offset_top = -232.0
 offset_right = 2.0
@@ -41,5 +48,24 @@ texture = ExtResource("3_wc6vg")
 [node name="EntitySpawner" type="Node2D" parent="." index="8" unique_id=307322619]
 position = Vector2(0, 250)
 
-[connection signal="area_entered" from="Chair" to="." method="_on_chair_area_entered"]
+[node name="MonkeMover" parent="." index="9" unique_id=897127010 instance=ExtResource("5_jntih")]
+chair_enter_sound = ExtResource("6_738fv")
+texture = ExtResource("7_njlt4")
+chair_position = Vector2(823, 635)
+victory_scale = Vector2(0.309, 0.309)
+
+[node name="DogMover" parent="." index="10" unique_id=1168922065 instance=ExtResource("5_jntih")]
+chair_enter_sound = ExtResource("8_oo8is")
+texture = ExtResource("9_kip4j")
+chair_position = Vector2(823, 542)
+victory_scale = Vector2(0.359, 0.359)
+
+[node name="AstronautMover" parent="." index="11" unique_id=1580361960 instance=ExtResource("5_jntih")]
+chair_enter_sound = ExtResource("10_1kukn")
+texture = ExtResource("11_51fdn")
+is_winning = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="12" unique_id=536860096]
+
 [connection signal="timeout" from="PromptTimer" to="." method="_on_prompt_timer_timeout"]
+[connection signal="area_entered" from="Chair" to="." method="_on_chair_area_entered"]

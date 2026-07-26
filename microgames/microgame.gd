@@ -12,7 +12,6 @@ signal failure
 
 var playing: bool = false
 
-
 func _ready() -> void:
 	scale = Vector2(0, 0)
 	$Timer.wait_time = time_limit
