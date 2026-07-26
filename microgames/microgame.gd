@@ -45,7 +45,10 @@ func show_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func fail() -> void:
+	if !playing:
+		return
 	playing = false
+	radio_loss()
 	await get_tree().create_timer(1.0).timeout
 	failure.emit()
 	show_mouse()
@@ -74,8 +77,13 @@ func time_up() -> void:
 	playing = false
 	%Result.text = 'Time up!!'
 	%Result.show()
-	await get_tree().create_timer(1.0).timeout
 	fail()
+
+func radio_loss() -> void:
+	if lose_line:
+		var radio: WalkieTalkie = get_tree().get_first_node_in_group('walkie_talkie')
+		if radio:
+			radio.set_audio(lose_line)
 
 func _on_timer_timeout() -> void:
 	time_up()

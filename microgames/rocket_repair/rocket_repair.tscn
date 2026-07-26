@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bk4gmp70cc54k" path="res://microgames/rocket_repair/rocket_panel.tscn" id="3_wkg5i"]
 [ext_resource type="AudioStream" uid="uid://dop4gtl5b78ng" path="res://assets/audio/voice/holeinship_2.ogg" id="5_dlgio"]
 [ext_resource type="Texture2D" uid="uid://wm2r60q0ueox" path="res://microgames/rocket_repair/assets/rocket-side-halftone.png" id="5_im2dg"]
+[ext_resource type="AudioStream" uid="uid://c0d1bn2xtf52q" path="res://assets/audio/voice/badjob_4.ogg" id="6_gky3d"]
 [ext_resource type="Shader" uid="uid://cjjcp442txi2y" path="res://microgames/pie_time/mask.gdshader" id="8_q6dhj"]
 [ext_resource type="Texture2D" uid="uid://b6w6mj3xi1mo" path="res://microgames/rocket_repair/assets/AstronautJeff.png" id="9_gkxda"]
 [ext_resource type="PackedScene" uid="uid://dt3yrl5pns44y" path="res://components/hopping.tscn" id="10_gkxda"]
@@ -25,6 +26,7 @@ time_limit = 7.0
 preview_image = ExtResource("5_im2dg")
 song = ExtResource("3_3w1g0")
 intro_line = ExtResource("5_dlgio")
+lose_line = ExtResource("6_gky3d")
 
 [node name="VBoxContainer" parent="MarginContainer" parent_id_path=PackedInt32Array(866576842) index="0" unique_id=360461297]
 mouse_filter = 2
