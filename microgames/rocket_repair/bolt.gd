@@ -1,6 +1,7 @@
 extends Area2D
 class_name Bolt
 
+
 var target_rotation := 5 * PI
 var bolting := false
 var affixed := false
@@ -14,7 +15,7 @@ func _ready() -> void:
 
 func activate() -> void:
 	input_pickable = true
-	$Sprite2D.modulate = Color('F7E28F')
+	$Sprite2D/Colorized.assign_color()
 	$AnimationPlayer.play("shine")
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

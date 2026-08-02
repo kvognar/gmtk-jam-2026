@@ -14,6 +14,6 @@
 [resource]
 script = ExtResource("1_132b4")
 name = "launchpad"
-games = Array[PackedScene]([ExtResource("1_is7mf"), ExtResource("1_64ydy"), ExtResource("2_64ydy"), ExtResource("4_64ydy"), ExtResource("8_big10"), ExtResource("7_sk5op"), ExtResource("6_y3hpc"), ExtResource("5_mjwi6")])
+games = Array[PackedScene]([ExtResource("1_is7mf"), ExtResource("2_64ydy"), ExtResource("1_64ydy"), ExtResource("4_64ydy"), ExtResource("8_big10"), ExtResource("7_sk5op"), ExtResource("6_y3hpc"), ExtResource("5_mjwi6")])
 preview = ExtResource("9_sk5op")
 metadata/_custom_type_script = "uid://ulf2dkpf8wec"

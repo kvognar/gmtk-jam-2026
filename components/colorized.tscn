@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bobnoomvgkfoq"]
+
+[ext_resource type="Script" uid="uid://bkfn1vwctmkf2" path="res://components/colorized.gd" id="1_t3diq"]
+
+[node name="Colorized" type="Node" unique_id=1406821416 groups=["colorized"]]
+script = ExtResource("1_t3diq")

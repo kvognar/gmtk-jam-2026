@@ -33,6 +33,7 @@ window/stretch/mode="viewport"
 
 microgame_containers=""
 walkie_talkie=""
+colorized="Entities colorized by InterestLayer"
 
 [input]
 

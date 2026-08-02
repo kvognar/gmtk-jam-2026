@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bfmbm53wt3cc8" path="res://microgames/rocket_repair/bolt.gd" id="1_kdada"]
 [ext_resource type="Texture2D" uid="uid://cgsyaegs7gea1" path="res://microgames/rocket_repair/assets/bolt.png" id="2_c0kbk"]
 [ext_resource type="PackedScene" uid="uid://4gwd3bhrmvea" path="res://entities/sparkler.tscn" id="3_c0kbk"]
+[ext_resource type="PackedScene" uid="uid://bobnoomvgkfoq" path="res://components/colorized.tscn" id="3_i0aew"]
 [ext_resource type="AudioStream" uid="uid://ceekgykw3dblq" path="res://assets/audio/powerdrill_long.ogg" id="4_f64t8"]
 [ext_resource type="PackedScene" uid="uid://cta6w8sceojqu" path="res://components/hooray.tscn" id="5_3j2vr"]
 
@@ -177,6 +178,9 @@ shape = SubResource("CircleShape2D_ejdy6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=818418334]
 texture = ExtResource("2_c0kbk")
+
+[node name="Colorized" parent="Sprite2D" unique_id=1406821416 instance=ExtResource("3_i0aew")]
+automatic = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1117928339]
 libraries/ = SubResource("AnimationLibrary_i0aew")

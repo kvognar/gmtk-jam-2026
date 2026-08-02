@@ -9,7 +9,6 @@ var total_bolted := 0
 signal finished
 
 func _ready() -> void:
-	$Sprite2D.modulate = Color('F7E28F')
 	total_bolts = $Bolts.get_child_count()
 
 func _on_click_and_drag_dropped() -> void:

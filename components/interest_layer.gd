@@ -49,6 +49,7 @@ func create_interest_layer()-> void:
 	bg_color_index = randi() % colors.size()
 	$Wallpaper.modulate = colors[bg_color_index].color
 	bg_is_dark = colors[bg_color_index].dark
+	set_entity_colors()
 	
 	queue_redraw()
 
@@ -276,3 +277,15 @@ func select_color() -> int:
 		return light_colors.pick_random()
 
 	return dark_colors.pick_random()
+
+func set_entity_colors() -> void:
+	var color_index: int
+	if bg_is_dark:
+		color_index = light_colors.pick_random()
+	else:
+		color_index = dark_colors.pick_random()
+	var color = Color(colors[color_index]['color'])
+	
+	for entity in get_tree().get_nodes_in_group('colorized'):
+		entity.set_color(color)
+		

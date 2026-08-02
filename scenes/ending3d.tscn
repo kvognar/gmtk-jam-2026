@@ -31,9 +31,15 @@
 [ext_resource type="AudioStream" uid="uid://b0p1mvcv7rm2x" path="res://assets/intro/morningambience.ogg" id="29_to43n"]
 [ext_resource type="AudioStream" uid="uid://cs7tmbnp5631k" path="res://assets/intro/roomtone.ogg" id="30_to43n"]
 
+[sub_resource type="Environment" id="Environment_to43n"]
+ambient_light_source = 2
+ambient_light_color = Color(0.5682058, 0.42399585, 0.350675, 1)
+ambient_light_energy = 6.92
+
 [node name="Ending3D" type="Node3D" unique_id=492220335]
 script = ExtResource("1_ud7aa")
 test_wins = 8
+test_losses = 6
 
 [node name="room" parent="." unique_id=235516147 instance=ExtResource("4_ff34l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00027179718, -2.3841858e-07, -0.0038256645)
@@ -214,5 +220,8 @@ max_distance = 20.0
 stream = ExtResource("30_to43n")
 volume_db = 7.0
 max_distance = 3.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1322490314]
+environment = SubResource("Environment_to43n")
 
 [connection signal="pressed" from="UI/Return to Title" to="." method="_on_return_to_title_pressed"]

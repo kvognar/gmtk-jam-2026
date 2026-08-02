@@ -11,7 +11,8 @@ const COLORS: Array[Color] = [
 ]
 
 func _ready() -> void:
-	$Sprite2D.modulate = COLORS.pick_random()
+	pass
+	#$Sprite2D.modulate = COLORS.pick_random()
 
 func shoo(broom: Node2D) -> void:
 	if state == STATES.waiting:

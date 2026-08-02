@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://ds0w3luha1hh1" path="res://assets/audio/dragon-studio-radio-static-323621.mp3" id="5_psaj7"]
 [ext_resource type="Texture2D" uid="uid://tykw3is6q2m3" path="res://assets/textures/Radio-halftone.png" id="6_tb5d2"]
 [ext_resource type="Theme" uid="uid://cyxf867p4jpul" path="res://papercut.tres" id="7_clhp2"]
+[ext_resource type="PackedScene" uid="uid://bobnoomvgkfoq" path="res://components/colorized.tscn" id="8_0n7fv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ys5s"]
 radius = 94.11389
@@ -117,9 +118,10 @@ scale = Vector2(1.3175539, 1.2697474)
 priority = 1
 
 [node name="DialSprite" type="Sprite2D" parent="Radio/Dial" index="0" unique_id=763621727]
-modulate = Color(0.95686275, 0.61960787, 0.21568628, 1)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_psaj7")
+
+[node name="Colorized" parent="Radio/Dial/DialSprite" index="0" unique_id=1406821416 instance=ExtResource("8_0n7fv")]
 
 [node name="DialCollision" type="CollisionShape2D" parent="Radio/Dial" index="1" unique_id=360945755]
 shape = SubResource("CircleShape2D_4ys5s")

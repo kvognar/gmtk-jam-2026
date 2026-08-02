@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://mr8er160tqta" path="res://microgames/paparazzi/photographer.gd" id="1_dpxdj"]
 [ext_resource type="Texture2D" uid="uid://bokqpl8knoht8" path="res://microgames/paparazzi/assets/paparazzi1.png" id="2_dfphn"]
 [ext_resource type="PackedScene" uid="uid://dt3yrl5pns44y" path="res://components/hopping.tscn" id="3_sdppg"]
+[ext_resource type="PackedScene" uid="uid://bobnoomvgkfoq" path="res://components/colorized.tscn" id="4_dfphn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8g5yo"]
 resource_local_to_scene = true
@@ -72,8 +73,8 @@ script = ExtResource("1_dpxdj")
 texture = ExtResource("2_dfphn")
 
 [node name="Hopping" parent="Sprite2D" unique_id=1632497499 instance=ExtResource("3_sdppg")]
-gravity = 10000.0
-impulse = 1000.0
+
+[node name="Colorized" parent="Sprite2D" unique_id=1406821416 instance=ExtResource("4_dfphn")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1642985058]
 position = Vector2(3.5000079, -1.4999962)

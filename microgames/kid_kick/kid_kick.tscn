@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dcs43qs78n6l3" path="res://assets/textures/boot_halftone.png" id="4_xaqlw"]
 [ext_resource type="AudioStream" uid="uid://csr77fedd1qkm" path="res://assets/audio/freesound_community-homemadeoof-47509.mp3" id="5_x73dp"]
 [ext_resource type="Texture2D" uid="uid://cy8l3lt17mnff" path="res://assets/textures/stoaway-capsule-halftone.png" id="6_xaqlw"]
+[ext_resource type="PackedScene" uid="uid://bobnoomvgkfoq" path="res://components/colorized.tscn" id="7_0nnpm"]
 
 [node name="Microgame2" unique_id=1956794833 instance=ExtResource("1_khhlu")]
 script = ExtResource("2_4udp4")
@@ -46,6 +47,8 @@ position = Vector2(1151, 607)
 scale = Vector2(1.2245713, 0.7057733)
 texture = ExtResource("3_x73dp")
 flip_h = true
+
+[node name="Colorized" parent="KidSprite" index="0" unique_id=1406821416 instance=ExtResource("7_0nnpm")]
 
 [node name="FootPivot" type="Node2D" parent="." index="6" unique_id=1393403061]
 position = Vector2(779, 117)

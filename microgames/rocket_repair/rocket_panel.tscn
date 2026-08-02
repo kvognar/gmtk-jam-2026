@@ -4,13 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://brvfsnsp2nksb" path="res://components/click_and_drag.tscn" id="2_ajhth"]
 [ext_resource type="Texture2D" uid="uid://d0xswmv3ydteq" path="res://microgames/rocket_repair/assets/metalplate.png" id="2_yoich"]
 [ext_resource type="PackedScene" uid="uid://b65odl2j2cxfa" path="res://components/hover.tscn" id="3_se0mf"]
+[ext_resource type="PackedScene" uid="uid://bobnoomvgkfoq" path="res://components/colorized.tscn" id="4_namrl"]
 [ext_resource type="PackedScene" uid="uid://6kmwixrh22a7" path="res://microgames/rocket_repair/bolt.tscn" id="4_qq6gv"]
 [ext_resource type="AudioStream" uid="uid://dloub2md56inp" path="res://assets/audio/metal_clank2.ogg" id="6_fcif7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejdy6"]
 size = Vector2(500, 500)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_se0mf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_con4a"]
 resource_local_to_scene = true
 size = Vector2(500, 500)
 
@@ -26,6 +27,8 @@ texture = ExtResource("2_yoich")
 [node name="Hover" parent="Sprite2D" unique_id=653452688 instance=ExtResource("3_se0mf")]
 unique_name_in_owner = true
 
+[node name="Colorized" parent="Sprite2D" unique_id=1406821416 instance=ExtResource("4_namrl")]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1382831207]
 position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_ejdy6")
@@ -34,7 +37,7 @@ shape = SubResource("RectangleShape2D_ejdy6")
 
 [node name="CollisionShape2D" parent="ClickAndDrag/Area2D" parent_id_path=PackedInt32Array(649557033, 288501250) index="0" unique_id=416779008]
 position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_se0mf")
+shape = SubResource("RectangleShape2D_con4a")
 
 [node name="Bolts" type="Node2D" parent="." unique_id=965074477]
 
