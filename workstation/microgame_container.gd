@@ -11,6 +11,7 @@ var games: Array[PackedScene]
 var current_game_index := 0
 var running := false
 var radio: WalkieTalkie
+var game_over := false
 
 signal failure
 signal success
@@ -32,6 +33,7 @@ func prepare_game() -> void:
 		if endless_mode:
 			current_game_index = 0
 		else:
+			game_over = true
 			return
 
 	current_game = games[current_game_index].instantiate()
@@ -46,6 +48,8 @@ func prepare_game() -> void:
 		radio.set_audio(current_game.intro_line)
 
 func start_game() -> void:
+	if game_over:
+		return
 	current_game.begin()
 	current_game.failure.connect(_on_game_fail)
 	current_game.success.connect(_on_game_success)
