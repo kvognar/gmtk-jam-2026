@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cs7tmbnp5631k" path="res://assets/intro/roomtone.ogg" id="4_es01l"]
 [ext_resource type="Texture2D" uid="uid://d3xm7hgr7mikr" path="res://assets/intro/control_room_b.png" id="4_xwriy"]
 [ext_resource type="AudioStream" uid="uid://bspnrwvfxsuqe" path="res://assets/intro/type1.ogg" id="6_m3r7s"]
+[ext_resource type="FontFile" uid="uid://bvaorgs1jl5l8" path="res://assets/ending/Sunny Spells Basic 2.ttf" id="6_xwriy"]
 [ext_resource type="AudioStream" uid="uid://b3v4oe24addyf" path="res://assets/intro/type2.ogg" id="7_xwriy"]
 [ext_resource type="AudioStream" uid="uid://mr168wscrot6" path="res://assets/intro/type3.ogg" id="8_u5myo"]
 [ext_resource type="AudioStream" uid="uid://d04d1vbkmk5y4" path="res://assets/intro/type4.ogg" id="9_u05oh"]
@@ -61,6 +62,40 @@ texture = ExtResource("4_xwriy")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="slideshow/slide2" unique_id=1931234382]
 stream = ExtResource("4_es01l")
 volume_db = 7.0
+
+[node name="MarginContainer" type="MarginContainer" parent="slideshow" unique_id=262758495]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="slideshow/MarginContainer" unique_id=1455172318]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="slideshow/MarginContainer/VBoxContainer" unique_id=709592284]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="slideshow/MarginContainer/VBoxContainer" unique_id=806337174]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="slideshow/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1332119713]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SkipLabel" type="Label" parent="slideshow/MarginContainer/VBoxContainer/HBoxContainer" unique_id=912730780]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_xwriy")
+theme_override_font_sizes/font_size = 60
+text = "(Click again to skip)"
 
 [node name="typing" type="AudioStreamPlayer2D" parent="." unique_id=1710361604]
 unique_name_in_owner = true

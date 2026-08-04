@@ -37,6 +37,8 @@ var _slide2_db := 0.0
 
 var paper_rip_panel_box: PackedScene = preload('res://ui/paper_rip_panel.tscn')
 
+var skip_state := 'no_click'
+
 func _ready():
 	_slide1_db = slide1_audio.volume_db
 	_slide2_db = slide2_audio.volume_db
@@ -51,6 +53,17 @@ func _ready():
 	_upper_left = _make_label(Control.PRESET_TOP_LEFT, HORIZONTAL_ALIGNMENT_LEFT)
 
 	_run()
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("action"):
+		if skip_state == 'no_click':
+			skip_state = 'one_click'
+			var tween = get_tree().create_tween()
+			await tween.tween_property(%SkipLabel, 'modulate', Color(1, 1, 1, 1), 0.5).finished
+			skip_state = 'ready'
+			return
+		if skip_state == 'ready':
+			_finish()
 
 func _run():
 	_fade_audio(slide1_audio, _slide1_db, audio_fade_in, true)
