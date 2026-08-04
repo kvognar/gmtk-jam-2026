@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bobnoomvgkfoq" path="res://components/colorized.tscn" id="10_3o68s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6pnk7"]
-radius = 89.31
+radius = 129.47
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gkdu3"]
 streams_count = 3
@@ -20,71 +20,28 @@ stream_0/stream = ExtResource("3_majot")
 stream_1/stream = ExtResource("4_wwexs")
 stream_2/stream = ExtResource("5_mg2hf")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ejdy6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_b5tjt")
-}],
-"loop": 1,
-"name": &"fly",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_s0a8i")
-}],
-"loop": 1,
-"name": &"nest",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_3o68s")
-}],
-"loop": 1,
-"name": &"nesting",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_s0a8i")
-}],
-"loop": 1,
-"name": &"stand",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_3o68s")
-}],
-"loop": 1,
-"name": &"walk",
-"speed": 5.0
-}]
-
 [sub_resource type="Animation" id="Animation_b5tjt"]
 length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:scale:x")
+tracks/0/path = NodePath("Sprite2D:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:scale:y")
+tracks/1/path = NodePath("Sprite2D:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -95,24 +52,24 @@ loop_mode = 1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:scale:x")
+tracks/0/path = NodePath("Sprite2D:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 2, 2, 2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.016700994, 0, 0, 0, 1, -0.016859049, 0, 0, 0, 1, -0.01643996, 0, 0, 0),
-"times": PackedFloat32Array(0, 0.100205965, 0.20136026, 0.3)
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.016836751, 0, 0, 0, 1, -0.016937569, 0, 0, 0, 1, -0.016225684, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.1010205, 0.20264591, 0.3)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:scale:y")
+tracks/1/path = NodePath("Sprite2D:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2, 2, 2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.016700994, -0.033333343, 0, 0, 0.8, -0.016859049, 0.06666668, 0, 0, 1, -0.01643996, -0.033333335, 0, 0),
-"times": PackedFloat32Array(0, 0.100205965, 0.20136026, 0.3)
+"handle_modes": PackedInt32Array(2, 2, 2, 2),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1.2, -0.016836751, -0.033333343, 0, 0, 0.8, -0.016937569, 0.06666667, 0, 0, 1, -0.016225684, -0.033333335, 0, 0),
+"times": PackedFloat32Array(0, 0.1010205, 0.20264591, 0.3)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3o68s"]
@@ -121,23 +78,190 @@ _data = {
 &"flap": SubResource("Animation_s0a8i")
 }
 
+[sub_resource type="Animation" id="Animation_3o68s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [129.47]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_s0a8i")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CircleShape2D_6pnk7")]
+}
+
+[sub_resource type="Animation" id="Animation_cg1u7"]
+resource_name = "fly"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_b5tjt")]
+}
+
+[sub_resource type="Animation" id="Animation_uxyrm"]
+resource_name = "nest"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:shape:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [129.47]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_s0a8i")]
+}
+
+[sub_resource type="Animation" id="Animation_fojd6"]
+resource_name = "nesting"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_3o68s")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CircleShape2D_6pnk7")]
+}
+
+[sub_resource type="Animation" id="Animation_n4gs6"]
+resource_name = "stand"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_s0a8i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [184.69]
+}
+
+[sub_resource type="Animation" id="Animation_k3dug"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_3o68s")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wtbj8"]
+_data = {
+&"RESET": SubResource("Animation_3o68s"),
+&"fly": SubResource("Animation_cg1u7"),
+&"nest": SubResource("Animation_uxyrm"),
+&"nesting": SubResource("Animation_fojd6"),
+&"stand": SubResource("Animation_n4gs6"),
+&"walk": SubResource("Animation_k3dug")
+}
+
 [node name="Pigeon" type="CharacterBody2D" unique_id=540676680]
 scale = Vector2(0.7, 0.7)
 script = ExtResource("1_ho0rk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1729281083]
-visible = false
 shape = SubResource("CircleShape2D_6pnk7")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1991612719]
 stream = SubResource("AudioStreamRandomizer_gkdu3")
+volume_db = 20.0
 bus = &"SFX"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1115708433]
-sprite_frames = SubResource("SpriteFrames_ejdy6")
-animation = &"nest"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1569584632]
+texture = ExtResource("6_s0a8i")
 
-[node name="Colorized" parent="AnimatedSprite2D" unique_id=1406821416 instance=ExtResource("10_3o68s")]
+[node name="Colorized" parent="Sprite2D" unique_id=1406821416 instance=ExtResource("10_3o68s")]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=386286772]
+[node name="EffectsAnimationPlayer" type="AnimationPlayer" parent="." unique_id=386286772]
 libraries/ = SubResource("AnimationLibrary_3o68s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=436829566]
+libraries/ = SubResource("AnimationLibrary_wtbj8")

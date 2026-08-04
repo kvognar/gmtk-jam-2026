@@ -25,31 +25,20 @@ texture = ExtResource("3_nvg47")
 [node name="Pigeon" parent="Pigeons" index="0" unique_id=540676680 instance=ExtResource("3_86bxv")]
 position = Vector2(1390, 595)
 
-[node name="AnimatedSprite2D" parent="Pigeons/Pigeon" index="2" unique_id=1115708433]
-animation = &"stand"
-flip_h = true
-
 [node name="Pigeon2" parent="Pigeons" index="1" unique_id=625872230 instance=ExtResource("3_86bxv")]
 position = Vector2(253, 205)
-
-[node name="AnimatedSprite2D" parent="Pigeons/Pigeon2" index="2" unique_id=1115708433]
-animation = &"stand"
+starting_pose = "walk"
 
 [node name="Pigeon3" parent="Pigeons" index="2" unique_id=1241233968 instance=ExtResource("3_86bxv")]
 position = Vector2(457.99997, 574)
 
-[node name="AnimatedSprite2D" parent="Pigeons/Pigeon3" index="2" unique_id=1115708433]
-animation = &"walk"
-
 [node name="Pigeon5" parent="Pigeons" index="3" unique_id=2102194896 instance=ExtResource("3_86bxv")]
-position = Vector2(1081, 412)
+position = Vector2(1081.0001, 413.00003)
+starting_pose = "nest"
 
 [node name="Pigeon4" parent="Pigeons" index="4" unique_id=1500175335 instance=ExtResource("3_86bxv")]
-position = Vector2(1094, 435)
-
-[node name="AnimatedSprite2D" parent="Pigeons/Pigeon4" index="2" unique_id=1115708433]
-position = Vector2(32.85714, -158.57143)
-animation = &"nesting"
+position = Vector2(1103, 312)
+starting_pose = "nesting"
 
 [editable path="Pigeons/Pigeon"]
 [editable path="Pigeons/Pigeon2"]
