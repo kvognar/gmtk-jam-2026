@@ -13,4 +13,4 @@ func assign_color() -> void:
 	if !color:
 		print_debug('nevermind')
 		return
-	get_parent().modulate = color
+	get_parent().modulate = color * 1.2

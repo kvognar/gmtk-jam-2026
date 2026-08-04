@@ -49,9 +49,11 @@ position = Vector2(94, 753)
 position = Vector2(1239, 733)
 
 [node name="Sprite2D" parent="Photographers/Photographer6" index="0" unique_id=1528119636]
+modulate = Color(1, 1, 1, 1)
 flip_h = true
 
 [node name="CollisionShape2D" parent="Photographers/Photographer6" index="1" unique_id=1642985058]
+visible = true
 shape = SubResource("RectangleShape2D_pq6vp")
 
 [node name="Photographer3" parent="Photographers" index="4" unique_id=543112837 instance=ExtResource("4_s16q4")]
@@ -61,9 +63,11 @@ position = Vector2(357, 780)
 position = Vector2(968, 806)
 
 [node name="Sprite2D" parent="Photographers/Photographer4" index="0" unique_id=1528119636]
+modulate = Color(1, 1, 1, 1)
 flip_h = true
 
 [node name="CollisionShape2D" parent="Photographers/Photographer4" index="1" unique_id=1642985058]
+visible = true
 shape = SubResource("RectangleShape2D_371bv")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="9" unique_id=1786200917]

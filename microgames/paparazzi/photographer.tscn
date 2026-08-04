@@ -70,6 +70,7 @@ _data = {
 script = ExtResource("1_dpxdj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1528119636]
+modulate = Color(1.9902015, 1.9902015, 1.9902015, 1)
 texture = ExtResource("2_dfphn")
 
 [node name="Hopping" parent="Sprite2D" unique_id=1632497499 instance=ExtResource("3_sdppg")]
@@ -77,6 +78,7 @@ texture = ExtResource("2_dfphn")
 [node name="Colorized" parent="Sprite2D" unique_id=1406821416 instance=ExtResource("4_dfphn")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1642985058]
+visible = false
 position = Vector2(3.5000079, -1.4999962)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_8g5yo")

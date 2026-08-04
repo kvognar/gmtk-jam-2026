@@ -7,7 +7,7 @@ var colors = [
 	{"color": Color8(10, 10, 10), "dark":true},    ## black, 050609, DARK
 	{"color": Color8(247, 226, 143), "dark":false},  ## yellow, F7E28F, LIGHT
 	{"color": Color8(60, 119, 155), "dark":true},   ## blue, 3C779B, DARK
-	{"color": Color8(163, 151, 171), "dark":false},  ## purple, A397AB, LIGHT
+	{"color": Color8(212, 196, 223), "dark":false},  ## purple, A397AB, LIGHT
 	{"color": Color8(176, 70, 78), "dark":true},    ## red, B0464E, DARK
 	{"color": Color8(244, 158, 55), "dark":true},   ## orange, F49E37, DARK
 	{"color": Color8(245, 245, 245), "dark":false}  ## white, F0F0F0, LIGHT
