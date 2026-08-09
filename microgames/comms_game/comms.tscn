@@ -162,7 +162,7 @@ libraries/ = SubResource("AnimationLibrary_cjvwc")
 autoplay = &"dial_pulse"
 
 [node name="FrequencyDial" parent="." index="12" unique_id=408289048 instance=ExtResource("10_lnrn3")]
-position = Vector2(775, 500)
+position = Vector2(761, 513)
 
 [connection signal="timeout" from="PromptTimer" to="." method="_on_prompt_timer_timeout"]
 [connection signal="input_event" from="Radio/Dial" to="." method="_on_dial_input_event"]

@@ -13,7 +13,6 @@ const ROTATION_RATE = 2 * PI
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#print_debug('different game')
 	super()
 	dial = $Radio/Dial/DialSprite
 	
@@ -21,8 +20,6 @@ func begin() -> void:
 	super()
 	initialize_frequencies()
 	$Static.play()
-	$Timer.stop()
-
 
 func initialize_frequencies() -> void:
 	initialize_target_frequency()

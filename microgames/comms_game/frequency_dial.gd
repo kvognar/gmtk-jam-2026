@@ -4,7 +4,7 @@ class_name FrequencyDial
 const CENTER = Vector2(100, 100)
 const LABEL_LOCATION = Vector2(100, 200)
 const LABEL_TEXT = "Freq"
-const DIAL_RADIUS:int = 80
+const DIAL_RADIUS:int = 62
 const GAUGE_RADIUS: float = DIAL_RADIUS * 0.9
 # start should be less than end for the drawing to go correctly
 const GAUGE_START:float =  5 * PI / 6
