@@ -9,12 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://tykw3is6q2m3" path="res://assets/textures/Radio-halftone.png" id="6_tb5d2"]
 [ext_resource type="Theme" uid="uid://cyxf867p4jpul" path="res://papercut.tres" id="7_clhp2"]
 [ext_resource type="PackedScene" uid="uid://bobnoomvgkfoq" path="res://components/colorized.tscn" id="8_0n7fv"]
+[ext_resource type="PackedScene" uid="uid://ckv1q81wt1of4" path="res://microgames/comms_game/frequency_dial.tscn" id="10_lnrn3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ys5s"]
 radius = 94.11389
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_duscq"]
-points = PackedVector2Array(578, 447, 1522, 453, 1503, 745, 594, 730)
 
 [sub_resource type="Animation" id="Animation_cjvwc"]
 length = 0.001
@@ -105,16 +103,20 @@ wait_time = 1.25
 position = Vector2(-207, 60)
 priority = 1
 
-[node name="RadioImage" type="Sprite2D" parent="Radio" index="0" unique_id=962124978]
-position = Vector2(902.99994, 400.99997)
-scale = Vector2(1.3175539, 1.2697474)
+[node name="FrequencyDial" parent="Radio" index="0" unique_id=408289048 instance=ExtResource("10_lnrn3")]
+z_index = 1
+position = Vector2(1027, 371)
+
+[node name="RadioImage" type="Sprite2D" parent="Radio" index="1" unique_id=962124978]
+position = Vector2(753, 115.000015)
+scale = Vector2(2.1780963, 2.1816745)
 texture = ExtResource("6_tb5d2")
 
-[node name="Dial" type="Area2D" parent="Radio" index="1" unique_id=1050349489]
+[node name="Dial" type="Area2D" parent="Radio" index="2" unique_id=1050349489]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(1408, 556)
-scale = Vector2(1.3175539, 1.2697474)
+position = Vector2(1573, 392)
+scale = Vector2(1.6, 1.542)
 priority = 1
 
 [node name="DialSprite" type="Sprite2D" parent="Radio/Dial" index="0" unique_id=763621727]
@@ -126,13 +128,9 @@ texture = ExtResource("3_psaj7")
 [node name="DialCollision" type="CollisionShape2D" parent="Radio/Dial" index="1" unique_id=360945755]
 shape = SubResource("CircleShape2D_4ys5s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Radio" index="2" unique_id=283653093]
-position = Vector2(-1, 0)
-shape = SubResource("ConvexPolygonShape2D_duscq")
-disabled = true
-
 [node name="Frequencies" type="PanelContainer" parent="." index="10" unique_id=1945283670]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 939.0
 offset_top = 265.0
@@ -148,11 +146,13 @@ layout_mode = 2
 
 [node name="TargetFrequency" type="Label" parent="Frequencies/MarginContainer/VBoxContainer" index="0" unique_id=1419827306]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 
 [node name="CurrentFrequency" type="Label" parent="Frequencies/MarginContainer/VBoxContainer" index="1" unique_id=980260948]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 
