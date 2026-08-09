@@ -20,8 +20,8 @@ func _ready() -> void:
 func begin() -> void:
 	super()
 	initialize_frequencies()
-	update_current_frequency_text()
 	$Static.play()
+	$Timer.stop()
 
 
 func initialize_frequencies() -> void:
@@ -31,8 +31,7 @@ func initialize_frequencies() -> void:
 func initialize_current_frequency() -> void:
 	var frequency_offset = (randi() % 300) + 65
 	var is_below = randf() <= 0.5
-	current_frequency = target_frequency - frequency_offset if is_below else target_frequency + frequency_offset
-	update_current_frequency_text()
+	set_current_frequency(target_frequency - frequency_offset if is_below else target_frequency + frequency_offset)
 	
 func update_current_frequency_text() -> void:
 	%CurrentFrequency.text = "Current: %2.f mHz" % current_frequency
@@ -41,13 +40,18 @@ func initialize_target_frequency() -> void:
 	target_frequency = randi() % 100 + 2050
 	target_frequency_range = Vector2(target_frequency - 50, target_frequency + 50)
 	%TargetFrequency.text = "Target: %s - %s mHz" % [target_frequency_range.x, target_frequency_range.y]
+	$FrequencyDial.set_frequency_range(target_frequency_range)
+
+func set_current_frequency(freq: float) -> void:
+	current_frequency = freq
+	$FrequencyDial.set_current_frequency(freq)
+	update_current_frequency_text()
 
 func update_frequency(increment) -> void:
 	var new_frequency = current_frequency + increment
 	if new_frequency < 0:
 		new_frequency = 0
-	current_frequency = new_frequency
-	update_current_frequency_text()
+	set_current_frequency(new_frequency)
 	
 func update_dial_rotation(rads) -> void:
 	dial.rotation += rads

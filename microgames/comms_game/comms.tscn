@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://tykw3is6q2m3" path="res://assets/textures/Radio-halftone.png" id="6_tb5d2"]
 [ext_resource type="Theme" uid="uid://cyxf867p4jpul" path="res://papercut.tres" id="7_clhp2"]
 [ext_resource type="PackedScene" uid="uid://bobnoomvgkfoq" path="res://components/colorized.tscn" id="8_0n7fv"]
+[ext_resource type="PackedScene" uid="uid://ckv1q81wt1of4" path="res://microgames/comms_game/frequency_dial.tscn" id="10_lnrn3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ys5s"]
 radius = 94.11389
@@ -159,6 +160,9 @@ theme_override_font_sizes/font_size = 40
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="11" unique_id=1400163994]
 libraries/ = SubResource("AnimationLibrary_cjvwc")
 autoplay = &"dial_pulse"
+
+[node name="FrequencyDial" parent="." index="12" unique_id=408289048 instance=ExtResource("10_lnrn3")]
+position = Vector2(775, 500)
 
 [connection signal="timeout" from="PromptTimer" to="." method="_on_prompt_timer_timeout"]
 [connection signal="input_event" from="Radio/Dial" to="." method="_on_dial_input_event"]

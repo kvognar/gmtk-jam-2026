@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ckv1q81wt1of4"]
+
+[ext_resource type="Script" uid="uid://df676mrmayjgf" path="res://microgames/comms_game/frequency_dial.gd" id="1_ergsj"]
+
+[node name="FrequencyDial" type="Node2D" unique_id=408289048]
+script = ExtResource("1_ergsj")
