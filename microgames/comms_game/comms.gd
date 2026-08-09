@@ -37,11 +37,11 @@ func initialize_target_frequency() -> void:
 	target_frequency = randi() % 100 + 2050
 	target_frequency_range = Vector2(target_frequency - 50, target_frequency + 50)
 	%TargetFrequency.text = "Target: %s - %s mHz" % [target_frequency_range.x, target_frequency_range.y]
-	$FrequencyDial.set_frequency_range(target_frequency_range)
+	$Radio/FrequencyDial.set_frequency_range(target_frequency_range)
 
 func set_current_frequency(freq: float) -> void:
 	current_frequency = freq
-	$FrequencyDial.set_current_frequency(freq)
+	$Radio/FrequencyDial.set_current_frequency(freq)
 	update_current_frequency_text()
 
 func update_frequency(increment) -> void:
@@ -65,9 +65,6 @@ func _process(delta: float) -> void:
 		return
 	if current_frequency >= target_frequency_range.x && current_frequency <= target_frequency_range.y && !is_dragging:
 		win()
-
-func _on_prompt_timer_timeout() -> void:
-	%Frequencies.show()
 
 func stop_dragging() -> void:
 	is_dragging = false

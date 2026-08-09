@@ -14,9 +14,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ys5s"]
 radius = 94.11389
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_duscq"]
-points = PackedVector2Array(578, 447, 1522, 453, 1503, 745, 594, 730)
-
 [sub_resource type="Animation" id="Animation_cjvwc"]
 length = 0.001
 tracks/0/type = "value"
@@ -106,16 +103,20 @@ wait_time = 1.25
 position = Vector2(-207, 60)
 priority = 1
 
-[node name="RadioImage" type="Sprite2D" parent="Radio" index="0" unique_id=962124978]
-position = Vector2(902.99994, 400.99997)
-scale = Vector2(1.3175539, 1.2697474)
+[node name="FrequencyDial" parent="Radio" index="0" unique_id=408289048 instance=ExtResource("10_lnrn3")]
+z_index = 1
+position = Vector2(1027, 371)
+
+[node name="RadioImage" type="Sprite2D" parent="Radio" index="1" unique_id=962124978]
+position = Vector2(753, 115.000015)
+scale = Vector2(2.1780963, 2.1816745)
 texture = ExtResource("6_tb5d2")
 
-[node name="Dial" type="Area2D" parent="Radio" index="1" unique_id=1050349489]
+[node name="Dial" type="Area2D" parent="Radio" index="2" unique_id=1050349489]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(1408, 556)
-scale = Vector2(1.3175539, 1.2697474)
+position = Vector2(1573, 392)
+scale = Vector2(1.6, 1.542)
 priority = 1
 
 [node name="DialSprite" type="Sprite2D" parent="Radio/Dial" index="0" unique_id=763621727]
@@ -127,13 +128,9 @@ texture = ExtResource("3_psaj7")
 [node name="DialCollision" type="CollisionShape2D" parent="Radio/Dial" index="1" unique_id=360945755]
 shape = SubResource("CircleShape2D_4ys5s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Radio" index="2" unique_id=283653093]
-position = Vector2(-1, 0)
-shape = SubResource("ConvexPolygonShape2D_duscq")
-disabled = true
-
 [node name="Frequencies" type="PanelContainer" parent="." index="10" unique_id=1945283670]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 939.0
 offset_top = 265.0
@@ -149,20 +146,19 @@ layout_mode = 2
 
 [node name="TargetFrequency" type="Label" parent="Frequencies/MarginContainer/VBoxContainer" index="0" unique_id=1419827306]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 
 [node name="CurrentFrequency" type="Label" parent="Frequencies/MarginContainer/VBoxContainer" index="1" unique_id=980260948]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="11" unique_id=1400163994]
 libraries/ = SubResource("AnimationLibrary_cjvwc")
 autoplay = &"dial_pulse"
-
-[node name="FrequencyDial" parent="." index="12" unique_id=408289048 instance=ExtResource("10_lnrn3")]
-position = Vector2(761, 513)
 
 [connection signal="timeout" from="PromptTimer" to="." method="_on_prompt_timer_timeout"]
 [connection signal="input_event" from="Radio/Dial" to="." method="_on_dial_input_event"]
